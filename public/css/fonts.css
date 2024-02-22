@@ -1,14 +1,4 @@
 @font-face {
-  font-family: 'Linden Hill';
-  font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/theleagueof/linden-hill/webfonts/LindenHill-webfont.woff') format('woff');
-}
-@font-face {
-  font-family: 'Linden Hill';
-  font-style: italic;
-  src: url('https://cdn.jsdelivr.net/gh/theleagueof/linden-hill/webfonts/LindenHill-webfont.woff') format('woff');
-}
-@font-face {
   font-family: 'Source Han Serif CN';
   src: local('Source Han Serif CN'), local('Source Han Serif SC'),
        local('Source Han Serif TC'), local('Source Han Serif TW'),
