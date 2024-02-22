@@ -13,6 +13,8 @@ tags: []
 
 （等有时间了慢慢把前面要啰嗦的补上，先搭个框架记录一下要写的）
 
+- 需要安装: R studio, GitHub desktop, Hugo, R packages:blogdown
+
 - 网页搭建
 
 - 字体更改
