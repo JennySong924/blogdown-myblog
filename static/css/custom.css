@@ -2,6 +2,9 @@ h1.title::before { content: "➶"; }
 .main {
   line-height: 1.75;
 }
+h1.title, .toc-line > a {
+  font-style: normal;
+}
 .archive {
   max-width: none;
   width: 100%;
