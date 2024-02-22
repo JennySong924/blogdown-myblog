@@ -13,7 +13,7 @@ tags: []
 
 （等有时间了慢慢把前面要啰嗦的补上，先搭个框架记录一下要写的）
 
-- 需要安装: R studio, GitHub desktop, Git, (Go, Dart Sass),[Hugo](https://www.gohugo.org/doc/tutorials/installing-on-windows/), R packages:blogdown
+- 需要安装: R studio, GitHub desktop, Git, (Go, Dart Sass),[Hugo](https://www.gohugo.org/doc/tutorials/installing-on-windows/) ( 也可用`blogdown:install_hugo()`下载 ), R packages:blogdown
 
 - 网页搭建
 
