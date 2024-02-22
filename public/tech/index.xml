@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teches on J Song&#39;s Blog</title>
+    <link>//localhost:4288/tech/</link>
+    <description>Recent content in Teches on J Song&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 22 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4288/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>搭建自己的博客</title>
+      <link>//localhost:4288/tech/2024-02-22-blog-buiding/</link>
+      <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:4288/tech/2024-02-22-blog-buiding/</guid>
+      <description>人在没有看到自己喜欢的东西之前，是不知道自己会有多喜欢它的。&#xA;偶然间发现了 yihui 大神的博客</description>
+    </item>
+  </channel>
+</rss>

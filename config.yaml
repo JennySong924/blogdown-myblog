@@ -4,6 +4,7 @@ title: "J Song's Blog"
 theme: "hugo-paged"
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 footnotereturnlinkcontents: "↩"
+author: 'J Song'
 
 outputs:
   home: [html, rss, json]
@@ -32,7 +33,7 @@ menu:
       weight: 6
 
 params:
-  description: "这是一个纯粹的博客......."
+  description: " ^-^ "
   logo:
     main:
       alt: LOGO TEXT
