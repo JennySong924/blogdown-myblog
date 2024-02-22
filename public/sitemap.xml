@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:4288/</loc>
+    <loc>//localhost:4288/post/2024-02-22-first-try/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4288/lists/</loc>
     <lastmod>2024-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4288/post/</loc>
@@ -17,14 +20,32 @@
     <loc>//localhost:4288/reading/2024-02-22-wuhezhizhong/</loc>
     <lastmod>2024-02-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>//localhost:4288/lists/2024-02-22-book-list/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:4288/tech/2024-02-22-blog-buiding/</loc>
     <lastmod>2024-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4288/post/2024-02-22-newyear2024/</loc>
     <lastmod>2024-02-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>//localhost:4288/lists/2024-02-22-movie-list/</loc>
+    <lastmod>2024-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4288/reading/2024-01-02-santi2/</loc>
+    <lastmod>2024-01-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4288/reading/2024-01-02-aideyishu/</loc>
+    <lastmod>2024-01-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4288/reading/2024-01-02-aidiriji/</loc>
+    <lastmod>2024-01-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>//localhost:4288/about/</loc>
-    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
+    <lastmod>2022-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4288/</loc>
+    <lastmod>2017-01-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4288/categories/</loc>
   </url><url>

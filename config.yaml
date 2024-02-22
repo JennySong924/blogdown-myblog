@@ -20,8 +20,8 @@ menu:
       url: /
       weight: 2
     - identifier: posts
-      name: Posts
-      url: /posts/
+      name: Post
+      url: /post/
       weight: 3
     - identifier: tech
       name: Tech
@@ -31,6 +31,14 @@ menu:
       name: Reading
       url: /Reading/
       weight: 6
+    - identifier: lists
+      name: Lists
+      url: /lists/
+      weight: 7
+    - name: About
+      url: /about/
+    - name: GitHub
+      url: 'https://github.com/JennySong924/blogdown-myblog'
 
 params:
   description: " ^-^ "
