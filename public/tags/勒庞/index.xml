@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>勒庞 on J Song&#39;s Blog</title>
+    <link>//localhost:3603/tags/%E5%8B%92%E5%BA%9E/</link>
+    <description>Recent content in 勒庞 on J Song&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 22 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:3603/tags/%E5%8B%92%E5%BA%9E/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>乌合之众</title>
+      <link>//localhost:3603/reading/2024-02-22-/</link>
+      <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:3603/reading/2024-02-22-/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
