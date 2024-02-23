@@ -13,7 +13,7 @@
       <link>//localhost:4288/tech/2024-02-22-blog-buiding/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
       <guid>//localhost:4288/tech/2024-02-22-blog-buiding/</guid>
-      <description>人在没有看到自己喜欢的东西之前，是不知道自己会有多喜欢它的。&#xA;偶然间发现了 yihui 大神的博客。。。&#xA;（等有时间了慢慢把前面要啰嗦的补上，先搭个框架记录一下要写的）&#xA;网页搭建&#xA;字体更改&#xA;分栏&#xA;页面排版&#xA;logo 添加&#xA;目录排版</description>
+      <description>人在没有看到自己喜欢的东西之前，是不知道自己会有多喜欢它的。&#xA;偶然间发现了 yihui 大神的博客。。。&#xA;（等有时间了慢慢把前面要啰嗦的补上，先搭个框架记录一下要写的）&#xA;需要安装: R studio, GitHub desktop, Git, (Go, Dart Sass),Hugo ( 也可用blogdown:install_hugo()下载 ), R packages:blogdown&#xA;网页搭建&#xA;字体更改&#xA;分栏&#xA;页面排版&#xA;logo 添加&#xA;目录排版</description>
     </item>
   </channel>
 </rss>
