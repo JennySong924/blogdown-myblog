@@ -3,7 +3,7 @@
 {{ if .Params.list_pages }}
   {{ range .RegularPages.ByParam (or .Params.order_by "date" ) }}
   <p>
-    <span>{{ .Date.Format "2006-01-02" }}</span>
+    <span>{{ .Date.Format "01-02" }}</span>
     <a href="{{ .RelPermalink }}">{{ .Title | markdownify }} {{ with .Params.subtitle }}<span class='subtitle'> &middot; {{ . | markdownify }} </span>{{ end }}</a>
   </p>
   {{ end }}
@@ -13,7 +13,7 @@
   {{ range .Pages.GroupByDate "01" }}
 <ul>
   {{- range .Pages -}}
-<li{{ with .Params.page_class }} class="{{ . }}"{{ end }}><span>{{ .Date.Format "2006-01-02" }}</span> <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
+<li{{ with .Params.page_class }} class="{{ . }}"{{ end }}><span>{{ .Date.Format "01-02" }}</span> <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></li>
 {{ end }}</ul>
   {{ end }}
   {{ end }}
