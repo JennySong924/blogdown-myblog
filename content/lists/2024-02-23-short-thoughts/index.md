@@ -1,5 +1,5 @@
 ---
-title: 灵感
+title: 随笔
 author: J Song
 date: '2024-02-23'
 slug: []
