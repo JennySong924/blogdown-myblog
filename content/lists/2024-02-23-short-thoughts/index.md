@@ -1,5 +1,5 @@
 ---
-title: 随笔
+title: 手记
 author: J Song
 date: '2024-02-23'
 slug: []
