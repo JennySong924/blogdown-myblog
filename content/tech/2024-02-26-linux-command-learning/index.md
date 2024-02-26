@@ -6,7 +6,7 @@ slug: []
 categories: []
 tags: []
 ---
-- 新建xueke.txt的文件
+新建xueke.txt的文件
 ```bash
 vi xueke.txt
 touch xueke.txt
