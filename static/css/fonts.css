@@ -21,6 +21,9 @@ body {
 .home blockquote {
   font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FandolKai, serif;
 }
+blockquote {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FandolKai, serif;
+}
 code {
   font-family: Consolas, Courier, 'Courier New', FandolKai, monospace;
 }
