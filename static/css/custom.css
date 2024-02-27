@@ -1,4 +1,15 @@
 h1.title, .toc-line > a {
   font-style: normal;
 }
-
+blockquote {
+  margin: 1em 0;
+  padding: 0 2em;
+}
+.single blockquote {
+  background: none;
+  border-left-width: 3px;
+  padding: 0 2em;
+}
+.home blockquote {
+  border-left-color: transparent;
+}
