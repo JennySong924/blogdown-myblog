@@ -15,11 +15,11 @@
   font-style: normal;
   src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.0.0/style.css') format('css');
 } */
-@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.0.0/style.css');
+/* @import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.0.0/style.css');
 div.post-body,h1,h2,h3,h4 {
   font-family: "LXGW WenKai LITE", sans-serif;
   font-size: 108%;
-}
+} */
 body {
   font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Latin Modern Roman', 'Source Han Serif CN', serif;
 }
