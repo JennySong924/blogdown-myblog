@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4023&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -11,14 +11,12 @@
     <meta name="twitter:card" content="summary">
     
       
-      <meta property="description" content="人在没有看到自己喜欢的东西之前，是不知道自己会有多喜欢它的。
-[&amp;hellip;] 偶然间发现了 yihui 大神的博客。。。
-[&amp;hellip;] （等有时间了慢慢把前面要啰嗦的补上，先搭个框架记录一下要写的）
-[&amp;hellip;] 需要安装: R studio, GitHub desktop, Git, (Go, Dart Sass),Hugo ( 也可 &amp;hellip;">
-      <meta property="og:description" content="人在没有看到自己喜欢的东西之前，是不知道自己会有多喜欢它的。
-[&amp;hellip;] 偶然间发现了 yihui 大神的博客。。。
-[&amp;hellip;] （等有时间了慢慢把前面要啰嗦的补上，先搭个框架记录一下要写的）
-[&amp;hellip;] 需要安装: R studio, GitHub desktop, Git, (Go, Dart Sass),Hugo ( 也可 &amp;hellip;">
+      <meta property="description" content="这里是我自己建立这个博客小站的一些经验。从零开始摸索，前期尝试了几种搭建网站的方法，觉得还是用 blogdown 比较新手友好，在这里推荐给大家。blogdown 是谢益辉为搭建和维护个人博客网站所写的一个 R 包，感兴趣的童鞋还可以去参观一下大神的个人博客。
+[&amp;hellip;] R studio：在这里面写代码进行网页创建的具体操作
+[&amp;hellip;] GitHub desktop：在本地创 &amp;hellip;">
+      <meta property="og:description" content="这里是我自己建立这个博客小站的一些经验。从零开始摸索，前期尝试了几种搭建网站的方法，觉得还是用 blogdown 比较新手友好，在这里推荐给大家。blogdown 是谢益辉为搭建和维护个人博客网站所写的一个 R 包，感兴趣的童鞋还可以去参观一下大神的个人博客。
+[&amp;hellip;] R studio：在这里面写代码进行网页创建的具体操作
+[&amp;hellip;] GitHub desktop：在本地创 &amp;hellip;">
       
     
 
@@ -96,38 +94,90 @@
 
 
 
-<p>人在没有看到自己喜欢的东西之前，是不知道自己会有多喜欢它的。</p>
-<p>偶然间发现了 yihui 大神的博客。。。</p>
-<p>（等有时间了慢慢把前面要啰嗦的补上，先搭个框架记录一下要写的）</p>
+
+<nav id="TableOfContents">
+      <ul>
+        <li><a href="#需要安装">需要安装:</a></li>
+        <li><a href="#网页搭建">网页搭建</a></li>
+        <li><a href="#创建日志">创建日志</a></li>
+        <li><a href="#字体更改">字体更改</a></li>
+        <li><a href="#分栏">分栏</a></li>
+        <li><a href="#页面排版">页面排版</a></li>
+        <li><a href="#logo-添加">logo 添加</a></li>
+        <li><a href="#目录排版">目录排版</a></li>
+      </ul>
+</nav>
+
+
+
+
+<p>这里是我自己建立这个博客小站的一些经验。从零开始摸索，前期尝试了几种搭建网站的方法，觉得还是用 blogdown 比较新手友好，在这里推荐给大家。<a href="https://bookdown.org/yihui/blogdown/get-started.html">blogdown</a> 是<a href="https://yihui.org">谢益辉</a>为搭建和维护个人博客网站所写的一个 R 包，感兴趣的童鞋还可以去参观一下大神的个人博客。</p>
+<h3 id="需要安装">需要安装:</h3>
 <ul>
 <li>
-<p>需要安装: R studio, GitHub desktop, Git, (Go, Dart Sass),<a href="https://www.gohugo.org/doc/tutorials/installing-on-windows/">Hugo</a> ( 也可用<code>blogdown:install_hugo()</code>下载 ), R packages:blogdown</p>
+<p><a href="https://posit.co/download/rstudio-desktop/">R studio</a>：在这里面写代码进行网页创建的具体操作</p>
 </li>
 <li>
-<p>网页搭建</p>
+<p><a href="https://desktop.github.com">GitHub desktop</a>：在本地创建网站相关文件之后， 需要 push 到 GitHub 上进行网站部署。用 GitHub desktop 比较方便</p>
 </li>
 <li>
-<p>字体更改</p>
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a></p>
 </li>
 <li>
-<p>分栏</p>
+<p><a href="https://www.gohugo.org/doc/tutorials/installing-on-windows/">Hugo</a>：也可在 Rstudio 中安装 blogdown 包之后用<code>blogdown:install_hugo()</code>下载</p>
 </li>
 <li>
-<p>页面排版</p>
-</li>
-<li>
-<p>logo 添加</p>
-</li>
-<li>
-<p>目录排版</p>
+<p><a href="https://bookdown.org/yihui/blogdown/get-started.html">R packages:blogdown</a></p>
 </li>
 </ul>
+<h3 id="网页搭建">网页搭建</h3>
+<p>在 R studio 里面新建一个 project（也可以不建，但是用 project 来管理比较方便）。用 <code>install.packages('blogdown')</code> 安装好 blogdown 包之后，用 <code>blogdown::build_site()</code> 创建网站所需要的基本框架文件。如果有自己比较喜欢的主题风格，可以把主题包下载到 themes 目录下面，然后用 <code>blogdown::build_site(theme = themes/&lt;theme folder&gt;)</code> 进行网站创建。有关主题的使用在 blogdown 的网页上有详细介绍。</p>
+<h3 id="创建日志">创建日志</h3>
+<p>在 R studio 中用 <code>blogdown::new_post()</code> 可以创建新的日志文件。文件会以一个文件夹的形式进行创建，文件夹中包含 index.md文件，之后就可以在这个文件中进行日志内容的编辑。创建的时候可以输入标题名称，但是标题中包含的中文字符貌似不会在文件夹名称中显示。所以一般我的文件夹名称会使用英文名，之后在 index.md 文件中再修改成中文 title。</p>
+<h3 id="字体更改">字体更改</h3>
+<p>一般主题包中会有自带的字体设置文件，位置在主题包文件夹中的 static/css/ 文件夹中。不过通常这些主题包会进行更新，如果在本地修改过这个文件夹中的内容，后面想要使用更新后的主题包时就需要重新修改，会比较麻烦。因此另一个做法是在主目录下的 static 文件夹中创建 static/css/*.css 文件，这个文件夹的优先级会高于 theme 文件架中的 .css 文件</p>
+<h3 id="分栏">分栏</h3>
+<p>在主目录下的 config.yaml 文件中进行页面分栏的设置。我是把页面分成 Home, Tech, Post 等几页，所以在 config.yaml 文件中添加下面一段内容：</p>
+<pre><code class="language-css">menu:
+  main:
+    - identifier: search
+      name: 🔍search
+      url: search
+      weight: 1
+    - identifier: home
+      name: Home
+      url: /
+      weight: 2
+    - identifier: posts
+      name: Post
+      url: /post/
+      weight: 3
+    - identifier: tech
+      name: Tech
+      url: /Tech/
+      weight: 5
+    - identifier: reading
+      name: Reading
+      url: /Reading/
+      weight: 6
+    - identifier: lists
+      name: Lists
+      url: /lists/
+      weight: 7
+    - name: About
+      url: /about/
+    - name: GitHub
+      url: 'https://github.com/JennySong924/blogdown-myblog'
+</code></pre>
+<h3 id="页面排版">页面排版</h3>
+<h3 id="logo-添加">logo 添加</h3>
+<h3 id="目录排版">目录排版</h3>
 
 
 
 <nav class="post-nav fullwidth kai">
   <span class="nav-prev">&larr; &empty;</span>
-  <span class="nav-next">&empty; &rarr;</span>
+  <span class="nav-next"><a href="/tech/2024-02-26-linux-command-learning/">linux 命令学习</a> &rarr;</span>
 </nav>
 
 
@@ -155,9 +205,17 @@
 
 </div>
   <footer class="small">
-  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
+  <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fix-toc.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/key-buttons.min.js" defer></script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/key-buttons.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/heading-anchor.min.js" defer></script>
 <script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/external-link.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
 
 
 

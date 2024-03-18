@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>linux 命令学习 - J Song&#39;s Blog</title>
+    <meta property="og:title" content="linux 命令学习 - J Song&#39;s Blog">
+    
+    <meta name="twitter:card" content="summary">
+    
+      
+      <meta property="description" content="新建xueke.txt的文件
+[&amp;hellip;] vi xueke.txt touch xueke.txt 去重 uniq
+[&amp;hellip;] 文件的压缩和解压
+[&amp;hellip;] tar -xf xueke.tar #tar格式解压 tar -cf xueke.tar *.fa #打包成tar格式 gunzip xueke.fa.gz #gz格式解压 gzip xueke.fa #压缩 &amp;hellip;">
+      <meta property="og:description" content="新建xueke.txt的文件
+[&amp;hellip;] vi xueke.txt touch xueke.txt 去重 uniq
+[&amp;hellip;] 文件的压缩和解压
+[&amp;hellip;] tar -xf xueke.tar #tar格式解压 tar -cf xueke.tar *.fa #打包成tar格式 gunzip xueke.fa.gz #gz格式解压 gzip xueke.fa #压缩 &amp;hellip;">
+      
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/fonts.css">
+    
+    <link rel="stylesheet" href="/css/custom.css">
+    
+    
+
+
+
+
+
+
+  </head>
+
+  
+  
+  
+  <body class="single tech">
+    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
+    <nav class="nav-top small">
+    <div class="logo">
+    
+    </div>
+    <div class="menu"><span><a href="/search">🔍search</a></span>
+      <span><a href="/">Home</a></span>
+      <span><a href="/post/">Post</a></span>
+      <span class="active"><a href="/tech/">Tech</a></span>
+      <span><a href="/reading/">Reading</a></span>
+      <span><a href="/lists/">Lists</a></span>
+      <span><a href="/about/">About</a></span>
+      <span><a href="https://github.com/JennySong924/blogdown-myblog">GitHub</a></span>
+      
+    </div>
+    </nav>
+
+<div class="article-meta">
+<h1 class="title">linux 命令学习</h1>
+
+<h3 class="meta-line">
+  <span>
+
+<span class="author">Package Build</span>
+
+
+
+
+
+
+<span class="date">2024-02-26</span>
+
+
+</span>
+  <span class="term">
+  
+  
+  </span>
+</h3>
+</div>
+
+<div class="main">
+
+
+
+
+<p>新建xueke.txt的文件</p>
+<pre><code class="language-bash">vi xueke.txt
+touch xueke.txt
+</code></pre>
+<p>去重 uniq</p>
+<p>文件的压缩和解压</p>
+<pre><code class="language-bash">tar -xf xueke.tar       #tar格式解压
+tar -cf xueke.tar *.fa  #打包成tar格式
+gunzip xueke.fa.gz      #gz格式解压
+gzip xueke.fa           #压缩成gz格式
+</code></pre>
+<p>任务管理</p>
+<pre><code class="language-bash">top             # 显示进程信息
+top -c		# 显示完整命令
+top -b          # 以批处理模式显示程序信息
+htop		# 查看CPU，内存的使用情况
+kill 12345      # 杀死进程
+kill -9 123456  # 彻底杀死进程
+</code></pre>
+<p>文件查找</p>
+<pre><code class="language-bash">#将当前目录及其子目录下所有文件后缀为 .c 的文件列出来:
+find . -name &quot;*.c&quot;
+#搜索 etc 目录下所有以 sh 开头的文件
+locate /etc/sh
+#忽略大小写搜索当前用户目录下所有以 r 开头的文件
+locate -i ~/r
+# fastp文件的绝对路径					
+which fastp
+#案例一：搜索Data目录下以点fna结尾的文件；
+find  ../Data -name *.fna
+
+#案例二：搜索系统中最近5分钟内编辑过的文件；
+find / -amin 5
+
+#案例三：查找大于100M的文件；
+find ./ -size 100M
+
+案例四：按照文件类型搜索；
+find  ./ -type 文件类型
+c 的档案
+d: 目录 
+b: 区块装置档案 ，
+p: 具名贮列
+f: 一般档案
+l: 符号连结
+s: socket
+
+#案例五：搜索文件，直接处理；
+find ./temp/ -name *.fna -exec rm '{}' \;
+</code></pre>
+<p>grep</p>
+<pre><code class="language-bash">#案例一：统计fasta文件中序列的条数；
+grep -c &quot;&gt;&quot;  gene.ffn
+#案例二：输出满足条件的序列；
+grep -A  &quot;3 gi 29732 34486&quot; lastz.axt
+#案例三：筛选出不满足条件的内容；
+ps -fx | grep -v &quot;S&quot;
+</code></pre>
+<p>sed</p>
+<pre><code class="language-bash">#案例一：输出固定的行
+sed -n '1307p'  seq.fna   #输出文件第1307行；
+sed -n '100,200' seq.fna  #输出文件第100到200行；
+
+#案例二：替换操作
+sed -e 's/gi/GI/' seq.fna  #将文件中gi全部替换为大写GI；
+sed -i 's/gi/GI/g' seq.fna   #在原文件上进行替换，并且进行全部替换；
+sed -i.bak 's#GI#gi#' seq.fna  #在原文件上进行替换，并进行备份；
+sed -e 's/gi/GI/2；s/ref/REF/2' seq.fna   #只将第二次出现的gi和ref进行替换；
+sed -f sed.list cds.list    #根据文件中的模式进行替换，可同时进行多条件替换；
+sed -n 's/gi/GI/p' seq.fna  #打印发生替换的行；
+
+#案例三：删除空白行；
+sed -e '/^\s*$/d'  seq.fna  #删除文件中的空白行；
+
+#案例四：行寻址
+sed -n '/ref/p' seq.fna   #输出文件中包含ref关键字的行；
+sed  '100,2000s/GI/gi/g' seq.fa  #则只替换100行到2000行的内容；
+sed  '100,2000！s/GI/gi/g' seq.fa  #加感叹号取反，在这个范围之外的执行操作；
+
+#案例五：删除操作
+sed -e '/&gt;/d' seq.fna #删除包含ref的行；
+sed -e 's/:.*//g' seq.fna   #删除冒号之后的所有内容；
+
+#案例六：对应替换，类似于tr的功能
+sed -e 'y/ATCG/atcg/' seq.fna  #修改大小写
+sed -e '/&gt;/!y/ATCG/atcg/' seq.fna  #DNA序列反向互补配对，并修改大小写
+</code></pre>
+<p>awk</p>
+<pre><code class="language-bash">#案例1：输出一个列表任意行；
+awk '{print $1}' blast_m8.out  #输出blast m8 格式结果的第一行；
+awk -F &quot;:&quot; '{print $1,$NF}' passwd.list   #通过-F修改默认分隔符为冒号，输出第一行与最后一行；
+
+#案例2：格式转换
+awk '{print&quot;@&quot; $1&quot;\n&quot;$10&quot;\n&quot;&quot;+\n&quot;$11&quot;&quot;}' all.sam  #将短序列比对上的reads输出出来，生成fastq文件；
+
+#案例3：过滤blast结果
+awk '{if ($3&gt;= &amp;&amp; $4&gt;=) print $0}'  blast_m8.out  #过滤blast比对结果，将identity 大于80，并且比对长度大于100bp的结果输出；
+
+#案例4：比较
+awk '$8&gt;$1' input.txt #输出第8列大于第10列的行。
+
+#案例5：匹配输出
+awk '$0~ /wang/{print $0}' passwd.list   #利用正则表达式，将秘密表中姓wang的账户都输出出来；
+
+#案例6：格式化输出
+awk 'BEGIN{print &quot;The Program Begin\n&quot;}{if ($3&gt;= &amp;&amp; $4&gt;=) print $0}END{print &quot; The Program End\n&quot;}' input.txt  #利用BEGIN和END关键字生成报告；
+
+#案例7：修改字段和记录分隔符
+awk 'BEGIN{OFS=&quot;\t&quot;}{print $2,$4,$5}' input.txt   #在BEGIN中设定字段分隔符和记录分隔符；
+
+#案例8：awk编程计算
+awk '{x+=$3}END{print x/NR}' input.txt   #计算第三列的平均值，最后在END将其输出出来。
+
+#案例9：awk编程比较大小
+awk   'BEGIN { max= ;print &quot;max=&quot; max} {max=($1 &gt;max ?$1:max); print $1,&quot;Now max is &quot;max}' input.txt  #取得文件最后一个域的最大值。 
+
+#案例10：awk编程求和
+awk '{print $0,$3+$4}' input.txt  #计算第3列和第4列的和。
+
+#案例11：输出固定行内容
+awk 'NR&gt;=&amp;&amp;NR&lt;=' input.txt  #输出第20到第80行内容。
+
+#案例12：合并文件
+awk 'BEGIN{while((getline&lt;&quot;file1&quot;)&gt;)l[$1]=$0}$1 in l{print $0&quot;\t&quot;l[$1]}' file2  #将两个文件按列合并起来，类似jion命令的功能。
+
+#案例13：去重复
+awk '!($0 in a) {a[$0];print}' input.txt  # 打印不重复的行，类似uniq的功能;
+awk '!($2 in l){print;l[$2]=}' input.txt #计算第二列内容非冗余的次数，类似于uniq的功能;
+
+#案例14：统计字符
+awk '{for(i=;i!=NF;++i)c[$i]++}END{for (x in c) print x,c[x]}' input.txt 计算每个字符出现的次数，类似wc的功能。
+
+#案例15：替换
+awk '{sub(/test/, &quot;no&quot;, $0);print}' input.txt 进行替换，类似sed的功能，
+
+#案例16：fastq转换为fasta
+awk '{getline seq;getline plus;getline qual;sub(&quot;@&quot;,&quot;&gt;&quot;,$0);print $0 &quot;\n&quot;seq}'  test.fastq；
+</code></pre>
+
+
+
+<nav class="post-nav fullwidth kai">
+  <span class="nav-prev">&larr; <a href="/tech/2024-02-22-blog-buiding/">搭建自己的博客</a></span>
+  <span class="nav-next">&empty; &rarr;</span>
+</nav>
+
+
+
+<section class="fullwidth comments">
+<script data-src="https://giscus.app/client.js"
+  data-repo="yihui/yihui.org"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk4MDc3NDg0NA=="
+  data-category="Comments"
+  data-category-id="DIC_kwDOBNCGvM4COkjD"
+  data-mapping="pathname"
+  data-strict="1"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  defer>
+</script>
+</section>
+
+
+
+</div>
+  <footer class="small">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
+<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
+
+
+
+
+
+
+
+  
+  
+  <hr/>
+  
+  <p class="nav-bottom">
+    <span>© <a href="https://jennysong924.github.io">J Song</a> 2024</span>
+    <span class="menu-bottom">
+
+
+
+
+
+<a href="/tech/index.xml" type="application/rss+xml" title="RSS feed">Subscribe</a>
+
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
+<a href="/search/">Search</a>
+<a href="#">Back to top</a>
+
+</span>
+  </p>
+  
+  </footer>
+  </body>
+</html>
+

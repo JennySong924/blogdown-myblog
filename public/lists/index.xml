@@ -1,26 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lists on J Song&#39;s Blog</title>
-    <link>//localhost:4023/lists/</link>
+    <link>//localhost:4321/lists/</link>
     <description>Recent content in Lists on J Song&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 22 Feb 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4023/lists/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/lists/" rel="self" type="application/rss+xml" />
+    
+    
     <item>
-      <title>书单</title>
-      <link>//localhost:4023/lists/2024-02-22-book-list/</link>
-      <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:4023/lists/2024-02-22-book-list/</guid>
-      <description>2024 计划阅读 人性的枷锁 三体 III - 死神永生 全球通史 已经读完 1 月 讲给大家的中国历史 05 2023 已经读完 12 月 </description>
+      <title>手记</title>
+      <link>//localhost:4321/lists/2024-02-23-short-thoughts/</link>
+      <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
+      <author>J Song</author>
+      <guid>//localhost:4321/lists/2024-02-23-short-thoughts/</guid>
+      <description>
+        <![CDATA[
+        <h2 id="2024">2024</h2>
+<ul>
+<li>西方文明史的架构分为四个阶段：上古，中古，近代，现代。西方上古历史从文明诞生一直到西罗马帝国灭亡，包括古希腊罗马时代，以及这个时代产生的古典文明。紧接着，蛮族入侵，西罗马帝国灭亡，以基督教[&hellip;] &lt;//localhost:4321/lists/2024-02-23-short-thoughts/&gt;</li></ul>
+        
+        ]]>
+      </description>
     </item>
+    
+    
+    
     <item>
       <title>片单</title>
-      <link>//localhost:4023/lists/2024-02-22-movie-list/</link>
+      <link>//localhost:4321/lists/2024-02-22-movie-list/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:4023/lists/2024-02-22-movie-list/</guid>
-      <description>2024 电影 热辣滚烫 2023 电影 教父 1 放牛班的春天 百万美元宝贝 </description>
+      <author>J Song</author>
+      <guid>//localhost:4321/lists/2024-02-22-movie-list/</guid>
+      <description>
+        <![CDATA[
+        <h2 id="2024">2024</h2>
+<h3 id="计划要看">计划要看</h3>
+<ul>
+<li>飞驰人生 2</li>
+<li>美丽心灵</li>
+<li>肖申克的救赎</li>
+<li>辛德勒的名单</li>
+<li>这个杀手不太冷</li>
+<li>霸王别姬</li>
+<li>阿甘正传</li>
+<li>当幸福来敲门</li>
+<li>楚门的世界</li>
+<li>忠犬八公的故事</li>
+<li>海上钢琴师</li>
+</ul>
+<h3 id="已经看完">已经看完</h3>
+<h4 id="电影">电影</h4>
+<ul>
+<li>第二十条</li>
+<li>热辣滚[&hellip;] &lt;//localhost:4321/lists/2024-02-22-movie-list/&gt;</li></ul>
+        
+        ]]>
+      </description>
     </item>
+    
+    
+    
+    <item>
+      <title>书单</title>
+      <link>//localhost:4321/lists/2024-02-22-book-list/</link>
+      <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
+      <author>J Song</author>
+      <guid>//localhost:4321/lists/2024-02-22-book-list/</guid>
+      <description>
+        <![CDATA[
+        <h2 id="2024">2024</h2>
+<h3 id="计划阅读">计划阅读</h3>
+<ul>
+<li>政治哲学</li>
+<li>反脆弱</li>
+<li>讲给大家的中国历史 6-11</li>
+<li>三体 III - 死神永生（刘慈欣）</li>
+<li>中国近代史 1600-2000 中国的奋斗</li>
+<li>毛泽东的中国及其后</li>
+<li>全球通史</li>
+<li>西方哲学史</li>
+<li>置身事[&hellip;] &lt;//localhost:4321/lists/2024-02-22-book-list/&gt;</li></ul>
+        
+        ]]>
+      </description>
+    </item>
+    
+    
   </channel>
 </rss>

@@ -1,19 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Teches on J Song&#39;s Blog</title>
-    <link>//localhost:4023/tech/</link>
+    <link>//localhost:4321/tech/</link>
     <description>Recent content in Teches on J Song&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 22 Feb 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:4023/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:4321/tech/" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux 命令学习</title>
+      <link>//localhost:4321/tech/2024-02-26-linux-command-learning/</link>
+      <pubDate>Mon, 26 Feb 2024 00:00:00 +0000</pubDate>
+      <author>Package Build</author>
+      <guid>//localhost:4321/tech/2024-02-26-linux-command-learning/</guid>
+      <description>
+        <![CDATA[
+        <p>新建xueke.txt的文件</p>
+<pre><code class="language-bash">vi xueke.txt
+touch xueke.txt
+</code></pre>
+<p>去重 uniq</p>
+<p>文件的压缩和解压</p>
+<pre><code class="language-bash">tar -xf xueke.tar       #tar格式解压
+tar[&hellip;] &lt;//localhost:4321/tech/2024-02-26-linux-command-learning/&gt;</code></pre>
+        
+        ]]>
+      </description>
+    </item>
+    
+    
+    
     <item>
       <title>搭建自己的博客</title>
-      <link>//localhost:4023/tech/2024-02-22-blog-buiding/</link>
+      <link>//localhost:4321/tech/2024-02-22-blog-buiding/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>//localhost:4023/tech/2024-02-22-blog-buiding/</guid>
-      <description>人在没有看到自己喜欢的东西之前，是不知道自己会有多喜欢它的。&#xA;偶然间发现了 yihui 大神的博客。。。&#xA;（等有时间了慢慢把前面要啰嗦的补上，先搭个框架记录一下要写的）&#xA;需要安装: R studio, GitHub desktop, Git, (Go, Dart Sass),Hugo ( 也可用blogdown:install_hugo()下载 ), R packages:blogdown&#xA;网页搭建&#xA;字体更改&#xA;分栏&#xA;页面排版&#xA;logo 添加&#xA;目录排版</description>
+      <author>J Song</author>
+      <guid>//localhost:4321/tech/2024-02-22-blog-buiding/</guid>
+      <description>
+        <![CDATA[
+        <p>这里是我自己建立这个博客小站的一些经验。从零开始摸索，前期尝试了几种搭建网站的方法，觉得还是用 blogdown 比较新手友好，在这里推荐给大家。<a href="https://bookdown.org/yihui/blogdown/get-started.html">blogdown</a> 是<a href="https://yihui.org">谢益辉</a>为搭建和维护个人博客网站所写[&hellip;] &lt;//localhost:4321/tech/2024-02-22-blog-buiding/&gt;</p>
+        
+        ]]>
+      </description>
     </item>
+    
+    
   </channel>
 </rss>
