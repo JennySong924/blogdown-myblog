@@ -24,3 +24,21 @@ blockquote {
 .comments {
   margin-top: 1em;
 }
+@media only screen and (min-width: 768px) {
+  pre, table {
+    width: auto;
+    max-width: none;
+    margin-left: auto;
+  }
+  .cn #TableOfContents {
+    columns: 2;
+  }
+  .nav-next {
+    border-right: 1px solid;
+    padding-right: 1em;
+  }
+  .nav-prev {
+    border-left: 1px solid;
+    padding-left: 1em;
+  }
+}
