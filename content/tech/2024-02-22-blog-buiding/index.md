@@ -22,11 +22,11 @@ tags: []
 
 ### 网页搭建
 
-`blogdown::build_site()`
+在 R studio 里面新建一个 project（也可以不建，但是用 project 来管理比较方便）。用`install.packages('blogdown')`安装好 blogdown 包之后，用 `blogdown::build_site()` 创建网站所需要的基本框架文件。如果有自己比较喜欢的主题风格，可以把主题包下载到 themes 目录下面，然后用 `blogdown::build_site(theme = themes/<theme folder>)` 进行网站创建。有关主题的使用在 blogdown 的网页上有详细介绍。
 
 ### 创建日志
 
-`blogdown::new_post()`
+在 R studio 中用`blogdown::new_post()`可以创建新的日志文件。文件会以一个文件夹的形式进行创建，文件夹中包含 index.md文件，之后就可以在这个文件中进行日志内容的编辑。创建的时候可以输入标题名称，但是标题中包含的中文字符貌似不会在文件夹名称中显示。所以一般我的文件夹名称会使用英文名，之后在 index.md 文件中再修改成中文 title。 
 
 ### 字体更改
 
