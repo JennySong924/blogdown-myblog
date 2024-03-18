@@ -22,17 +22,52 @@ tags: []
 
 ### 网页搭建
 
-在 R studio 里面新建一个 project（也可以不建，但是用 project 来管理比较方便）。用`install.packages('blogdown')`安装好 blogdown 包之后，用 `blogdown::build_site()` 创建网站所需要的基本框架文件。如果有自己比较喜欢的主题风格，可以把主题包下载到 themes 目录下面，然后用 `blogdown::build_site(theme = themes/<theme folder>)` 进行网站创建。有关主题的使用在 blogdown 的网页上有详细介绍。
+在 R studio 里面新建一个 project（也可以不建，但是用 project 来管理比较方便）。用 `install.packages('blogdown')` 安装好 blogdown 包之后，用 `blogdown::build_site()` 创建网站所需要的基本框架文件。如果有自己比较喜欢的主题风格，可以把主题包下载到 themes 目录下面，然后用 `blogdown::build_site(theme = themes/<theme folder>)` 进行网站创建。有关主题的使用在 blogdown 的网页上有详细介绍。
 
 ### 创建日志
 
-在 R studio 中用`blogdown::new_post()`可以创建新的日志文件。文件会以一个文件夹的形式进行创建，文件夹中包含 index.md文件，之后就可以在这个文件中进行日志内容的编辑。创建的时候可以输入标题名称，但是标题中包含的中文字符貌似不会在文件夹名称中显示。所以一般我的文件夹名称会使用英文名，之后在 index.md 文件中再修改成中文 title。 
+在 R studio 中用 `blogdown::new_post()` 可以创建新的日志文件。文件会以一个文件夹的形式进行创建，文件夹中包含 index.md文件，之后就可以在这个文件中进行日志内容的编辑。创建的时候可以输入标题名称，但是标题中包含的中文字符貌似不会在文件夹名称中显示。所以一般我的文件夹名称会使用英文名，之后在 index.md 文件中再修改成中文 title。 
 
 ### 字体更改
 
+一般主题包中会有自带的字体设置文件，位置在主题包文件夹中的 static/css/ 文件夹中。不过通常这些主题包会进行更新，如果在本地修改过这个文件夹中的内容，后面想要使用更新后的主题包时就需要重新修改，会比较麻烦。因此另一个做法是在主目录下的 static 文件夹中创建 static/css/*.css 文件，这个文件夹的优先级会高于 theme 文件架中的 .css 文件
 
 
 ### 分栏
+
+在主目录下的 config.yaml 文件中进行页面分栏的设置。我是把页面分成 Home, Tech, Post 等几页，所以在 config.yaml 文件中添加下面一段内容：
+```
+menu:
+  main:
+    - identifier: search
+      name: 🔍search
+      url: search
+      weight: 1
+    - identifier: home
+      name: Home
+      url: /
+      weight: 2
+    - identifier: posts
+      name: Post
+      url: /post/
+      weight: 3
+    - identifier: tech
+      name: Tech
+      url: /Tech/
+      weight: 5
+    - identifier: reading
+      name: Reading
+      url: /Reading/
+      weight: 6
+    - identifier: lists
+      name: Lists
+      url: /lists/
+      weight: 7
+    - name: About
+      url: /about/
+    - name: GitHub
+      url: 'https://github.com/JennySong924/blogdown-myblog'
+```
 
 ### 页面排版
 
