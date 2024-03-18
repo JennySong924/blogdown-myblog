@@ -14,7 +14,9 @@ blockquote {
 .home blockquote {
   border-left-color: transparent;
 }
-code {
+pre code {
+  display: block;
   margin: 1em 0;
-  padding: 0 2em;
+  padding: 1em;
+  overflow-x: auto;
 }
