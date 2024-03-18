@@ -104,7 +104,6 @@
         <li><a href="#分栏">分栏</a></li>
         <li><a href="#页面排版">页面排版</a></li>
         <li><a href="#logo-添加">logo 添加</a></li>
-        <li><a href="#目录排版">目录排版</a></li>
       </ul>
 </nav>
 
@@ -135,7 +134,7 @@
 <h3 id="创建日志">创建日志</h3>
 <p>在 R studio 中用 <code>blogdown::new_post()</code> 可以创建新的日志文件。文件会以一个文件夹的形式进行创建，文件夹中包含 index.md文件，之后就可以在这个文件中进行日志内容的编辑。创建的时候可以输入标题名称，但是标题中包含的中文字符貌似不会在文件夹名称中显示。所以一般我的文件夹名称会使用英文名，之后在 index.md 文件中再修改成中文 title。</p>
 <h3 id="字体更改">字体更改</h3>
-<p>一般主题包中会有自带的字体设置文件，位置在主题包文件夹中的 static/css/ 文件夹中。不过通常这些主题包会进行更新，如果在本地修改过这个文件夹中的内容，后面想要使用更新后的主题包时就需要重新修改，会比较麻烦。因此另一个做法是在主目录下的 static 文件夹中创建 static/css/*.css 文件，这个文件夹的优先级会高于 theme 文件架中的 .css 文件</p>
+<p>一般主题包中会有自带的字体设置文件，位置在主题包文件夹中的 static/css/ 文件夹中。不过通常这些主题包会进行更新，如果在本地修改过这个文件夹中的内容，后面想要使用更新后的主题包时就需要重新修改，会比较麻烦。因此另一个做法是在主目录下的 static 文件夹中创建 static/css/*.css 文件，这个文件夹的优先级会高于 theme 文件架中的 .css 文件。更改字体可以在 font.css 文件中进行更改。</p>
 <h3 id="分栏">分栏</h3>
 <p>在主目录下的 config.yaml 文件中进行页面分栏的设置。我是把页面分成 Home, Tech, Post 等几页，所以在 config.yaml 文件中添加下面一段内容：</p>
 <pre><code class="language-css">menu:
@@ -170,8 +169,13 @@
       url: 'https://github.com/JennySong924/blogdown-myblog'
 </code></pre>
 <h3 id="页面排版">页面排版</h3>
+<p>有关页面排版的内容，例如标题位置、文字边距、字体颜色和大小、目录样式等等都可以在 static/css/custom.css 中进行设置。例如，想要让字数统计靠右对齐，可以这样写：</p>
+<pre><code class="language-css">.stats {
+  text-align: right;
+}
+</code></pre>
+<p>有关 html 中的各分类器、元素进行了解，可以参考<a href="https://www.w3school.com.cn/tags/html_ref_byfunc.asp">这里</a>，css 样式相关的内容可以参考<a href="https://www.w3school.com.cn/cssref/index.asp">这里</a>。</p>
 <h3 id="logo-添加">logo 添加</h3>
-<h3 id="目录排版">目录排版</h3>
 
 
 
