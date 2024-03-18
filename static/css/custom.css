@@ -14,3 +14,4 @@ blockquote {
 .home blockquote {
   border-left-color: transparent;
 }
+.hash-note, .side { background: lightyellow; }

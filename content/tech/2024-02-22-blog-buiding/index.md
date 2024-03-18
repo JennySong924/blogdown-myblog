@@ -36,7 +36,7 @@ tags: []
 ### 分栏
 
 在主目录下的 config.yaml 文件中进行页面分栏的设置。我是把页面分成 Home, Tech, Post 等几页，所以在 config.yaml 文件中添加下面一段内容：
-```
+``` css
 menu:
   main:
     - identifier: search
