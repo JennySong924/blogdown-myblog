@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:4321/tech/2024-02-26-linux-command-learning/</loc>
-    <lastmod>2024-02-26T00:00:00+00:00</lastmod>
+    <loc>//localhost:4321/reading/2024-03-22-fancuiruo/</loc>
+    <lastmod>2024-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/reading/</loc>
+    <lastmod>2024-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4321/tags/</loc>
+    <lastmod>2024-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4321/tags/%E7%BA%B3%E8%A5%BF%E5%A7%86%E5%B0%BC%E5%8F%A4%E6%8B%89%E6%96%AF%E5%A1%94%E5%8B%92%E5%B8%83/</loc>
+    <lastmod>2024-03-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:4321/tech/2024-02-26-linux-command-learning/</loc>
     <lastmod>2024-02-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/tech/</loc>
@@ -108,7 +117,5 @@
     <lastmod>2013-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:4321/categories/</loc>
-  </url><url>
-    <loc>//localhost:4321/tags/</loc>
   </url>
 </urlset>
