@@ -7,7 +7,7 @@ categories: []
 tags: []
 ---
 
-这里是我自己建立这个博客小站的一些经验。从零开始摸索，前期尝试了几种搭建网站的方法，觉得还是用 blogdown 比较新手友好，在这里推荐给大家。[blogdown](https://bookdown.org/yihui/blogdown/get-started.html) 是[谢益辉](https://yihui.org)为搭建和维护个人博客网站所写的一个 R 包，感兴趣的童鞋还可以去参观一下大神的个人博客。
+这里是我自己建立这个博客小站的一些经验。从零开始摸索，前期尝试了几种搭建网站的方法，觉得还是用 blogdown 比较新手友好，在这里推荐给大家。[blogdown](https://bookdown.org/yihui/blogdown/get-started.html) 是[谢益辉](https://yihui.org)为搭建和维护个人博客网站所写的一个 R 包，感兴趣的童鞋还可以去参观一下大神的个人博客。以下内容主要参考庄亮亮的[帖子](https://cosx.org/2022/03/build-blog-step-by-step/)。
 
 ### 需要安装: 
 - [R studio](https://posit.co/download/rstudio-desktop/)：在这里面写代码进行网页创建的具体操作
