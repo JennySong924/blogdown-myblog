@@ -3,6 +3,7 @@ languageCode: "en-US"
 title: "J Song's Blog"
 theme: "hugo-paged"
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+hasCJKLanguage: true
 footnotereturnlinkcontents: "↩"
 author: 'J Song'
 
