@@ -10,16 +10,18 @@
     
     
     <item>
-      <title>手记</title>
+      <title>2024 手记</title>
       <link>//localhost:4321/lists/2024-02-23-short-thoughts/</link>
       <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
       <author>J Song</author>
       <guid>//localhost:4321/lists/2024-02-23-short-thoughts/</guid>
       <description>
         <![CDATA[
-        <h2 id="2024">2024</h2>
+        <h2 id="3月">3月</h2>
 <ul>
-<li>西方文明史的架构分为四个阶段：上古，中古，近代，现代。西方上古历史从文明诞生一直到西罗马帝国灭亡，包括古希腊罗马时代，以及这个时代产生的古典文明。紧接着，蛮族入侵，西罗马帝国灭亡，以基督教[&hellip;] &lt;//localhost:4321/lists/2024-02-23-short-thoughts/&gt;</li></ul>
+<li>
+<p>3.1 <br>
+西方文明史的架构分为四个阶段：上古，中古，近代，现代。西方上古历史从文明诞生一直到西罗马帝国灭亡，包括古希腊罗马时代，以及这个时代产生的古典文明。紧接着，蛮族入侵，西罗马帝国灭亡，[&hellip;] &lt;//localhost:4321/lists/2024-02-23-short-thoughts/&gt;</p></li></ul>
         
         ]]>
       </description>
@@ -28,33 +30,16 @@
     
     
     <item>
-      <title>片单</title>
+      <title>2024 电影片单</title>
       <link>//localhost:4321/lists/2024-02-22-movie-list/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
       <author>J Song</author>
       <guid>//localhost:4321/lists/2024-02-22-movie-list/</guid>
       <description>
         <![CDATA[
-        <h2 id="2024">2024</h2>
-<h3 id="计划要看">计划要看</h3>
+        <h2 id="计划要看">计划要看</h2>
 <ul>
-<li>飞驰人生 2</li>
-<li>美丽心灵</li>
-<li>肖申克的救赎</li>
-<li>辛德勒的名单</li>
-<li>这个杀手不太冷</li>
-<li>霸王别姬</li>
-<li>阿甘正传</li>
-<li>当幸福来敲门</li>
-<li>楚门的世界</li>
-<li>忠犬八公的故事</li>
-<li>海上钢琴师</li>
-</ul>
-<h3 id="已经看完">已经看完</h3>
-<h4 id="电影">电影</h4>
-<ul>
-<li>第二十条</li>
-<li>热辣滚[&hellip;] &lt;//localhost:4321/lists/2024-02-22-movie-list/&gt;</li></ul>
+<li>飞驰人生 2[&hellip;] &lt;//localhost:4321/lists/2024-02-22-movie-list/&gt;</li></ul>
         
         ]]>
       </description>
@@ -63,22 +48,92 @@
     
     
     <item>
-      <title>书单</title>
+      <title>2024 书单</title>
       <link>//localhost:4321/lists/2024-02-22-book-list/</link>
       <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
       <author>J Song</author>
       <guid>//localhost:4321/lists/2024-02-22-book-list/</guid>
       <description>
         <![CDATA[
-        <h2 id="2024">2024</h2>
-<h3 id="计划阅读">计划阅读</h3>
+        <h2 id="计划阅读">计划阅读</h2>
+<p>（每月一本历史+一本哲学+一本心理/社会/经济/科学+一两本小说）</p>
+<h3 id="4月">4月</h3>
 <ul>
-<li>政治哲学（77%）</li>
-<li>反脆弱 （87%）</li>
-<li>讲给大家的中国历史 7-13</li>
-<li>三体 III - 死神永生（刘慈欣）（22%）</li>
-<li>中国近代史 1600-2000 中国的奋斗</li>
-<li>毛泽东的中国及其[&hellip;] &lt;//localhost:4321/lists/2024-02-22-book-list/&gt;</li></ul>
+<li>讲给大家的中国历史 7-9（7 - 35%）</li>
+<li>西西弗神话 （加缪）</li>
+<li>鼠疫（加缪）</li>
+</ul>
+<h3 id="5月">5[&hellip;] &lt;//localhost:4321/lists/2024-02-22-book-list/&gt;</h3>
+        
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>2023 电影片单</title>
+      <link>//localhost:4321/lists/2023-12-25-2023-movies/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      <author>J Song</author>
+      <guid>//localhost:4321/lists/2023-12-25-2023-movies/</guid>
+      <description>
+        <![CDATA[
+        <h3 id="电影">电影</h3>
+<ul>
+<li>教父 1</li>
+<li>放牛班的春天</li>
+<li>百万美元宝贝</li>
+</ul>
+<h3 id="纪录片">纪录片</h3>
+<ul>
+<li>河西走廊</li>
+</ul>
+
+        
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>2023 手记</title>
+      <link>//localhost:4321/lists/2023-12-25-2023-short-thoughts/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      <author>J Song</author>
+      <guid>//localhost:4321/lists/2023-12-25-2023-short-thoughts/</guid>
+      <description>
+        <![CDATA[
+        <ul>
+<li>创业初期需要独裁，看创始人个人能力，成熟稳定后民主，吸引多方势力。小企业没体量搞民主，创始人的能力就是上限。大企业不搞民主会积重难返，多方势力不会因为你不搞民主就偃旗息鼓</li>
+<li>像瑞士这样的永久中立国，并[&hellip;] &lt;//localhost:4321/lists/2023-12-25-2023-short-thoughts/&gt;</li></ul>
+        
+        ]]>
+      </description>
+    </item>
+    
+    
+    
+    <item>
+      <title>2023 书单</title>
+      <link>//localhost:4321/lists/2023-12-25-2023-reading/</link>
+      <pubDate>Mon, 25 Dec 2023 00:00:00 +0000</pubDate>
+      <author>J Song</author>
+      <guid>//localhost:4321/lists/2023-12-25-2023-reading/</guid>
+      <description>
+        <![CDATA[
+        <h3 id="12-月">12 月</h3>
+<ul>
+<li>刀锋（[英]毛姆）</li>
+<li>爱的艺术</li>
+<li>三体 II - 黑暗森林（刘慈欣）</li>
+<li>讲给大家的中国历史 02（杨照）</li>
+</ul>
+<h3 id="11-月">11 月</h3>
+<ul>
+<li>Etty Hillesum</li>
+<li>三体 I -地球往事（刘慈欣）[&hellip;] &lt;//localhost:4321/lists/2023-12-25-2023-reading/&gt;</li></ul>
         
         ]]>
       </description>
