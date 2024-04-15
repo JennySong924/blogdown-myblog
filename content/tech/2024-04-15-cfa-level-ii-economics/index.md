@@ -27,7 +27,7 @@ tags: []
         - 波动性越大，价差越大 |
 2. 三角套利 Triangular Arbitrage
     - 交叉汇率 cross-rate
-        - 不考虑买卖价差：$\frac{A}{B} = \frac{A}{C} \times \frac{C}{B}$
+        - 不考虑买卖价差：`$\frac{A}{B} = \frac{A}{C} \times \frac{C}{B}$`
         - 考虑买卖价差：
             
             $$
