@@ -47,6 +47,10 @@ params:
       alt: LOGO TEXT
       img: "/images/logo.png"
   footer: "&copy; [J Song](https://jennysong924.github.io) {Year}"
+  highlightjsVersion: "9.12.0"
+  highlightjsCDNL: "//cdnjs.cloudflare.com/ajax/libs"
+  highlightjsLang: ["r", "yaml"]
+  highlightjsTheme: "github"
   MathJaxCDN: "//cdnjs.cloudflare.com/ajax/libs"
   MathJaxVersion: "2.7.5"
   # twitterImage: "/images/logo.png"
