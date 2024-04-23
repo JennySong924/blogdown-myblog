@@ -102,7 +102,6 @@ tags: []
     
 3. Violations of regression assumptions
 
-    
 |  | Heteroskedasticity | Serial correlation | Multicolinearity |
 | --- | --- | --- | --- |
 | Description | unconditional 异方差： 残差的方差不恒定，但与自变量不相关
@@ -118,7 +117,7 @@ conditional 异方差：残差的方差不恒定，且残差的方差与自变�
         - 高杠杆点（high-leverage point）：指自变量为极值
         - 异常值（outlier）：因变量为极值
     - 检测方法总结
-        
+    
 | 名称 | 影响来源 | 检测指标 | 计算方法 | 检测方法 |
 | --- | --- | --- | --- | --- |
 | 高杠杆点 | 自变量 | 杠杆率 $ h_{ii}$ | 度量某个自变量的第 i 个观测值与其 n 个观测值均值的距离 | `$h_{ii} > 3(\frac{k+1}{n})$`，潜在的高杠杆点 |
@@ -325,10 +324,10 @@ Deep learning<br>Reinforcement learning |
 - Error analysis
   - confusion matrix
         
-        | 预测 vs 真实 | 1 | 0 |
-        | --- | --- | --- |
-        | 1 | TP | FP ( Type I error) |
-        | 0 | FN (Type II error) | TN |
+| 预测 vs 真实 | 1 | 0 |
+| --- | --- | --- |
+| 1 | TP | FP ( Type I error) |
+| 0 | FN (Type II error) | TN |
         
     - Precision (P) = TP / ( TP + FP )
         - 模型预测为1的样本中，有多少真的是1
