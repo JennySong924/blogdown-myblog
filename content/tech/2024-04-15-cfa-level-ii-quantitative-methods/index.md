@@ -19,10 +19,10 @@ tags: []
         ![quantitative-methods.drawio-3.png](1%20Quantitative%20Methods%20e84dd0d2cb6140a5a200ff6cf9e94216/quantitative-methods.drawio-3.png)
         
     - A multiple regression model is represented by the following equation:
-    $Y_i = b_0 + b_1X_{1i} + b_2X_{2i} + \dots + b_kX_{ki} + \epsilon_i, i=1,2,3,...,n$
-    where $Y$ is the dependent variable, $Xs$ are the independent variables from $1$  to $k$, and the model is estimated using $n$ observations
-    - Coefficient  $b_0$ is the model’s “intercept” representing the expected value of  $*Y$* if all independent variables are zero.
-    - Parameters $*b_1*$ to $*b_k$* are the slope coefficients (or partial regression coefficients) for independent variables $*X_1*$ to $*X_k*$. Slope coefficient $*b_j*$ describes the impact of independent variable $*X_j$* on $*Y*$, holding all the other independent variables constant.
+    `$Y_i = b_0 + b_1X_{1i} + b_2X_{2i} + \dots + b_kX_{ki} + \epsilon_i, i=1,2,3,...,n$`
+    where `$Y$` is the dependent variable, `$Xs$` are the independent variables from $1$  to `$k$`, and the model is estimated using $n$ observations
+    - Coefficient  $b_0$ is the model’s “intercept” representing the expected value of  `$Y$` if all independent variables are zero.
+    - Parameters `$b_1$` to `$b_k$` are the slope coefficients (or partial regression coefficients) for independent variables `$*X_1*$` to `$X_k$`. Slope coefficient `$b_j$` describes the impact of independent variable `$X_j$` on `$Y$`, holding all the other independent variables constant.
 3. Assumptions underlying multiple linear regression
     
     
@@ -49,26 +49,26 @@ tags: []
 | Error | n-k-1 | SSE | MSE = SSE/(n-k-1) |
 | Total | n-1 | SST |  |
 1. Goodness of fit
-    - 一元线性回归中 coefficient of determination  $R^2 = \frac{SSR}{SST} = 1-\frac{SSE}{SST}$
-    - 多元线性回归中 adjusted $R^2 = 1-[\frac{n-1}{n-k-1}\times (1-R^2)]$
-        - adjusted $R^2$ 一定小于 $R^2$，甚至可能小于0
-        - $R^2$ 的含义是因变量变化被解释的比率，但是 adjusted $R^2$ 并无此含义
-        - $R^2$ 和 adjusted $R^2$ 都不能说明回归系数是否有显著性，也不能说明模型拟合度的显著性，需要通过方差分析和建设检验才能得出结论
-    - AIC：用于比较因变量相同的各个模型的拟合优度 AIC =  $n \times ln(\frac{SSE}{n})+2(k+1)$
-    - BIC：BIC =  $n \times ln(\frac{SSE}{n})+ln(n)\times(k+1)$
+    - 一元线性回归中 coefficient of determination  `$R^2 = \frac{SSR}{SST} = 1-\frac{SSE}{SST}$`
+    - 多元线性回归中 adjusted `$R^2 = 1-[\frac{n-1}{n-k-1}\times (1-R^2)]$`
+        - adjusted `$R^2$` 一定小于 `$R^2$`，甚至可能小于0
+        - `$R^2$` 的含义是因变量变化被解释的比率，但是 adjusted $R^2$ 并无此含义
+        - `$R^2$` 和 adjusted `$R^2$` 都不能说明回归系数是否有显著性，也不能说明模型拟合度的显著性，需要通过方差分析和建设检验才能得出结论
+    - AIC：用于比较因变量相同的各个模型的拟合优度 AIC =  `$n \times ln(\frac{SSE}{n})+2(k+1)$`
+    - BIC：BIC =  `$n \times ln(\frac{SSE}{n})+ln(n)\times(k+1)$`
         - 通常 BIC > AIC
         - 若更关注模型的预测能力，用 AIC；若关注模型的拟合优度，用 BIC
         - AIC 和 BIC 越小越好
 2. Testing joint hypotheses for coefficients
     - 单个回归系数：t 检验
     - 联合假设检验（join hypothesis test）：F 检验
-        - unrestricted model：$Y_i = b_0 + b_1 X_{1i} + b_2 X_{2i} + b_3 X_{3i} + b_4 X_{4i} + \epsilon_i$
-        - restricted model：例如 $Y_i = b_0 + b_1 X_{1i} + b_2 X_{2i} + \epsilon_i$
-        - 联合检验：$H_0：b_3 = b_4 = 0$, $H_a$：$b_3$ 和 $b_4$ 中至少有一个不等于0（限制条件q=2）
+        - unrestricted model：`$Y_i = b_0 + b_1 X_{1i} + b_2 X_{2i} + b_3 X_{3i} + b_4 X_{4i} + \epsilon_i$`
+        - restricted model：例如 `$Y_i = b_0 + b_1 X_{1i} + b_2 X_{2i} + \epsilon_i$`
+        - 联合检验：`$H_0：b_3 = b_4 = 0$`, `$H_a$`：`$b_3$` 和 `$b_4$` 中至少有一个不等于0（限制条件q=2）
             
-            $$
+            `$$
             F = \frac{(SSE_{restricted} - SSE_{unrestricted})/q}{SSE_{unrestricted}/(n-k-1)}
-            $$
+            $$`
             
         - 假设检验步骤
             1. State the hypothesis
@@ -111,9 +111,9 @@ tags: []
     - 负序列相关 - 二类错误
     - 如果模型自变量中不存在因变量的滞后性，啧序列相关不影响系数估计的一致性；否则会导致系数估计无效。 | 计算的标准误偏大，容易犯二类错误 |
     | Testing | - 散点图
-    - Breusch-Pagan(BP)检验：BP =$ n \times R^2_{res}$, 将残差的平方与自变量做回归，单尾检验，拒绝域在右尾 | - DW 检验（一阶序列相关）
-    - BG 检验（p阶序列相关）~$ F_{n-p-k-1,p}$ | $VIF_j$ =$ \frac{1}{1-R^2_j}$
-    其中 $ R^2_j$ 是将第 j 个自变量作为因变量，与其他k-1 个自变量做线性回归。VIF > 5 可能存在多重共线，>10 严重多重共线  |
+    - Breusch-Pagan(BP)检验：BP =`$ n \times R^2_{res}$`, 将残差的平方与自变量做回归，单尾检验，拒绝域在右尾 | - DW 检验（一阶序列相关）
+    - BG 检验（p阶序列相关）~`$ F_{n-p-k-1,p}$` | `$VIF_j$` =`$ \frac{1}{1-R^2_j}$`
+    其中 `$ R^2_j$` 是将第 j 个自变量作为因变量，与其他k-1 个自变量做线性回归。VIF > 5 可能存在多重共线，>10 严重多重共线  |
     | Correcting | - robust standard errors
     - heteroskedasticity-consistent standard errors
     - White-corrected standard errors | - serial-correlation consistent standard errors
@@ -134,78 +134,78 @@ tags: []
         
         | 名称 | 影响来源 | 检测指标 | 计算方法 | 检测方法 |
         | --- | --- | --- | --- | --- |
-        | 高杠杆点 | 自变量 | 杠杆率 $ h_{ii}$ | 度量某个自变量的第 i 个观测值与其 n 个观测值均值的距离 | $h_{ii} > 3(\frac{k+1}{n})$，潜在的高杠杆点 |
-        | 异常值 | 因变量 | 学生化残差 $ t_i^*$ | 1. 用全部样本建模，得到残差标准差$s_{e^*}$，然后依次剔除第i个样本重新建模
-        2. $ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$
-        3. $t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$ | $|t_i^*|>t $关键值，潜在的异常值，> 3 则认定为异常值 |
-        | 强影响点 | 自变量和因变量 | Cook’s distance $ D_i$ | $D_i = \frac{\epsilon_i^2}{k\times MSE}\times \frac{h_{ii}}{(1-h_{ii})^2}$ | $D_i > \sqrt{k/n}$，很可能为强影响点
+        | 高杠杆点 | 自变量 | 杠杆率 $ h_{ii}$ | 度量某个自变量的第 i 个观测值与其 n 个观测值均值的距离 | `$h_{ii} > 3(\frac{k+1}{n})$`，潜在的高杠杆点 |
+        | 异常值 | 因变量 | 学生化残差 `$ t_i^*$` | 1. 用全部样本建模，得到残差标准差`$s_{e^*}$`，然后依次剔除第i个样本重新建模
+        2. `$ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$`
+        3. `$t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$` | `$|t_i^*|>t $`关键值，潜在的异常值，> 3 则认定为异常值 |
+        | 强影响点 | 自变量和因变量 | Cook’s distance `$ D_i$` | `$D_i = \frac{\epsilon_i^2}{k\times MSE}\times \frac{h_{ii}}{(1-h_{ii})^2}$` | `$D_i > \sqrt{k/n}$`，很可能为强影响点
         > 1， 很可能
         > 0.5，可能 |
 2. 虚拟变量（Dummy variables）
-    - intercept dummy：$Y = b_0 + d_0D+b_1X+\epsilon$
-    - slope dummy：$Y = b_0 + b_1X + d_1DX + \epsilon$
+    - intercept dummy：`$Y = b_0 + d_0D+b_1X+\epsilon$`
+    - slope dummy：`$Y = b_0 + b_1X + d_1DX + \epsilon$`
 3. 定性因变量的多元线性回归 - logistic regression
     - odds = P/(1-P)
     - log odds (or logit) = ln(P/(1-P))
-    - $ln(\frac{P}{1-P}) = b_0 + b_1X_1 + … + \epsilon$
-    - $P = \frac{1}{1+exp[ -(b_0 + b_1X_1 + … + \epsilon)]}$
+    - `$ln(\frac{P}{1-P}) = b_0 + b_1X_1 + … + \epsilon$`
+    - `$P = \frac{1}{1+exp[ -(b_0 + b_1X_1 + … + \epsilon)]}$`
     - 最大似然估计 MLE 进行回归系数估计
     - 似然比检验 LR test 检验拟合优度
 
 ### Learning Module 5: Time-series analysis
 
 1. Trend models 趋势模型
-    - Linear trend model: $y_t = b_0 + b_1t + \epsilon_t$
-    - Log-linear trend model (exponential trend): $y_t = e^{b_0 + b_1t}$
-        - 增长率为常数，$y_{t+1}/y_t - 1 = e^{b_1}-1$
+    - Linear trend model: `$y_t = b_0 + b_1t + \epsilon_t$`
+    - Log-linear trend model (exponential trend): `$y_t = e^{b_0 + b_1t}$`
+        - 增长率为常数，`$y_{t+1}/y_t - 1 = e^{b_1}-1$`
     - 如果选取的趋势模型能很好地模拟时间序列，那么应当由残差序列不相关。可用DW检验。
 2. Autoregressive model 自回归模型
     - 定义
-        - AR(1)：$y_t = b_0 + b_1y_{t-1} + \epsilon_t$
-        - AR(p)：$y_t = b_0 + b_1y_{t-1} +\dots +b_py_{t-p}+ \epsilon_t$
+        - AR(1)：`$y_t = b_0 + b_1y_{t-1} + \epsilon_t$`
+        - AR(p)：`$y_t = b_0 + b_1y_{t-1} +\dots +b_py_{t-p}+ \epsilon_t$`
     - 协方差平稳 covariance stationary
         - 如果时间序列不平稳，那么有关回归方程的系数估计是有偏的，统计推断非有效
         - 对一组时间序列数据，第一步就是判断是否平稳
         - 协方差平稳定义：
-            - 均值平稳 $E(y_t) = \mu$
-            - 方差平稳 $Var(y_t) = \sigma^2 < \infty$
-            - 结构平稳（周期性）$Cov(y_t,y_{t-\tau}) = \gamma (\tau)$
+            - 均值平稳 `$E(y_t) = \mu$`
+            - 方差平稳 `$Var(y_t) = \sigma^2 < \infty$`
+            - 结构平稳（周期性）`$Cov(y_t,y_{t-\tau}) = \gamma (\tau)$`
     - AR 模型序列相关性检验
-        - kth-order autocorrelation $(\rho_k) = \frac{cov(x_t,x_{t-k})}{\sigma_x^2}$
+        - kth-order autocorrelation `$(\rho_k) = \frac{cov(x_t,x_{t-k})}{\sigma_x^2}$`
         - 步骤
             - 构建并估计AR（1）模型
             - 计算模型残差之间的自相关系数
             - 检验残差的各阶自相关系数是否显著不为0
     - 均值复归 Mean reversion
         - 具有均值复归特性的时间序列处于均值水平时，对下一期的预测仍然应当是均值
-        - 均值复归水平 $y_t = \frac{b_0}{1-b_1}$
+        - 均值复归水平 `$y_t = \frac{b_0}{1-b_1}$`
     - 模型预测
         - 如何选择预测模型：根据预测误差进行判断
         - in-sample forecast errors：回归标准差SEE
         - out-of-sample forecast errors：均方误RMSE，越小越好
         - 回归系数不稳定性：选取不同时间段的历史数据可能会得到不同的模型或回归系数
-3. Random walk 随机游走  — $b_1 = 1$ 的AR (1)
-    - 定义：$y_t = y_{t-1} + \epsilon_t$，$E(\epsilon_t)=0$, $E(\epsilon_t^2)=\sigma^2$, $E(\epsilon_t \epsilon_s)=0(t \neq s)$
+3. Random walk 随机游走  — `$b_1 = 1$` 的AR (1)
+    - 定义：`$y_t = y_{t-1} + \epsilon_t$`，`$E(\epsilon_t)=0$`, `$E(\epsilon_t^2)=\sigma^2$`, `$E(\epsilon_t \epsilon_s)=0(t \neq s)$`
     - 均值不复归，方差不有限，不满足协方差平稳的条件
-        - 处理方法：一阶差分 first-differencing    $y_t^\prime = \Delta y_t = y_t - y_{t-1}$
+        - 处理方法：一阶差分 first-differencing    `$y_t^\prime = \Delta y_t = y_t - y_{t-1}$`
         - 差分后序列平稳
-    - 含漂移项的随机游走：$y_t = b_0 + y_{t-1} + \epsilon$,  $b_0 \neq 0$,….
+    - 含漂移项的随机游走：`$y_t = b_0 + y_{t-1} + \epsilon$`,  `$b_0 \neq 0$`,….
 4. Unit Root Test 非平稳的单位根检验
     - 如果一个时间序列有单位根，则序列非平稳。
-    - 单位根检验基本思想：如果有  $|b_1| \geq 1$，则时间序列不平稳
+    - 单位根检验基本思想：如果有  `$|b_1| \geq 1$`，则时间序列不平稳
     - Dickey-Fuller 检验
-        - $\Delta y_t = b_0 + b_1^\prime y_{t-1} + \epsilon_t$
-        - $H_0: b_1^\prime = 0$（非平稳，具有单位根）$H_a: b_1^\prime < 0$
+        - `$\Delta y_t = b_0 + b_1^\prime y_{t-1} + \epsilon_t$`
+        - `$H_0: b_1^\prime = 0$`（非平稳，具有单位根）`$H_a: b_1^\prime < 0$`
 5. Moving-average 移动平均时序模型
-    - n-period moving average = $(y_t + y_{t-1}+\dots + y_{t-(n-1)})/n$
-    - MA (q) 定义：$y_t = \epsilon_t + \theta_1 \epsilon_{t-1}+\dots+\theta_q\epsilon_{t-q}$, $E(\epsilon_t)=0$, $E(\epsilon_t^2)=\sigma^2$, $cov(\epsilon_t, \epsilon_s) = 0$ for  $t \neq s$
+    - n-period moving average = `$(y_t + y_{t-1}+\dots + y_{t-(n-1)})/n$`
+    - MA (q) 定义：`$y_t = \epsilon_t + \theta_1 \epsilon_{t-1}+\dots+\theta_q\epsilon_{t-q}$`, `$E(\epsilon_t)=0$`, `$E(\epsilon_t^2)=\sigma^2$`, `$cov(\epsilon_t, \epsilon_s) = 0$` for  `$t \neq s$`
     - S&P BSE 100 指数更适合用 MA 模型（相比于 AR 模型）
     - 特征：MA (q) 模型的前 q-autocorrelations 显著不等于0，而后突然变成0. 而 AR 模型的自相关系数是逐渐减小的。
     - ARMA 模型 以此类推
 6. 季节性因素
     - 存在季节性特征时，AR(1) 残差项会序列相关，需要将滞后 p 阶的时间序列也加入模型（假设考察对象为时间间隔为 p 的数据）
 7. ARCH model 自回归条件异方差模型
-    - ARCH(p) 定义：$\epsilon_t^2 = a_0 + a_1 \epsilon^2_{t-1} + \dots + a_p \epsilon^2_{t-p} + u_t$
+    - ARCH(p) 定义：`$\epsilon_t^2 = a_0 + a_1 \epsilon^2_{t-1} + \dots + a_p \epsilon^2_{t-p} + u_t$`
 8. 多个时间序列的回归
     - Cointegrated 协整
         
@@ -277,7 +277,7 @@ tags: []
     
 2. Supervised learning model
     - Penalized regression
-        - LASSO：目标函数 $\sum_{i=1}^n(Y_i - \hat{Y}_i)^2 + \lambda \sum_{i=1}^n| \hat{b}_i|$
+        - LASSO：目标函数 `$\sum_{i=1}^n(Y_i - \hat{Y}_i)^2 + \lambda \sum_{i=1}^n| \hat{b}_i|$`
     - SVM
         - maximum margin
         - 分类 or 回归
@@ -365,8 +365,8 @@ Reinforcement learning |
 
 —> bag-of-words |
 |  | 异常值 trimming or wisorization
-normalization：$\frac{X_i - X_{min}}{X_{max}-X_{min}}$
-standardization：$\frac{X_i-\mu}{\sigma}$ |  |
+normalization：`$\frac{X_i - X_{min}}{X_{max}-X_{min}}$`
+standardization：`$\frac{X_i-\mu}{\sigma}$` |  |
 | 数据探索
 1. 探索性数据分析 Exploratory data analysis, EDA | 通过可视化图表发现数据关联 | 文本探索(text exploration)
 - 统计单文本词频 |
@@ -385,7 +385,7 @@ standardization：$\frac{X_i-\mu}{\sigma}$ |  |
 - 数据的大小：观测值数据量较大时用神经网络模型，特征值较多时用支持向量机 |  |
 | 2. 模型表现评估 performance evaluation | - 错误分析 Error analysis（下面表格）
 - ROC， Receiver operating characteristic
-- RMSE = $\sqrt{\sum_{i=1}^n\frac{Predicted_i - Actual_i}{n}}$ | 同左 |
+- RMSE = `$\sqrt{\sum_{i=1}^n\frac{Predicted_i - Actual_i}{n}}$` | 同左 |
 | 3. 模型调试 tuning | bias: 模型过于简单，欠拟合
 variance：模型过于复杂，过度拟合 |  |
 - Error analysis
