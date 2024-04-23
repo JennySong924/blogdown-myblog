@@ -103,13 +103,13 @@ tags: []
 3. Violations of regression assumptions
 
     
-    |  | Heteroskedasticity | Serial correlation | Multicolinearity |
-    | --- | --- | --- | --- |
-    | Description | unconditional 异方差： 残差的方差不恒定，但与自变量不相关
-    conditional 异方差：残差的方差不恒定，且残差的方差与自变量相关 | 正序列相关：前一个残差大于 0，后一个残差大于 0 的概率较大。 | 两个或更多自变量之间高度线性相关 |
-    | Consequences | 可能会造成标准误偏小，容易犯一类错误 | - 正序列相关 - 一类错误<br>- 负序列相关 - 二类错误<br>  - 如果模型自变量中不存在因变量的滞后性，啧序列相关不影响系数估计的一致性；否则会导致系数估计无效。 | 计算的标准误偏大，容易犯二类错误 |
-    | Testing | - 散点图<br>   - Breusch-Pagan(BP)检验：BP =`$ n \times R^2_{res}$`, 将残差的平方与自变量做回归，单尾检验，拒绝域在右尾 | - DW 检验（一阶序列相关）<br>    - BG 检验（p阶序列相关）~`$ F_{n-p-k-1,p}$` | `$VIF_j$` =`$ \frac{1}{1-R^2_j}$`<br>  其中 `$ R^2_j$` 是将第 j 个自变量作为因变量，与其他k-1 个自变量做线性回归。VIF > 5 可能存在多重共线，>10 严重多重共线  |
-    | Correcting | - robust standard errors<br>    - heteroskedasticity-consistent standard errors<br>    - White-corrected standard errors | - serial-correlation consistent standard errors<br>    - serial correlation and heteroskedasticity adjusted standard errors<br>    - Newey-West standard errors<br>    - Robust standard errors | - 去掉一个或多个共线性的自变量<br>    - 以替代变量来代替一个共线性的自变量<br>    - 增加样本容量 n |
+|  | Heteroskedasticity | Serial correlation | Multicolinearity |
+| --- | --- | --- | --- |
+| Description | unconditional 异方差： 残差的方差不恒定，但与自变量不相关
+conditional 异方差：残差的方差不恒定，且残差的方差与自变量相关 | 正序列相关：前一个残差大于 0，后一个残差大于 0 的概率较大。 | 两个或更多自变量之间高度线性相关 |
+| Consequences | 可能会造成标准误偏小，容易犯一类错误 | - 正序列相关 - 一类错误<br>- 负序列相关 - 二类错误<br>  - 如果模型自变量中不存在因变量的滞后性，啧序列相关不影响系数估计的一致性；否则会导致系数估计无效。 | 计算的标准误偏大，容易犯二类错误 |
+| Testing | - 散点图<br>   - Breusch-Pagan(BP)检验：BP =`$ n \times R^2_{res}$`, 将残差的平方与自变量做回归，单尾检验，拒绝域在右尾 | - DW 检验（一阶序列相关）<br>    - BG 检验（p阶序列相关）~`$ F_{n-p-k-1,p}$` | `$VIF_j$` =`$ \frac{1}{1-R^2_j}$`<br>  其中 `$ R^2_j$` 是将第 j 个自变量作为因变量，与其他k-1 个自变量做线性回归。VIF > 5 可能存在多重共线，>10 严重多重共线  |
+| Correcting | - robust standard errors<br>    - heteroskedasticity-consistent standard errors<br>    - White-corrected standard errors | - serial-correlation consistent standard errors<br>    - serial correlation and heteroskedasticity adjusted standard errors<br>    - Newey-West standard errors<br>    - Robust standard errors | - 去掉一个或多个共线性的自变量<br>    - 以替代变量来代替一个共线性的自变量<br>    - 增加样本容量 n |
 
 ### Learning Module 4: Extensions of multiple regression
 
@@ -119,11 +119,11 @@ tags: []
         - 异常值（outlier）：因变量为极值
     - 检测方法总结
         
-        | 名称 | 影响来源 | 检测指标 | 计算方法 | 检测方法 |
-        | --- | --- | --- | --- | --- |
-        | 高杠杆点 | 自变量 | 杠杆率 $ h_{ii}$ | 度量某个自变量的第 i 个观测值与其 n 个观测值均值的距离 | `$h_{ii} > 3(\frac{k+1}{n})$`，潜在的高杠杆点 |
-        | 异常值 | 因变量 | 学生化残差 `$ t_i^*$` | 1. 用全部样本建模，得到残差标准差`$s_{e^*}$`，然后依次剔除第i个样本重新建模<br>    2. `$ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$`<br>  3. `$t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$` | `$|t_i^*|>t$`关键值，潜在的异常值，> 3 则认定为异常值 |
-        | 强影响点 | 自变量和因变量 | Cook’s distance `$ D_i$` | `$D_i = \frac{\epsilon_i^2}{k\times MSE}\times \frac{h_{ii}}{(1-h_{ii})^2}$` | `$D_i > \sqrt{k/n}$`，很可能为强影响点<br>  > 1， 很可能<br>  > 0.5，可能 |
+| 名称 | 影响来源 | 检测指标 | 计算方法 | 检测方法 |
+| --- | --- | --- | --- | --- |
+| 高杠杆点 | 自变量 | 杠杆率 $ h_{ii}$ | 度量某个自变量的第 i 个观测值与其 n 个观测值均值的距离 | `$h_{ii} > 3(\frac{k+1}{n})$`，潜在的高杠杆点 |
+| 异常值 | 因变量 | 学生化残差 `$ t_i^*$` | 1. 用全部样本建模，得到残差标准差`$s_{e^*}$`，然后依次剔除第i个样本重新建模<br>    2. `$ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$`<br>  3. `$t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$` |`$|t_i^*|>t$`关键值，潜在的异常值，> 3 则认定为异常值 |
+| 强影响点 | 自变量和因变量 | Cook’s distance `$ D_i$` | `$D_i = \frac{\epsilon_i^2}{k\times MSE}\times \frac{h_{ii}}{(1-h_{ii})^2}$` | `$D_i > \sqrt{k/n}$`，很可能为强影响点<br>  > 1， 很可能<br>  > 0.5，可能 |
         
 2. 虚拟变量（Dummy variables）
     - intercept dummy：`$Y = b_0 + d_0D+b_1X+\epsilon$`
@@ -325,7 +325,7 @@ Deep learning<br>Reinforcement learning |
 - Error analysis
   - confusion matrix
         
-        | 预测 \\ 真实 | 1 | 0 |
+        | 预测 vs 真实 | 1 | 0 |
         | --- | --- | --- |
         | 1 | TP | FP ( Type I error) |
         | 0 | FN (Type II error) | TN |
