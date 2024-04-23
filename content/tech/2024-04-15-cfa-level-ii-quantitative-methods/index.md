@@ -321,13 +321,15 @@ Deep learning<br>Reinforcement learning |
 | 训练模型<br>1. 方法选择 method selection | - 监督模型与非监督模型的选择<br>- 数据的类型<br>- 数据的大小：观测值数据量较大时用神经网络模型，特征值较多时用支持向量机 |  |
 | 2. 模型表现评估 performance evaluation | - 错误分析 Error analysis（下面表格）<br>- ROC， Receiver operating characteristic<br>- RMSE = `$\sqrt{\sum_{i=1}^n\frac{Predicted_i - Actual_i}{n}}$` | 同左 |
 | 3. 模型调试 tuning | bias: 模型过于简单，欠拟合<br>variance：模型过于复杂，过度拟合 |  |
-- Error analysis<br>    - confusion matrix
-        
+
+- Error analysis
+  - confusion matrix
         
         | 预测\真实 | 1 | 0 |
         | --- | --- | --- |
         | 1 | TP | FP ( Type I error) |
         | 0 | FN (Type II error) | TN |
+        
     - Precision (P) = TP / ( TP + FP )
         - 模型预测为1的样本中，有多少真的是1
     - Recall (R) = TP / ( TP + FN )
