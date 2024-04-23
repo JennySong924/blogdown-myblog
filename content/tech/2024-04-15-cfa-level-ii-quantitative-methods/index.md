@@ -198,10 +198,8 @@ tags: []
         | --- | --- |
         | 两个时间序列均平稳 | 直接回归即可 |
         | 一个平稳，一个非平稳 | 不能回归 |
-        | 两个时间序列均非平稳
-        回归后残差项非平稳 | 不存在协整 |
-        | 两个时间序列均非平稳
-        回归后残差项平稳 | 存在协整 |
+        | 两个时间序列均非平稳<br>      回归后残差项非平稳 | 不存在协整 |
+        | 两个时间序列均非平稳<br>    回归后残差项平稳 | 存在协整 |
     - Cointegrated 协整 — 多个均存在单位根的时间序列之间是否存在协整关系的判断：
         1. 多个时间序列进行回归
         2. 用 Dickey-Fuller 检验残差项是否为平稳序列
@@ -301,23 +299,9 @@ tags: []
 
 | 模型类别 | 分类 | 连续 | 分类或连续 |
 | --- | --- | --- | --- |
-| Supervised | Logistic
-SVM
-KNN
-CART | Linear regression
-Panelized regression
-Logistic regression
-CART
-Random forest | Neural network
-Deep learning
-Reinforcement learning |
-| Unsupervised | PCA
-分层聚类
-K-means | PCA
-分层聚类
-K-means | Neural network
-Deep learning
-Reinforcement learning |
+| Supervised | Logistic<br>SVM<br>KNN<br>CART | Linear regression<br>Panelized regression<br>Logistic regression<br>CART<br>Random forest | Neural network
+Deep learning<br>Reinforcement learning |
+| Unsupervised | PCA<br>分层聚类<br>K-means | PCA<br>分层聚类<br>K-means | Neural network<br>Deep learning<br>Reinforcement learning |
 
 ### Learning Module 7: Big data projects
 
@@ -328,26 +312,9 @@ Reinforcement learning |
 | --- | --- | --- |
 | 明确建模的目标 | 确认模型的输入和输出 | 文本分析(text problem formulation)，确认模型的输入和输出 |
 | 数据收集 |  | 数据护理(data curation) |
-| 数据的准备与整理
-1. data preparing/cleaning | - incompleteness error 数据不完整
-- invalidity error 无效错误值
-- inaccuracy error 数据不准确
-- inconsistency error 数据不一致
-- non-uniformity error 非标准错误
-- duplication error 重复错误 | - 删除 html 的标识符
-- 删除断点符号 punctuations
-- 删除数字
-- 删除空白 |
-| 2. data wrangling/data preprocessing | - extraction：从已有特征中构造新的变量
-- aggregation：将两个或更多变量加总后得到类似的变量
-- filtration：去掉不需要的行
-- selection：去掉不需要的列
-- conversion：将数据转换为合适的类型 | - 将所有文本转化为小写
-- 删除停止词 stop words，例如 the, is, a
-- 词干提取 stemming
-- 词形还原 lemmatization
-
-—> bag-of-words |
+| 数据的准备与整理<br>1. data preparing/cleaning | - incompleteness error 数据不完整<br>- invalidity error 无效错误值<br>- inaccuracy error 数据不准确
+- inconsistency error 数据不一致<br>- non-uniformity error 非标准错误<br>- duplication error 重复错误 | - 删除 html 的标识符<br>- 删除断点符号 punctuations<br>- 删除数字<br>- 删除空白 |
+| 2. data wrangling/data preprocessing | - extraction：从已有特征中构造新的变量<br>- aggregation：将两个或更多变量加总后得到类似的变量<br>- filtration：去掉不需要的行<br>- selection：去掉不需要的列<br>- conversion：将数据转换为合适的类型 | - 将所有文本转化为小写<br>- 删除停止词 stop words，例如 the, is, a<br>- 词干提取 stemming<br>- 词形还原 lemmatization<br>—> bag-of-words |
 |  | 异常值 trimming or wisorization
 normalization：`$\frac{X_i - X_{min}}{X_{max}-X_{min}}$`
 standardization：`$\frac{X_i-\mu}{\sigma}$` |  |
