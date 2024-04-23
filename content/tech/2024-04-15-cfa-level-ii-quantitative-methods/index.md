@@ -312,8 +312,7 @@ Deep learning<br>Reinforcement learning |
 | --- | --- | --- |
 | 明确建模的目标 | 确认模型的输入和输出 | 文本分析(text problem formulation)，确认模型的输入和输出 |
 | 数据收集 |  | 数据护理(data curation) |
-| 数据的准备与整理<br>1. data preparing/cleaning | - incompleteness error 数据不完整<br>- invalidity error 无效错误值<br>- inaccuracy error 数据不准确
-- inconsistency error 数据不一致<br>- non-uniformity error 非标准错误<br>- duplication error 重复错误 | - 删除 html 的标识符<br>- 删除断点符号 punctuations<br>- 删除数字<br>- 删除空白 |
+| 数据的准备与整理<br>1. data preparing/cleaning | - incompleteness error 数据不完整<br>- invalidity error 无效错误值<br>- inaccuracy error 数据不准确<br>- inconsistency error 数据不一致<br>- non-uniformity error 非标准错误<br>- duplication error 重复错误 | - 删除 html 的标识符<br>- 删除断点符号 punctuations<br>- 删除数字<br>- 删除空白 |
 | 2. data wrangling/data preprocessing | - extraction：从已有特征中构造新的变量<br>- aggregation：将两个或更多变量加总后得到类似的变量<br>- filtration：去掉不需要的行<br>- selection：去掉不需要的列<br>- conversion：将数据转换为合适的类型 | - 将所有文本转化为小写<br>- 删除停止词 stop words，例如 the, is, a<br>- 词干提取 stemming<br>- 词形还原 lemmatization<br>—> bag-of-words |
 |  | 异常值 trimming or wisorization<br>normalization：`$\frac{X_i - X_{min}}{X_{max}-X_{min}}$`<br>standardization：`$\frac{X_i-\mu}{\sigma}$` |  |
 | 数据探索<br>1. 探索性数据分析 Exploratory data analysis, EDA | 通过可视化图表发现数据关联 | 文本探索(text exploration)<br>- 统计单文本词频 |
