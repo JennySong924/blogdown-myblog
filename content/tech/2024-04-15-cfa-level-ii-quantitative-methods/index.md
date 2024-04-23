@@ -107,21 +107,9 @@ tags: []
     | --- | --- | --- | --- |
     | Description | unconditional 异方差： 残差的方差不恒定，但与自变量不相关
     conditional 异方差：残差的方差不恒定，且残差的方差与自变量相关 | 正序列相关：前一个残差大于 0，后一个残差大于 0 的概率较大。 | 两个或更多自变量之间高度线性相关 |
-    | Consequences | 可能会造成标准误偏小，容易犯一类错误 | - 正序列相关 - 一类错误
-    - 负序列相关 - 二类错误
-    - 如果模型自变量中不存在因变量的滞后性，啧序列相关不影响系数估计的一致性；否则会导致系数估计无效。 | 计算的标准误偏大，容易犯二类错误 |
-    | Testing | - 散点图
-    - Breusch-Pagan(BP)检验：BP =`$ n \times R^2_{res}$`, 将残差的平方与自变量做回归，单尾检验，拒绝域在右尾 | - DW 检验（一阶序列相关）
-    - BG 检验（p阶序列相关）~`$ F_{n-p-k-1,p}$` | `$VIF_j$` =`$ \frac{1}{1-R^2_j}$`
-    其中 `$ R^2_j$` 是将第 j 个自变量作为因变量，与其他k-1 个自变量做线性回归。VIF > 5 可能存在多重共线，>10 严重多重共线  |
-    | Correcting | - robust standard errors
-    - heteroskedasticity-consistent standard errors
-    - White-corrected standard errors | - serial-correlation consistent standard errors
-    - serial correlation and heteroskedasticity adjusted standard errors
-    - Newey-West standard errors
-    - Robust standard errors | - 去掉一个或多个共线性的自变量
-    - 以替代变量来代替一个共线性的自变量
-    - 增加样本容量 n |
+    | Consequences | 可能会造成标准误偏小，容易犯一类错误 | - 正序列相关 - 一类错误<br>- 负序列相关 - 二类错误<br>  - 如果模型自变量中不存在因变量的滞后性，啧序列相关不影响系数估计的一致性；否则会导致系数估计无效。 | 计算的标准误偏大，容易犯二类错误 |
+    | Testing | - 散点图<br>   - Breusch-Pagan(BP)检验：BP =`$ n \times R^2_{res}$`, 将残差的平方与自变量做回归，单尾检验，拒绝域在右尾 | - DW 检验（一阶序列相关）<br>    - BG 检验（p阶序列相关）~`$ F_{n-p-k-1,p}$` | `$VIF_j$` =`$ \frac{1}{1-R^2_j}$`<br>  其中 `$ R^2_j$` 是将第 j 个自变量作为因变量，与其他k-1 个自变量做线性回归。VIF > 5 可能存在多重共线，>10 严重多重共线  |
+    | Correcting | - robust standard errors<br>    - heteroskedasticity-consistent standard errors<br>    - White-corrected standard errors | - serial-correlation consistent standard errors<br>    - serial correlation and heteroskedasticity adjusted standard errors<br>    - Newey-West standard errors<br>    - Robust standard errors | - 去掉一个或多个共线性的自变量<br>    - 以替代变量来代替一个共线性的自变量<br>    - 增加样本容量 n |
 
 ### Learning Module 4: Extensions of multiple regression
 
