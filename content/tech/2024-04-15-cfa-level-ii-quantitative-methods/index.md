@@ -316,8 +316,7 @@ Deep learning<br>Reinforcement learning |
 | 2. data wrangling/data preprocessing | - extraction：从已有特征中构造新的变量<br>- aggregation：将两个或更多变量加总后得到类似的变量<br>- filtration：去掉不需要的行<br>- selection：去掉不需要的列<br>- conversion：将数据转换为合适的类型 | - 将所有文本转化为小写<br>- 删除停止词 stop words，例如 the, is, a<br>- 词干提取 stemming<br>- 词形还原 lemmatization<br>—> bag-of-words |
 |  | 异常值 trimming or wisorization<br>normalization：`$\frac{X_i - X_{min}}{X_{max}-X_{min}}$`<br>standardization：`$\frac{X_i-\mu}{\sigma}$` |  |
 | 数据探索<br>1. 探索性数据分析 Exploratory data analysis, EDA | 通过可视化图表发现数据关联 | 文本探索(text exploration)<br>- 统计单文本词频 |
-| 2. 特征选择 Feature selection | - 反复迭代的过程<br>- 在提高模型解释力度和加快算法运行速度上进行抉择 | 精简文本标记符，噪声通常是出现频率最高或最低的词<br>- 利用频率删除噪声特征
-- 卡方检验筛选特征<br>- 利用 mutual information 筛选特征 |
+| 2. 特征选择 Feature selection | - 反复迭代的过程<br>- 在提高模型解释力度和加快算法运行速度上进行抉择 | 精简文本标记符，噪声通常是出现频率最高或最低的词<br>- 利用频率删除噪声特征<br>- 卡方检验筛选特征<br>- 利用 mutual information 筛选特征 |
 | 3. 特征工程 Feature Engineer | - 通过已有特征来构建新的特征 | - 标记数字<br>- N-gram：词组<br>- 命名实体技术 name entity recognition, NER：识别专有名词<br>- 词性 parts of speech, POS |
 | 训练模型<br>1. 方法选择 method selection | - 监督模型与非监督模型的选择<br>- 数据的类型<br>- 数据的大小：观测值数据量较大时用神经网络模型，特征值较多时用支持向量机 |  |
 | 2. 模型表现评估 performance evaluation | - 错误分析 Error analysis（下面表格）<br>- ROC， Receiver operating characteristic<br>- RMSE = `$\sqrt{\sum_{i=1}^n\frac{Predicted_i - Actual_i}{n}}$` | 同左 |
