@@ -121,7 +121,7 @@ conditional 异方差：残差的方差不恒定，且残差的方差与自变�
 | 名称 | 影响来源 | 检测指标 | 计算方法 | 检测方法 |
 | --- | --- | --- | --- | --- |
 | 高杠杆点 | 自变量 | 杠杆率 $ h_{ii}$ | 度量某个自变量的第 i 个观测值与其 n 个观测值均值的距离 | `$h_{ii} > 3(\frac{k+1}{n})$`，潜在的高杠杆点 |
-| 异常值 | 因变量 | 学生化残差 `$ t_i^*$` | 1. 用全部样本建模，得到残差标准差`$s_{e^*}$`，然后依次剔除第i个样本重新建模<br>    2. `$ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$`<br>  3. `$t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$` |`$|t_i^*|>t$`关键值，潜在的异常值，> 3 则认定为异常值 |
+| 异常值 | 因变量 | 学生化残差 `$ t_i^*$` | 1. 用全部样本建模，得到残差标准差`$s_{e^*}$`，然后依次剔除第i个样本重新建模<br>    2. `$ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$`<br>  3. `$t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$` |`$ \|t_i^*\|>t $`关键值，潜在的异常值，> 3 则认定为异常值 |
 | 强影响点 | 自变量和因变量 | Cook’s distance `$ D_i$` | `$D_i = \frac{\epsilon_i^2}{k\times MSE}\times \frac{h_{ii}}{(1-h_{ii})^2}$` | `$D_i > \sqrt{k/n}$`，很可能为强影响点<br>  > 1， 很可能<br>  > 0.5，可能 |
         
 2. 虚拟变量（Dummy variables）
@@ -329,14 +329,14 @@ Deep learning<br>Reinforcement learning |
 | 1 | TP | FP ( Type I error) |
 | 0 | FN (Type II error) | TN |
         
-    - Precision (P) = TP / ( TP + FP )
-        - 模型预测为1的样本中，有多少真的是1
-    - Recall (R) = TP / ( TP + FN )
-        - 真的是1的样本中，被预测为1的有多少
-    - Accuracy = ( TP + TN ) / ( TP + FP + TN + FN )
-    - F1 score = 2*P*R/(P+R)
-        - P 和 R 的调和平均值
-        - 当数据分类分布不均匀时，F1比accuracy更适用，分数越高模型表现越好
+  - Precision (P) = TP / ( TP + FP )
+      - 模型预测为1的样本中，有多少真的是1
+  - Recall (R) = TP / ( TP + FN )
+      - 真的是1的样本中，被预测为1的有多少
+  - Accuracy = ( TP + TN ) / ( TP + FP + TN + FN )
+  - F1 score = 2*P*R/(P+R)
+      - P 和 R 的调和平均值
+      - 当数据分类分布不均匀时，F1比accuracy更适用，分数越高模型表现越好
 - ROC
     - False positive rate FPR = FP / ( TN + FP )
     - True positive rate TPR = TP / ( TP + FN ) = Recall
