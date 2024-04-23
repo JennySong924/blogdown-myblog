@@ -22,7 +22,7 @@ tags: []
     `$Y_i = b_0 + b_1X_{1i} + b_2X_{2i} + \dots + b_kX_{ki} + \epsilon_i, i=1,2,3,...,n$`
     where `$Y$` is the dependent variable, `$Xs$` are the independent variables from $1$  to `$k$`, and the model is estimated using $n$ observations
     - Coefficient  $b_0$ is the model’s “intercept” representing the expected value of  `$Y$` if all independent variables are zero.
-    - Parameters `$b_1$` to `$b_k$` are the slope coefficients (or partial regression coefficients) for independent variables `$*X_1*$` to `$X_k$`. Slope coefficient `$b_j$` describes the impact of independent variable `$X_j$` on `$Y$`, holding all the other independent variables constant.
+    - Parameters `$b_1$` to `$b_k$` are the slope coefficients (or partial regression coefficients) for independent variables `$X_1$` to `$X_k$`. Slope coefficient `$b_j$` describes the impact of independent variable `$X_j$` on `$Y$`, holding all the other independent variables constant.
 3. Assumptions underlying multiple linear regression
     
     
@@ -123,12 +123,8 @@ tags: []
         | 名称 | 影响来源 | 检测指标 | 计算方法 | 检测方法 |
         | --- | --- | --- | --- | --- |
         | 高杠杆点 | 自变量 | 杠杆率 $ h_{ii}$ | 度量某个自变量的第 i 个观测值与其 n 个观测值均值的距离 | `$h_{ii} > 3(\frac{k+1}{n})$`，潜在的高杠杆点 |
-        | 异常值 | 因变量 | 学生化残差 `$ t_i^*$` | 1. 用全部样本建模，得到残差标准差`$s_{e^*}$`，然后依次剔除第i个样本重新建模
-        2. `$ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$`
-        3. `$t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$` | `$|t_i^*|>t $`关键值，潜在的异常值，> 3 则认定为异常值 |
-        | 强影响点 | 自变量和因变量 | Cook’s distance `$ D_i$` | `$D_i = \frac{\epsilon_i^2}{k\times MSE}\times \frac{h_{ii}}{(1-h_{ii})^2}$` | `$D_i > \sqrt{k/n}$`，很可能为强影响点
-        > 1， 很可能
-        > 0.5，可能 |
+        | 异常值 | 因变量 | 学生化残差 `$ t_i^*$` | 1. 用全部样本建模，得到残差标准差`$s_{e^*}$`，然后依次剔除第i个样本重新建模<br>    2. `$ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$`<br>  3. `$t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$` | `$|t_i^*|>t$`关键值，潜在的异常值，> 3 则认定为异常值 |
+        | 强影响点 | 自变量和因变量 | Cook’s distance `$ D_i$` | `$D_i = \frac{\epsilon_i^2}{k\times MSE}\times \frac{h_{ii}}{(1-h_{ii})^2}$` | `$D_i > \sqrt{k/n}$`，很可能为强影响点<br>  > 1， 很可能<br>  > 0.5，可能 |
 2. 虚拟变量（Dummy variables）
     - intercept dummy：`$Y = b_0 + d_0D+b_1X+\epsilon$`
     - slope dummy：`$Y = b_0 + b_1X + d_1DX + \epsilon$`
