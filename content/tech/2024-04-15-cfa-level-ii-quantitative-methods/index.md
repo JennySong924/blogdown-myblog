@@ -90,7 +90,6 @@ tags: []
         5. 模型应符合回归假设
 2. misspecified functional form
     
-    
     | Failures in regression functional form | Explanation | Consequence |
     | --- | --- | --- |
     | Omitted variables 遗漏变量 | 遗漏了一个或多个重要变量 | 可能造成异方差和序列相关 |
@@ -100,8 +99,9 @@ tags: []
     未使用缩放的数据 | 变量可能需要通过transform再放进模型中 | 可能造成异方差和多重共线性 |
     | Inappropriate pooling of data
     错误融合来自不同样本的数据 | 把不同样本集放到一起回归 | 可能造成异方差和序列相关 |
-3. Violations of regression assumptions
     
+3. Violations of regression assumptions
+
     
     |  | Heteroskedasticity | Serial correlation | Multicolinearity |
     | --- | --- | --- | --- |
@@ -119,12 +119,12 @@ tags: []
         - 异常值（outlier）：因变量为极值
     - 检测方法总结
         
-        
         | 名称 | 影响来源 | 检测指标 | 计算方法 | 检测方法 |
         | --- | --- | --- | --- | --- |
         | 高杠杆点 | 自变量 | 杠杆率 $ h_{ii}$ | 度量某个自变量的第 i 个观测值与其 n 个观测值均值的距离 | `$h_{ii} > 3(\frac{k+1}{n})$`，潜在的高杠杆点 |
         | 异常值 | 因变量 | 学生化残差 `$ t_i^*$` | 1. 用全部样本建模，得到残差标准差`$s_{e^*}$`，然后依次剔除第i个样本重新建模<br>    2. `$ \epsilon_i^* = Y_i - \hat{Y}_{i^*}$`<br>  3. `$t_{i^*} = \epsilon_i^*/s_{e^*}=\frac{e_i}{\sqrt{MSE_{(i)}(1-h_{ii})}}\sim t_{n-k-2}$` | `$|t_i^*|>t$`关键值，潜在的异常值，> 3 则认定为异常值 |
         | 强影响点 | 自变量和因变量 | Cook’s distance `$ D_i$` | `$D_i = \frac{\epsilon_i^2}{k\times MSE}\times \frac{h_{ii}}{(1-h_{ii})^2}$` | `$D_i > \sqrt{k/n}$`，很可能为强影响点<br>  > 1， 很可能<br>  > 0.5，可能 |
+        
 2. 虚拟变量（Dummy variables）
     - intercept dummy：`$Y = b_0 + d_0D+b_1X+\epsilon$`
     - slope dummy：`$Y = b_0 + b_1X + d_1DX + \epsilon$`
@@ -192,14 +192,14 @@ tags: []
     - ARCH(p) 定义：`$\epsilon_t^2 = a_0 + a_1 \epsilon^2_{t-1} + \dots + a_p \epsilon^2_{t-p} + u_t$`
 8. 多个时间序列的回归
     - Cointegrated 协整
+    
+      | 平稳性检验 | 结论与处理方法 |
+      | --- | --- |
+      | 两个时间序列均平稳 | 直接回归即可 |
+      | 一个平稳，一个非平稳 | 不能回归 |
+      | 两个时间序列均非平稳<br>      回归后残差项非平稳 | 不存在协整 |
+      | 两个时间序列均非平稳<br>    回归后残差项平稳 | 存在协整 |
         
-        
-        | 平稳性检验 | 结论与处理方法 |
-        | --- | --- |
-        | 两个时间序列均平稳 | 直接回归即可 |
-        | 一个平稳，一个非平稳 | 不能回归 |
-        | 两个时间序列均非平稳<br>      回归后残差项非平稳 | 不存在协整 |
-        | 两个时间序列均非平稳<br>    回归后残差项平稳 | 存在协整 |
     - Cointegrated 协整 — 多个均存在单位根的时间序列之间是否存在协整关系的判断：
         1. 多个时间序列进行回归
         2. 用 Dickey-Fuller 检验残差项是否为平稳序列
@@ -325,7 +325,7 @@ Deep learning<br>Reinforcement learning |
 - Error analysis
   - confusion matrix
         
-        | 预测\真实 | 1 | 0 |
+        | 预测 \\ 真实 | 1 | 0 |
         | --- | --- | --- |
         | 1 | TP | FP ( Type I error) |
         | 0 | FN (Type II error) | TN |
