@@ -288,14 +288,14 @@ math: mathjax
             - 索罗增长核算方程 Solow growth accounting equation
             
             $$
-            \% \Delta Y = \% \Delta A+\alpha \% \Delta K + (1-\alpha)\%\Delta L
+            % \Delta Y = \% \Delta A+\alpha \% \Delta K + (1-\alpha)\%\Delta L
             $$
             
             - 劳动生产率增长核算方程 Labor productivity growth accounting equation
             （此模型无法区分资本深化和技术进步各自对经济增长的具体影响）
             
             $$
-            \%\Delta Y = \% \Delta y + \% \Delta L
+            \% \Delta Y = \% \Delta y + \% \Delta L
             $$
             
     - 扩展：经济增长的其他影响因素
