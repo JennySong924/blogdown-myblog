@@ -291,7 +291,7 @@ params:
   avatar:
     # 设置显示头像的相对路径
     # Replace the default image and set the url here.
-    url: /imgs/IMG_7868.JPG
+    url: /imgs/IMG_7868.jpg
     # 开启头像的圆形显示效果
     # If true, the avatar will be displayed in circle.
     rounded: true
@@ -305,7 +305,7 @@ params:
     # 站点访问信息
     # Site's view information
     views:  
-      enable: true
+      enable: false
       # 组件类型，可选值为： 51la, busuanzi
       # 使用51la时需要注册账号：https://invite.51.la/
       # Plguin value is: 51la, busuanzi
@@ -545,7 +545,7 @@ params:
   # Post edit
   # Easily browse and edit blog source code online.
   postEdit:
-    enable: true
+    enable: false
     url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/
 
 
