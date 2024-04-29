@@ -3,7 +3,8 @@ title: 2014-1-21
 author: J Song
 date: '2014-01-21'
 slug: []
-categories: []
+categories: 
+  - 日记
 tags: []
 ---
 这两天似乎清晰地触摸到了自己成长的痕迹。

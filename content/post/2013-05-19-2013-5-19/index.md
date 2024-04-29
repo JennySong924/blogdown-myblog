@@ -3,7 +3,8 @@ title: Changes
 author: J Song
 date: '2013-05-19'
 slug: []
-categories: []
+categories: 
+  - 日记
 tags: []
 ---
 在看Adele的皇家艾尔伯特厅音乐会，有种深凝的感动。这样率性真实的Adele，是我最喜欢的类型

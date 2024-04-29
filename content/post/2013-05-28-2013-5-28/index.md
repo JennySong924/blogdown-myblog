@@ -3,7 +3,8 @@ title: 2013-5-28
 author: J Song
 date: '2013-05-28'
 slug: []
-categories: []
+categories: 
+  - 日记
 tags: []
 ---
 总觉得想写点什么，但思绪太凌乱太琐碎，反而不知道从何说起~
