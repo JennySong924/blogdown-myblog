@@ -291,7 +291,7 @@ params:
   avatar:
     # 设置显示头像的相对路径
     # Replace the default image and set the url here.
-    url: /imgs/IMG_7868.jpg
+    url: /imgs/IMG_78682.jpg
     # 开启头像的圆形显示效果
     # If true, the avatar will be displayed in circle.
     rounded: true
@@ -309,7 +309,7 @@ params:
       # 组件类型，可选值为： 51la, busuanzi
       # 使用51la时需要注册账号：https://invite.51.la/
       # Plguin value is: 51la, busuanzi
-      # plugin: busuanzi
+      plugin: busuanzi
 
   # 社交链接地址
   # 用法： `Key: 名称 || 链接地址 || 图标`
