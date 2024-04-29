@@ -221,7 +221,7 @@ params:
     size: big
     # 侧边栏显示
     # Show in sidebar
-    sidebar: true
+    sidebar: false
     # 文章底部显示
     # Show in post footer
     post: false
@@ -491,7 +491,7 @@ params:
       plugin: waline
     # 是否开启页面访问数显示
     views:
-      enable: true
+      enable: false
       # 页面访问统计插件，支持busuanzi, waline, leancloud
       # Page views counter plugin, support: busuanzi, waline, leancloud
       plugin: busuanzi
