@@ -3,8 +3,11 @@ title: linux 命令学习
 author: Package Build
 date: '2024-02-26'
 slug: []
-categories: []
-tags: []
+categories: 
+  - 技术文章
+  - 编程
+tags: 
+  - linux
 ---
 新建xueke.txt的文件
 ```bash

@@ -3,7 +3,9 @@ title: 乌合之众
 author: J Song
 date: '2024-02-22'
 slug: []
-categories: []
+categories: 
+  - 读书笔记
+  - 心理
 tags: []
 ---
 

@@ -3,8 +3,12 @@ title: 月亮与六便士
 author: J Song
 date: '2024-02-26'
 slug: []
-categories: []
-tags: []
+categories: 
+  - 读书笔记
+  - 小说
+tags: 
+  - 毛姆
+  - 英国
 ---
 时隔近十年，重读《月亮与六便士》。
 

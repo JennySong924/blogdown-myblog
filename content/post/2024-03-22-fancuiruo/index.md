@@ -3,8 +3,12 @@ title: 反脆弱 从不确定性中获益
 author: J Song
 date: '2024-03-22'
 slug: []
-categories: []
-tags: []
+categories: 
+  - 读书笔记
+  - 经济
+tags: 
+  - 塔勒布
+  - 美国
 ---
 一些摘录：
 

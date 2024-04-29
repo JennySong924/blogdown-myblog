@@ -3,8 +3,12 @@ title: 局外人
 author: J Song
 date: '2024-02-26'
 slug: []
-categories: []
-tags: []
+categories: 
+  - 读书笔记
+  - 小说
+tags: 
+  - 加缪
+  - 法国
 ---
 荒诞的世界里，其他人与自己无关，甚至自己也与自己无关。
 

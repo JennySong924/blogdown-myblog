@@ -3,8 +3,11 @@ title: CFA Level II - Quantitative methods
 author: J Song
 date: '2024-04-15'
 slug: []
-categories: []
-tags: []
+categories: 
+  - 技术文章
+  - 经济
+tags: 
+  - CFA
 ---
 
 ### Learning Module 1: Basics of multiple regression and underlying assumptions

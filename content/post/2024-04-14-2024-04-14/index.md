@@ -3,7 +3,8 @@ title: '2024-04-14'
 author: J Song
 date: '2024-04-14'
 slug: []
-categories: []
+categories: 
+  - 日记
 tags: []
 ---
 果然啊，每天写点东西还是太难执行了，从现实考虑，先每周一次开始吧。

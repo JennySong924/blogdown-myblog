@@ -3,8 +3,12 @@ title: 讲给大家的中国历史 1
 author: J Song
 date: '2024-02-26'
 slug: []
-categories: []
-tags: []
+categories: 
+  - 读书笔记
+  - 历史
+tags: 
+  - 中国台湾
+  - 杨照
 ---
 这是真正意义上第一本自己一气呵成读完且看得津津有味的历史书。
 

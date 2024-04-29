@@ -3,8 +3,11 @@ title: CFA Level II - Economics
 author: J Song
 date: '2024-04-15'
 slug: []
-categories: [tech]
-tags: [CFA]
+categories: 
+  - 技术文章
+  - 经济
+tags: 
+  - CFA 
 ---
 
 ### Learning Module 1: Currency exchange rates: understanding equilibrium value

@@ -3,8 +3,12 @@ title: 野性的呼唤
 author: J Song
 date: '2024-02-26'
 slug: []
-categories: []
-tags: []
+categories: 
+  - 读书笔记
+  - 小说
+tags: 
+  - 美国
+  - 杰克·伦敦
 ---
 生存，生命，人性，兽性。
 
