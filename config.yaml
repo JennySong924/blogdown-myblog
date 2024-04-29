@@ -166,10 +166,10 @@ params:
   mainSections: ["post"]
   # 年，月，日及时间的格式化样式
   # Format style for year,month,date & time
-  yearFormat: "2006"
+  yearFormat: "2024"
   monthFormat: "01-02"
-  dateFormat: "2006-01-02"
-  timeFormat: "2006-01-02T15:04:05-07:00"
+  dateFormat: "2024-01-02"
+  timeFormat: "2024-01-02T15:04:05-07:00"
 
   # 页面模式
   # Schemes
@@ -499,14 +499,14 @@ params:
 
   # 文章底部的设置
   # Post footer settings
-  postFooter:
-    # 通过线条将文章和捐赠等信息隔开，并在线条上添加提示信息
-    # Use line to separate post and reward etc other information
-    # and add tip title on line.
-    endLineTip: "~ 我可是有底线的哟 ~"
-    # 是否使用小图标，默认使用 # 符号表示标签
-    # Use icon instead of the symbol # to indicate the tag
-    tagIcon: true
+  # postFooter:
+  #   # 通过线条将文章和捐赠等信息隔开，并在线条上添加提示信息
+  #   # Use line to separate post and reward etc other information
+  #   # and add tip title on line.
+  #   endLineTip: "~ 我可是有底线的哟 ~"
+  #   # 是否使用小图标，默认使用 # 符号表示标签
+  #   # Use icon instead of the symbol # to indicate the tag
+  #   tagIcon: true
 
   # 捐赠信息设置
   # Donate (Sponsor) settings.
