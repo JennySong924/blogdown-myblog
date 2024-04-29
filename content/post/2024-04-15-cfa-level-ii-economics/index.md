@@ -25,7 +25,7 @@ math: mathjax
         | 做市商与客户的关系- 信用风险低的，价差越小 | 市场波动性- 波动性越大，价差越大 |
 2. 三角套利 Triangular Arbitrage
     - 交叉汇率 cross-rate
-        - 不考虑买卖价差：`$\frac{A}{B} = \frac{A}{C} \times \frac{C}{B}$`
+        - 不考虑买卖价差：$\frac{A}{B} = \frac{A}{C} \times \frac{C}{B}$
         - 考虑买卖价差：
         
         $$
