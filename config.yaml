@@ -126,7 +126,7 @@ menus:
   main:
     - identifier: home
       name: 主页
-      url: _index
+      pageref: home
       pre: home
       weight: 2
     - identifier: archives
