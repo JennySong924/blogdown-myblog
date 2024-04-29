@@ -1,307 +1,149 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4321&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>linux 命令学习 - J Song&#39;s Blog</title>
-    <meta property="og:title" content="linux 命令学习 - J Song&#39;s Blog">
-    
-    <meta name="twitter:card" content="summary">
-    
-      
-      <meta property="description" content="新建xueke.txt的文件
-[&amp;hellip;] vi xueke.txt touch xueke.txt 去重 uniq
-[&amp;hellip;] 文件的压缩和解压
-[&amp;hellip;] tar -xf xueke.tar #tar格式解压 tar -cf xueke.tar *.fa #打包成tar格式 gunzip xueke.fa.gz #gz格式解压 gzip xueke.fa #压缩 &amp;hellip;">
-      <meta property="og:description" content="新建xueke.txt的文件
-[&amp;hellip;] vi xueke.txt touch xueke.txt 去重 uniq
-[&amp;hellip;] 文件的压缩和解压
-[&amp;hellip;] tar -xf xueke.tar #tar格式解压 tar -cf xueke.tar *.fa #打包成tar格式 gunzip xueke.fa.gz #gz格式解压 gzip xueke.fa #压缩 &amp;hellip;">
-      
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <link rel="stylesheet" href="/css/fonts.css">
-    
-    <link rel="stylesheet" href="/css/custom.css">
-    
-    
-
-
-
-
-
-
-  </head>
-
-  
-  
-  
-  <body class="single tech">
-    <div class="crop-h"></div><div class="crop-v"></div><div class="crop-c"></div>
-    <nav class="nav-top small">
-    <div class="logo">
-    
-    </div>
-    <div class="menu"><span><a href="/search">🔍search</a></span>
-      <span><a href="/">Home</a></span>
-      <span><a href="/post/">Post</a></span>
-      <span class="active"><a href="/tech/">Tech</a></span>
-      <span><a href="/reading/">Reading</a></span>
-      <span><a href="/lists/">Lists</a></span>
-      <span><a href="/about/">About</a></span>
-      <span><a href="https://github.com/JennySong924/blogdown-myblog">GitHub</a></span>
-      
-    </div>
-    </nav>
-
-<div class="article-meta">
-<h1 class="title">linux 命令学习</h1>
-
-<h3 class="meta-line">
-  <span>
-
-<span class="author">Package Build</span>
-
-
-
-
-
-
-<span class="date">2024-02-26</span>
-
-
-</span>
-  <span class="term">
-  
-  
-  </span>
-</h3>
-</div>
-
-<div class="main">
-
-
-
-
-<p>新建xueke.txt的文件</p>
-<pre><code class="language-bash">vi xueke.txt
-touch xueke.txt
-</code></pre>
-<p>去重 uniq</p>
-<p>文件的压缩和解压</p>
-<pre><code class="language-bash">tar -xf xueke.tar       #tar格式解压
-tar -cf xueke.tar *.fa  #打包成tar格式
-gunzip xueke.fa.gz      #gz格式解压
-gzip xueke.fa           #压缩成gz格式
-</code></pre>
-<p>任务管理</p>
-<pre><code class="language-bash">top             # 显示进程信息
-top -c		# 显示完整命令
-top -b          # 以批处理模式显示程序信息
-htop		# 查看CPU，内存的使用情况
-kill 12345      # 杀死进程
-kill -9 123456  # 彻底杀死进程
-</code></pre>
-<p>文件查找</p>
-<pre><code class="language-bash">#将当前目录及其子目录下所有文件后缀为 .c 的文件列出来:
-find . -name &quot;*.c&quot;
-#搜索 etc 目录下所有以 sh 开头的文件
-locate /etc/sh
-#忽略大小写搜索当前用户目录下所有以 r 开头的文件
-locate -i ~/r
-# fastp文件的绝对路径					
-which fastp
-#案例一：搜索Data目录下以点fna结尾的文件；
-find  ../Data -name *.fna
-
-#案例二：搜索系统中最近5分钟内编辑过的文件；
-find / -amin 5
-
-#案例三：查找大于100M的文件；
-find ./ -size 100M
-
-案例四：按照文件类型搜索；
-find  ./ -type 文件类型
-c 的档案
-d: 目录 
-b: 区块装置档案 ，
-p: 具名贮列
-f: 一般档案
-l: 符号连结
-s: socket
-
-#案例五：搜索文件，直接处理；
-find ./temp/ -name *.fna -exec rm '{}' \;
-</code></pre>
-<p>grep</p>
-<pre><code class="language-bash">#案例一：统计fasta文件中序列的条数；
-grep -c &quot;&gt;&quot;  gene.ffn
-#案例二：输出满足条件的序列；
-grep -A  &quot;3 gi 29732 34486&quot; lastz.axt
-#案例三：筛选出不满足条件的内容；
-ps -fx | grep -v &quot;S&quot;
-</code></pre>
-<p>sed</p>
-<pre><code class="language-bash">#案例一：输出固定的行
-sed -n '1307p'  seq.fna   #输出文件第1307行；
-sed -n '100,200' seq.fna  #输出文件第100到200行；
-
-#案例二：替换操作
-sed -e 's/gi/GI/' seq.fna  #将文件中gi全部替换为大写GI；
-sed -i 's/gi/GI/g' seq.fna   #在原文件上进行替换，并且进行全部替换；
-sed -i.bak 's#GI#gi#' seq.fna  #在原文件上进行替换，并进行备份；
-sed -e 's/gi/GI/2；s/ref/REF/2' seq.fna   #只将第二次出现的gi和ref进行替换；
-sed -f sed.list cds.list    #根据文件中的模式进行替换，可同时进行多条件替换；
-sed -n 's/gi/GI/p' seq.fna  #打印发生替换的行；
-
-#案例三：删除空白行；
-sed -e '/^\s*$/d'  seq.fna  #删除文件中的空白行；
-
-#案例四：行寻址
-sed -n '/ref/p' seq.fna   #输出文件中包含ref关键字的行；
-sed  '100,2000s/GI/gi/g' seq.fa  #则只替换100行到2000行的内容；
-sed  '100,2000！s/GI/gi/g' seq.fa  #加感叹号取反，在这个范围之外的执行操作；
-
-#案例五：删除操作
-sed -e '/&gt;/d' seq.fna #删除包含ref的行；
-sed -e 's/:.*//g' seq.fna   #删除冒号之后的所有内容；
-
-#案例六：对应替换，类似于tr的功能
-sed -e 'y/ATCG/atcg/' seq.fna  #修改大小写
-sed -e '/&gt;/!y/ATCG/atcg/' seq.fna  #DNA序列反向互补配对，并修改大小写
-</code></pre>
-<p>awk</p>
-<pre><code class="language-bash">#案例1：输出一个列表任意行；
-awk '{print $1}' blast_m8.out  #输出blast m8 格式结果的第一行；
-awk -F &quot;:&quot; '{print $1,$NF}' passwd.list   #通过-F修改默认分隔符为冒号，输出第一行与最后一行；
-
-#案例2：格式转换
-awk '{print&quot;@&quot; $1&quot;\n&quot;$10&quot;\n&quot;&quot;+\n&quot;$11&quot;&quot;}' all.sam  #将短序列比对上的reads输出出来，生成fastq文件；
-
-#案例3：过滤blast结果
-awk '{if ($3&gt;= &amp;&amp; $4&gt;=) print $0}'  blast_m8.out  #过滤blast比对结果，将identity 大于80，并且比对长度大于100bp的结果输出；
-
-#案例4：比较
-awk '$8&gt;$1' input.txt #输出第8列大于第10列的行。
-
-#案例5：匹配输出
-awk '$0~ /wang/{print $0}' passwd.list   #利用正则表达式，将秘密表中姓wang的账户都输出出来；
-
-#案例6：格式化输出
-awk 'BEGIN{print &quot;The Program Begin\n&quot;}{if ($3&gt;= &amp;&amp; $4&gt;=) print $0}END{print &quot; The Program End\n&quot;}' input.txt  #利用BEGIN和END关键字生成报告；
-
-#案例7：修改字段和记录分隔符
-awk 'BEGIN{OFS=&quot;\t&quot;}{print $2,$4,$5}' input.txt   #在BEGIN中设定字段分隔符和记录分隔符；
-
-#案例8：awk编程计算
-awk '{x+=$3}END{print x/NR}' input.txt   #计算第三列的平均值，最后在END将其输出出来。
-
-#案例9：awk编程比较大小
-awk   'BEGIN { max= ;print &quot;max=&quot; max} {max=($1 &gt;max ?$1:max); print $1,&quot;Now max is &quot;max}' input.txt  #取得文件最后一个域的最大值。 
-
-#案例10：awk编程求和
-awk '{print $0,$3+$4}' input.txt  #计算第3列和第4列的和。
-
-#案例11：输出固定行内容
-awk 'NR&gt;=&amp;&amp;NR&lt;=' input.txt  #输出第20到第80行内容。
-
-#案例12：合并文件
-awk 'BEGIN{while((getline&lt;&quot;file1&quot;)&gt;)l[$1]=$0}$1 in l{print $0&quot;\t&quot;l[$1]}' file2  #将两个文件按列合并起来，类似jion命令的功能。
-
-#案例13：去重复
-awk '!($0 in a) {a[$0];print}' input.txt  # 打印不重复的行，类似uniq的功能;
-awk '!($2 in l){print;l[$2]=}' input.txt #计算第二列内容非冗余的次数，类似于uniq的功能;
-
-#案例14：统计字符
-awk '{for(i=;i!=NF;++i)c[$i]++}END{for (x in c) print x,c[x]}' input.txt 计算每个字符出现的次数，类似wc的功能。
-
-#案例15：替换
-awk '{sub(/test/, &quot;no&quot;, $0);print}' input.txt 进行替换，类似sed的功能，
-
-#案例16：fastq转换为fasta
-awk '{getline seq;getline plus;getline qual;sub(&quot;@&quot;,&quot;&gt;&quot;,$0);print $0 &quot;\n&quot;seq}'  test.fastq；
-</code></pre>
-
-
-
-<nav class="post-nav fullwidth kai">
-  <span class="nav-prev">&larr; <a href="/tech/2024-02-22-blog-buiding/">搭建自己的博客</a></span>
-  <span class="nav-next"><a href="/tech/2024-04-15-cfa-level-ii-quantitative-methods/">CFA Level II - Quantitative methods</a> &rarr;</span>
-</nav>
-
-
-
-<section class="fullwidth comments">
-<script data-src="https://giscus.app/client.js"
-  data-repo="yihui/yihui.org"
-  data-repo-id="MDEwOlJlcG9zaXRvcnk4MDc3NDg0NA=="
-  data-category="Comments"
-  data-category-id="DIC_kwDOBNCGvM4COkjD"
-  data-mapping="pathname"
-  data-strict="1"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-theme="preferred_color_scheme"
-  data-lang="en"
-  data-loading="lazy"
-  crossorigin="anonymous"
-  defer>
-</script>
-</section>
-
-
-
-</div>
-  <footer class="small">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/rstudio/markdown/inst/resources/prism-xcode.css">
-<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
-<script src="//cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/copy-button.min.js" defer></script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@xiee/utils/css/copy-button.min.css">
-<script src="//cdn.jsdelivr.net/npm/@xiee/utils/js/fullwidth.min.js" defer></script>
-
-
-
-
-
-
-
-  
-  
-  <hr/>
-  
-  <p class="nav-bottom">
-    <span>© <a href="https://jennysong924.github.io">J Song</a> 2024</span>
-    <span class="menu-bottom">
-
-
-
-
-
-<a href="/tech/index.xml" type="application/rss+xml" title="RSS feed">Subscribe</a>
-
-<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="Attribution-NonCommercial-ShareAlike 4.0 International">License</a>
-<a href="/search/">Search</a>
-<a href="#">Back to top</a>
-
-</span>
-  </p>
-  
-  </footer>
-  </body>
-</html>
-
+<!doctype html><html lang=zh-CN data-theme=light><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width"><meta name=theme-color content="#222" media="(prefers-color-scheme: light)"><meta name=generator content="Hugo 0.123.0"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon_16x16_next.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon_32_32_next.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple_touch_icon_next.png><meta itemprop=name content="linux 命令学习"><meta itemprop=description content><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="//localhost:1313/imgs/hugo_next_avatar.png"><meta itemprop=keywords content><meta property="og:type" content="article"><meta property="og:title" content="linux 命令学习"><meta property="og:description" content><meta property="og:image" content="/imgs/hugo_next_avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="//localhost:1313/tech/2024-02-26-linux-command-learning/"><meta property="og:site_name" content="J Song's Blog"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="Package Build"><meta property="article:published_time" content="2024-02-26 00:00:00 +0000 UTC"><meta property="article:modified_time" content="2024-02-26 00:00:00 +0000 UTC"><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/font-awesome/6.1.2/css/all.min.css><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/animate.css/3.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://cdn.staticfile.org/viewerjs/1.11.0/viewer.min.css><link rel=stylesheet href=/css/main.css><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return void 0;const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),void 0):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script class=next-config data-name=page type=application/json>{"comments":false,"isHome":false,"isPage":true,"path":"2024-02-26-linux-command-learning","permalink":"//localhost:1313/tech/2024-02-26-linux-command-learning/","title":"linux 命令学习","waline":{"js":[{"alias":"waline","alias_name":"@waline/client","file":"dist/pageview.js","name":"pageview","version":"2.13.0"},{"alias":"waline","alias_name":"@waline/client","file":"dist/comment.js","name":"comment","version":"2.13.0"}]}}</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",e.async=!1,e.defer=!0,document.head.appendChild(e),e.onload=function(){NexT.utils.fmtBusuanzi()}})</script><title>linux 命令学习 - J Song's Blog</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage class=use-motion><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>J Song's Blog</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>随便写写的个人小站</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa- hvr-icon"></i>主页</a></li><li class="menu-item menu-item-posts"><a href=/post/ class=hvr-icon-pulse rel=section><i class="fa fa- hvr-icon"></i>随笔</a></li><li class="menu-item menu-item-tech"><a href=/tech/ class=hvr-icon-pulse rel=section><i class="fa fa- hvr-icon"></i>技术文章</a></li><li class="menu-item menu-item-reading"><a href=/reading/ class=hvr-icon-pulse rel=section><i class="fa fa- hvr-icon"></i>阅读</a></li><li class="menu-item menu-item-lists"><a href=/lists/ class=hvr-icon-pulse rel=section><i class="fa fa- hvr-icon"></i>书影音清单</a></li><li class="menu-item menu-item-"><a href=/about/ class=hvr-icon-pulse rel=section><i class="fa fa- hvr-icon"></i>关于我</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse"><i class="fa fa-search fa-fw hvr-icon"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container><input autocomplete=off autocapitalize=off maxlength=80 placeholder=搜索... spellcheck=false type=search class=search-input></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class=search-result-icon><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt="J Song" src=/imgs/img-lazy-loading.gif data-src=/imgs/hugo_next_avatar.png><p class=site-author-name itemprop=name>J Song</p><div class=site-description itemprop=description></div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>15</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>0</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>0</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://github.com/elkan1788 title="Github → https://github.com/elkan1788" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-github fa-fw hvr-icon"></i>
+Github</a></span></div><div class="cc-license animated" itemprop=license><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh class=cc-opacity rel=noopener target=_blank title=共享知识><img src=/imgs/img-lazy-loading.gif data-src=/imgs/cc/big/by_nc_sa.svg alt=共享知识></a></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate=2013-05-19T00:00:00+00:00></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=17240></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=43></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate=2024-04-28T00:00:00+00:00></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-gtranslate class=button title=多语言翻译><i class="fas fa-globe"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><a href=https://github.com/hugo-next rel="noopener external nofollow noreferrer" target=_blank title="Follow me on GitHub" class="exturl github-corner"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27L250 250V0z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentcolor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4l13.9-13.8C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8z" fill="currentcolor" class="octo-body"/></svg>
+</a><script type=text/javascript src=//sidecar.gitter.im/dist/sidecar.v1.js async></script><script type=text/javascript>((window.gitter={}).chat={}).options={room:"hugo-next/community"}</script><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=//localhost:1313/tech/2024-02-26-linux-command-learning/><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/hugo_next_avatar.png"><meta itemprop=name content="Package Build"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="J Song"><meta itemprop=description content></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="linux 命令学习"><meta itemprop=description content="新建xueke.txt的文件 vi xueke.txt touch xueke.txt 去重 uniq 文件的压缩和解压 tar -xf xueke.tar #tar格式解压 tar -cf xueke.tar *.fa #打包成tar格式 gunzip xueke.fa.gz #gz格式解压 gzip xueke.fa #压缩成gz"></span><header class=post-header><h1 class=post-title itemprop="name headline">linux 命令学习
+<a href=https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/tech/2024-02-26-linux-command-learning/index.md rel="noopener external nofollow noreferrer" target=_blank class="exturl post-edit-link" title=编辑><i class="fa fa-pen-nib"></i></a></h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="far fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2024-02-26 00:00:00 +0000 UTC" itemprop="dateCreated datePublished" datetime="2024-02-26 00:00:00 +0000 UTC">2024-02-26</time></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="far fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>1584</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="far fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>4分钟</span></span></div></div></header><div class=post-body itemprop=articleBody><p>新建xueke.txt的文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=display:flex><span>vi xueke.txt
+</span></span><span style=display:flex><span>touch xueke.txt
+</span></span></code></pre></div><p>去重 uniq</p><p>文件的压缩和解压</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=display:flex><span>tar -xf xueke.tar       <span style=color:#75715e>#tar格式解压</span>
+</span></span><span style=display:flex><span>tar -cf xueke.tar *.fa  <span style=color:#75715e>#打包成tar格式</span>
+</span></span><span style=display:flex><span>gunzip xueke.fa.gz      <span style=color:#75715e>#gz格式解压</span>
+</span></span><span style=display:flex><span>gzip xueke.fa           <span style=color:#75715e>#压缩成gz格式</span>
+</span></span></code></pre></div><p>任务管理</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=display:flex><span>top             <span style=color:#75715e># 显示进程信息</span>
+</span></span><span style=display:flex><span>top -c		<span style=color:#75715e># 显示完整命令</span>
+</span></span><span style=display:flex><span>top -b          <span style=color:#75715e># 以批处理模式显示程序信息</span>
+</span></span><span style=display:flex><span>htop		<span style=color:#75715e># 查看CPU，内存的使用情况</span>
+</span></span><span style=display:flex><span>kill <span style=color:#ae81ff>12345</span>      <span style=color:#75715e># 杀死进程</span>
+</span></span><span style=display:flex><span>kill -9 <span style=color:#ae81ff>123456</span>  <span style=color:#75715e># 彻底杀死进程</span>
+</span></span></code></pre></div><p>文件查找</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#将当前目录及其子目录下所有文件后缀为 .c 的文件列出来:</span>
+</span></span><span style=display:flex><span>find . -name <span style=color:#e6db74>&#34;*.c&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#搜索 etc 目录下所有以 sh 开头的文件</span>
+</span></span><span style=display:flex><span>locate /etc/sh
+</span></span><span style=display:flex><span><span style=color:#75715e>#忽略大小写搜索当前用户目录下所有以 r 开头的文件</span>
+</span></span><span style=display:flex><span>locate -i ~/r
+</span></span><span style=display:flex><span><span style=color:#75715e># fastp文件的绝对路径					</span>
+</span></span><span style=display:flex><span>which fastp
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例一：搜索Data目录下以点fna结尾的文件；</span>
+</span></span><span style=display:flex><span>find  ../Data -name *.fna
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例二：搜索系统中最近5分钟内编辑过的文件；</span>
+</span></span><span style=display:flex><span>find / -amin <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例三：查找大于100M的文件；</span>
+</span></span><span style=display:flex><span>find ./ -size 100M
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>案例四：按照文件类型搜索；
+</span></span><span style=display:flex><span>find  ./ -type 文件类型
+</span></span><span style=display:flex><span>c 的档案
+</span></span><span style=display:flex><span>d: 目录 
+</span></span><span style=display:flex><span>b: 区块装置档案 ，
+</span></span><span style=display:flex><span>p: 具名贮列
+</span></span><span style=display:flex><span>f: 一般档案
+</span></span><span style=display:flex><span>l: 符号连结
+</span></span><span style=display:flex><span>s: socket
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例五：搜索文件，直接处理；</span>
+</span></span><span style=display:flex><span>find ./temp/ -name *.fna -exec rm <span style=color:#e6db74>&#39;{}&#39;</span> <span style=color:#ae81ff>\;</span>
+</span></span></code></pre></div><p>grep</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#案例一：统计fasta文件中序列的条数；</span>
+</span></span><span style=display:flex><span>grep -c <span style=color:#e6db74>&#34;&gt;&#34;</span>  gene.ffn
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例二：输出满足条件的序列；</span>
+</span></span><span style=display:flex><span>grep -A  <span style=color:#e6db74>&#34;3 gi 29732 34486&#34;</span> lastz.axt
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例三：筛选出不满足条件的内容；</span>
+</span></span><span style=display:flex><span>ps -fx | grep -v <span style=color:#e6db74>&#34;S&#34;</span>
+</span></span></code></pre></div><p>sed</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#案例一：输出固定的行</span>
+</span></span><span style=display:flex><span>sed -n <span style=color:#e6db74>&#39;1307p&#39;</span>  seq.fna   <span style=color:#75715e>#输出文件第1307行；</span>
+</span></span><span style=display:flex><span>sed -n <span style=color:#e6db74>&#39;100,200&#39;</span> seq.fna  <span style=color:#75715e>#输出文件第100到200行；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例二：替换操作</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#e6db74>&#39;s/gi/GI/&#39;</span> seq.fna  <span style=color:#75715e>#将文件中gi全部替换为大写GI；</span>
+</span></span><span style=display:flex><span>sed -i <span style=color:#e6db74>&#39;s/gi/GI/g&#39;</span> seq.fna   <span style=color:#75715e>#在原文件上进行替换，并且进行全部替换；</span>
+</span></span><span style=display:flex><span>sed -i.bak <span style=color:#e6db74>&#39;s#GI#gi#&#39;</span> seq.fna  <span style=color:#75715e>#在原文件上进行替换，并进行备份；</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#e6db74>&#39;s/gi/GI/2；s/ref/REF/2&#39;</span> seq.fna   <span style=color:#75715e>#只将第二次出现的gi和ref进行替换；</span>
+</span></span><span style=display:flex><span>sed -f sed.list cds.list    <span style=color:#75715e>#根据文件中的模式进行替换，可同时进行多条件替换；</span>
+</span></span><span style=display:flex><span>sed -n <span style=color:#e6db74>&#39;s/gi/GI/p&#39;</span> seq.fna  <span style=color:#75715e>#打印发生替换的行；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例三：删除空白行；</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#e6db74>&#39;/^\s*$/d&#39;</span>  seq.fna  <span style=color:#75715e>#删除文件中的空白行；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例四：行寻址</span>
+</span></span><span style=display:flex><span>sed -n <span style=color:#e6db74>&#39;/ref/p&#39;</span> seq.fna   <span style=color:#75715e>#输出文件中包含ref关键字的行；</span>
+</span></span><span style=display:flex><span>sed  <span style=color:#e6db74>&#39;100,2000s/GI/gi/g&#39;</span> seq.fa  <span style=color:#75715e>#则只替换100行到2000行的内容；</span>
+</span></span><span style=display:flex><span>sed  <span style=color:#e6db74>&#39;100,2000！s/GI/gi/g&#39;</span> seq.fa  <span style=color:#75715e>#加感叹号取反，在这个范围之外的执行操作；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例五：删除操作</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#e6db74>&#39;/&gt;/d&#39;</span> seq.fna <span style=color:#75715e>#删除包含ref的行；</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#e6db74>&#39;s/:.*//g&#39;</span> seq.fna   <span style=color:#75715e>#删除冒号之后的所有内容；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例六：对应替换，类似于tr的功能</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#e6db74>&#39;y/ATCG/atcg/&#39;</span> seq.fna  <span style=color:#75715e>#修改大小写</span>
+</span></span><span style=display:flex><span>sed -e <span style=color:#e6db74>&#39;/&gt;/!y/ATCG/atcg/&#39;</span> seq.fna  <span style=color:#75715e>#DNA序列反向互补配对，并修改大小写</span>
+</span></span></code></pre></div><p>awk</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#案例1：输出一个列表任意行；</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;{print $1}&#39;</span> blast_m8.out  <span style=color:#75715e>#输出blast m8 格式结果的第一行；</span>
+</span></span><span style=display:flex><span>awk -F <span style=color:#e6db74>&#34;:&#34;</span> <span style=color:#e6db74>&#39;{print $1,$NF}&#39;</span> passwd.list   <span style=color:#75715e>#通过-F修改默认分隔符为冒号，输出第一行与最后一行；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例2：格式转换</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;{print&#34;@&#34; $1&#34;\n&#34;$10&#34;\n&#34;&#34;+\n&#34;$11&#34;&#34;}&#39;</span> all.sam  <span style=color:#75715e>#将短序列比对上的reads输出出来，生成fastq文件；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例3：过滤blast结果</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;{if ($3&gt;= &amp;&amp; $4&gt;=) print $0}&#39;</span>  blast_m8.out  <span style=color:#75715e>#过滤blast比对结果，将identity 大于80，并且比对长度大于100bp的结果输出；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例4：比较</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;$8&gt;$1&#39;</span> input.txt <span style=color:#75715e>#输出第8列大于第10列的行。</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例5：匹配输出</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;$0~ /wang/{print $0}&#39;</span> passwd.list   <span style=color:#75715e>#利用正则表达式，将秘密表中姓wang的账户都输出出来；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例6：格式化输出</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;BEGIN{print &#34;The Program Begin\n&#34;}{if ($3&gt;= &amp;&amp; $4&gt;=) print $0}END{print &#34; The Program End\n&#34;}&#39;</span> input.txt  <span style=color:#75715e>#利用BEGIN和END关键字生成报告；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例7：修改字段和记录分隔符</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;BEGIN{OFS=&#34;\t&#34;}{print $2,$4,$5}&#39;</span> input.txt   <span style=color:#75715e>#在BEGIN中设定字段分隔符和记录分隔符；</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例8：awk编程计算</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;{x+=$3}END{print x/NR}&#39;</span> input.txt   <span style=color:#75715e>#计算第三列的平均值，最后在END将其输出出来。</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例9：awk编程比较大小</span>
+</span></span><span style=display:flex><span>awk   <span style=color:#e6db74>&#39;BEGIN { max= ;print &#34;max=&#34; max} {max=($1 &gt;max ?$1:max); print $1,&#34;Now max is &#34;max}&#39;</span> input.txt  <span style=color:#75715e>#取得文件最后一个域的最大值。 </span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例10：awk编程求和</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;{print $0,$3+$4}&#39;</span> input.txt  <span style=color:#75715e>#计算第3列和第4列的和。</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例11：输出固定行内容</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;NR&gt;=&amp;&amp;NR&lt;=&#39;</span> input.txt  <span style=color:#75715e>#输出第20到第80行内容。</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例12：合并文件</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;BEGIN{while((getline&lt;&#34;file1&#34;)&gt;)l[$1]=$0}$1 in l{print $0&#34;\t&#34;l[$1]}&#39;</span> file2  <span style=color:#75715e>#将两个文件按列合并起来，类似jion命令的功能。</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例13：去重复</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;!($0 in a) {a[$0];print}&#39;</span> input.txt  <span style=color:#75715e># 打印不重复的行，类似uniq的功能;</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;!($2 in l){print;l[$2]=}&#39;</span> input.txt <span style=color:#75715e>#计算第二列内容非冗余的次数，类似于uniq的功能;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例14：统计字符</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;{for(i=;i!=NF;++i)c[$i]++}END{for (x in c) print x,c[x]}&#39;</span> input.txt 计算每个字符出现的次数，类似wc的功能。
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例15：替换</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;{sub(/test/, &#34;no&#34;, $0);print}&#39;</span> input.txt 进行替换，类似sed的功能，
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#案例16：fastq转换为fasta</span>
+</span></span><span style=display:flex><span>awk <span style=color:#e6db74>&#39;{getline seq;getline plus;getline qual;sub(&#34;@&#34;,&#34;&gt;&#34;,$0);print $0 &#34;\n&#34;seq}&#39;</span>  test.fastq；
+</span></span></code></pre></div></div><footer class=post-footer><div class=addthis_inline_share_toolbox style=text-align:center></div><hr><div class=post-copyright><img src=/imgs/cc/cc.svg width=75 height=75 align=right alt=共享知识><ul><li class=post-copyright-title><strong>文章标题：</strong>
+linux 命令学习</li><li class=post-copyright-author><strong>原文作者： </strong>Package Build</li><li class=post-copyright-link><strong>本文链接：</strong>
+<a id=post-cr-link href=//localhost:1313/tech/2024-02-26-linux-command-learning/ title="linux 命令学习">//localhost:1313/tech/2024-02-26-linux-command-learning/</a></li><li class=post-copyright-license><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <i class="fab fa-fw fa-creative-commons"></i><a target=_blank href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/tech/2024-04-15-cfa-level-ii-quantitative-methods/ rel=next title="CFA Level II - Quantitative methods"><i class="fa fa-chevron-left"></i> CFA Level II - Quantitative methods</a></div><div class="post-nav-prev post-nav-item"><a href=/tech/2024-02-22-blog-buiding/ rel=prev title=搭建自己的博客>搭建自己的博客
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class=footer><div class=footer-inner><div id=gtranslate class=google-translate><i class="fa fa-language"></i><div id=google_translate_element></div></div><div class=copyright>&copy;
+<span itemprop=copyrightYear>2024
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>J Song</span></div></div></footer><script type=text/javascript src=https://cdn.staticfile.org/animejs/3.2.1/anime.min.js defer></script><script type=text/javascript src=https://cdn.staticfile.org/viewerjs/1.11.0/viewer.min.js defer></script><script class=next-config data-name=main type=application/json>{"bookmark":{"color":"#222","enable":true,"save":"manual"},"copybtn":true,"darkmode":false,"giscus":{"cfg":{"category":"Comments","categoryid":null,"emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"username/repo-name","repoid":null,"theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"//localhost:1313/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"lang":"zh-CN","lazyload":false,"localSearch":{"enable":true,"limit":1e3,"path":"/searchindexes.xml","preload":false,"topnperarticle":-1,"trigger":"auto","unescape":false},"motion":{"async":true,"enable":true,"transition":{"collheader":"fadeInLeft","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"fadeInUp"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":false,"plugin":"busuanzi"}},"root":"/","scheme":"Gemini","sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"qiniu","router":"https://cdn.staticfile.org"},"version":"4.5.3","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":null,"sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"waline","file":"dist/waline.css","name":"@waline/client","version":"2.13.0"},"js":{"alias":"waline","file":"dist/waline.js","name":"@waline/client","version":"2.13.0"}}}</script><script type=text/javascript src=/js/main.js defer></script></body></html>
