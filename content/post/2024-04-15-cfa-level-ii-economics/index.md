@@ -29,7 +29,7 @@ math: mathjax
         - 考虑买卖价差：
         
         $$
-        \frac{A}{B}_{bid} = \frac{A}{C}_{bid} \frac{C}{B}_{bid}
+        \frac{A}{B}_{\text{bid}} = \frac{A}{C}_{bid} \frac{C}{B}_{bid}
         $$
                 
         $$
@@ -271,7 +271,7 @@ math: mathjax
         - 较高的潜在经济增长率有利于提高固定收益产品的整体信用质量
         - 一个主权国家的信用质量和其潜在的经济增长正相关。信用评级机构常根据潜在的经济增长率来评估主权风险 sovereign risk
 3. Cobb-Douglas Production function 柯布-道格拉斯生产函数
-    - 定义：$Y = AK^\alpha L^{(1-\alpha)}$
+    - 定义：$$Y = AK^\alpha L^{(1-\alpha)}$$
         - A：全要素生产率 total factor productivity, TFP，代表经济的整体劳动生产率或科技水平
         - K：实物资本水平 capital
         - L：劳动力水平 labor
