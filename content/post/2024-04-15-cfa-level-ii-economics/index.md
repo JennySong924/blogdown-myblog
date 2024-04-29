@@ -63,56 +63,56 @@ $$
         V_t = \frac{\text{contract size} \times (F_t - F_0)}{1+r_{\text{price currency}}\times \frac{days}{360}}
         $$
         
-        - 如果是空头，则用 `$F_0 - F_t$`
+        - 如果是空头，则用 $F_0 - F_t$
         - 步骤
             1. 建立一个远期合约的反向合约
             2. 确定反向合约的远期汇率 $F_t$：如果反向合约是买入基础货币，使用卖价；如果反向合约是卖出基础货币，使用买价
-            3. 计算结算日的净现金流 Net cash flows = Contract size `$\times (F_t - F_0)$`
+            3. 计算结算日的净现金流 Net cash flows = Contract size $\times (F_t - F_0)$
             4. 计算结算日净现金流的现值
 4. 国际平价关系 The International Parity Relationship
     - 利率平价 Interest rate parity, IRP
         - covered interest rate parity 抛补利率
             - 投资者投资本国货币市场工具的回报率应当与投资汇率风险被完全对冲的外国货币市场工具的回报率相同
             
-            `$$
+            $$
             \frac{F_{X/Y}}{S_{X/Y}} = \frac{1+r_X\times \frac{days}{360}}{1+r_Y \times \frac{days}{360}}
-            $$`
+            $$
             
             - 无套利远期汇率定价
-            - 远期升水或贴水的判断及计算：Forward premium (discount)  `$\approx S_{X/Y}\frac{days}{360} (r_x - r_y)$`，名义收益率较高的货币在远期将面临贬值的压力
-            - 套利利润的计算：若 `$\frac{F_{X/Y}}{S_{X/Y}}(1+r_Y) > 1+r_X$`，利润（以X货币计）= `$\frac{F_{X/Y}}{S_{X/Y}}(1+r_Y) - (1+r_X)$`
+            - 远期升水或贴水的判断及计算：Forward premium (discount)  $\approx S_{X/Y}\frac{days}{360} (r_x - r_y)$，名义收益率较高的货币在远期将面临贬值的压力
+            - 套利利润的计算：若 $\frac{F_{X/Y}}{S_{X/Y}}(1+r_Y) > 1+r_X$，利润（以X货币计）= $\frac{F_{X/Y}}{S_{X/Y}}(1+r_Y) - (1+r_X)$
         - uncovered interest rate parity 非抛补利率
             - 无法使用远期合约时，不存在套利机制，仍然面临汇率风险
             - 前提：投资者是风险中性的 risk-neutral
-            - 将抛补利率中的远期汇率替换为对 t 时刻即期汇率的预测值（未来预期汇率） `$S_{X/Y}^e$`
+            - 将抛补利率中的远期汇率替换为对 t 时刻即期汇率的预测值（未来预期汇率） $S_{X/Y}^e$
             - 短期和中期一般不成立，长期才可能成立
         - forward rate parity 远期汇率平价
             - 若抛补利率平价和非抛补利率平价同时成立，则远期汇率是未来预期汇率的无偏估计量
     - 购买力平价 Purchasing power parity, PPP
         - 绝对购买力平价 Absolute PPP
             - 一价定律： 当允许自由贸易且交易费用为 0 时，同样的商品无论在何地销售，用同一货币所表示的商品价格都相同
-            - 定义：描述了汇率与两国物价水平的关系  `$S_{X/Y} = \frac{P_X}{P_Y}$`
+            - 定义：描述了汇率与两国物价水平的关系  $S_{X/Y} = \frac{P_X}{P_Y}$
             - 绝对购买力平价通常是不成立的
         - 相对购买力平价 Relative PPP
             - 定义：描述了汇率与两国相对物价水平（通货膨胀率）之间的关系
-            - 事后相对购买力平价 ex-post PPP：`$\frac{S_t}{S_0} = (\frac{1+\pi_X}{1+\pi_Y})^t$`
+            - 事后相对购买力平价 ex-post PPP：$\frac{S_t}{S_0} = (\frac{1+\pi_X}{1+\pi_Y})^t$
                 - 如果一国的通货膨胀率较高，则其货币在长期会贬值；反之，会升值
                 - 短期不成立，长期才有可能成立
-            - 事前相对购买力平价 ex-ante PPP： `$\frac{S_t^e}{S_0} = (\frac{1+\pi^e_X}{1+\pi^e_Y})^t$`
+            - 事前相对购买力平价 ex-ante PPP： $\frac{S_t^e}{S_0} = (\frac{1+\pi^e_X}{1+\pi^e_Y})^t$
             - 如果相对购买力评价在任何时候都成立，实际汇率稳定不变，则将其称为均衡的实际汇率
     - 国际费雪效应 International Fisher relation
-        - 实际利率与费雪效应 `$1+R = (1+r)(1+\pi^e)$` 或简化为  `$R= r+\pi^e$`
+        - 实际利率与费雪效应 $1+R = (1+r)(1+\pi^e)$ 或简化为  $R= r+\pi^e$
         - 实际利率平价 real interest rate parity：不同国家或市场的实际利率会趋同
-        - 国际费雪效应 International Fisher Effect：`$R_X - R_Y = \pi_X^e - \pi_Y^e$`
+        - 国际费雪效应 International Fisher Effect：$R_X - R_Y = \pi_X^e - \pi_Y^e$
             - 国际费雪效应成立的前提是实际利率平价成立
             - 实际利率平价成立的前提是非抛补利率平价和事前PPP同时成立
             - 国际费雪关系在短期到中期不成立，只有在长期才可能成立
 5. 外汇利差交易 FX Carry Trade
     - 如果非抛补利率平价不成立，则投资者尅通过利差交易 carry trade 获利
-    - 投资收益：如果  `$r_X > r_Y$`，利差交易为在Y国借钱，在X国投资一年，则该笔单位交易的所有利润 all-in-profit = `$\frac{S_0}{S_1}\times(1+r_X)-(1+r_Y)$`
+    - 投资收益：如果  $r_X > r_Y$，利差交易为在Y国借钱，在X国投资一年，则该笔单位交易的所有利润 all-in-profit = $\frac{S_0}{S_1}\times(1+r_X)-(1+r_Y)$
         - 套利计算使用的是远期汇率，利差交易使用的是即期汇率
-    - 近似计算：利润  `$\approx r_X-r_Y-\%\Delta S_{X/Y}$`
-        - 如果X贬值，Y升值，则 `$\%\Delta S_{X/Y}$` > 0, 收益率下降；反之收益率上升
+    - 近似计算：利润  $\approx r_X-r_Y-\%\Delta S_{X/Y}$
+        - 如果X贬值，Y升值，则 $\%\Delta S_{X/Y}$ > 0, 收益率下降；反之收益率上升
     - 风险管理
         - 汇率风险：利差交易并非套利交易，投资者在交易过程中承担汇率风险
         - 崩盘风险 crash risk：利差交易的收益分布左偏且尖峰肥尾
@@ -140,12 +140,12 @@ $$
             - 债务状况影响投资者信任，撤资造成资本流出，本币贬值
     - 资本账户对汇率的影响机制
         - 实际利率之差 real exchange rate differentials
-            - `$\text{real exchange rate}_{X/Y} = \text{equilibrium real exchange rate} + (r_Y - r_X) - (\text{risk premium}_Y - \text{risk premium}_X)$`
+            - $\text{real exchange rate}_{X/Y} = \text{equilibrium real exchange rate} + (r_Y - r_X) - (\text{risk premium}_Y - \text{risk premium}_X)$
             - 实际汇率在短期围绕其长期均衡水平上下波动
             - 实际利率与汇率之间正相关，实际利率高的国家，货币需求增加，本币升值
             - 风险补偿与汇率之间负相关，风险溢价高的国家，风险水平较高，本币面临贬值
         - 名义利率之差 nominal interest rate differentials
-            - `$\text{real exchange rate}_{X/Y} = \text{equilibrium real exchange rate} + (R_Y - R_X) - (\pi_Y^e - \pi_X^e) - (\text{risk premium}_Y - \text{risk premium}_X)$`
+            - $\text{real exchange rate}_{X/Y} = \text{equilibrium real exchange rate} + (R_Y - R_X) - (\pi_Y^e - \pi_X^e) - (\text{risk premium}_Y - \text{risk premium}_X)$
             - 实际汇率由四个因素决定：均衡的实际汇率，名义利率之差，预期通货膨胀率之差，风险溢价之差
             - 若一国采取紧缩的货币政策，该国的汇率肯能较高
         - 权益市场和汇率的关系
@@ -244,19 +244,19 @@ $$
     （1）与股票市场的关系
     
     - 潜在GDP：一个国家的资源得到充分利用且劳动力充分就业情况下的产出水平
-    - Grinold-Kroner 模型 (GK model)：`$E(R_e) = dy + \Delta (P/E) + i + g - \Delta S$`
-        - `$E(R_e)$`：权益市场的收益率
-        - `$dy$`：dividend yield
-        - `$\Delta (P/E)$`：expected repricing
-        - `$i$`：inflation rate
-        - `$g$`：real economic growth
-        - `$\Delta S$`：change in shares outstanding
+    - Grinold-Kroner 模型 (GK model)：$E(R_e) = dy + \Delta (P/E) + i + g - \Delta S$
+        - $E(R_e)$：权益市场的收益率
+        - $dy$：dividend yield
+        - $\Delta (P/E)$：expected repricing
+        - $i$：inflation rate
+        - $g$：real economic growth
+        - $\Delta S$：change in shares outstanding
     - 当市场上流通的股票数量不变时，实际经济增长可以转化为更高的股权回报
-    - 稀释效应  `$\Delta S$` 包含两方面：
+    - 稀释效应  $\Delta S$ 包含两方面：
         
-        （1）回购与发行。净回购 net buybacks (nbb)>0，则 `$- \Delta S >0$`，`$E(R_e)$` 上升
+        （1）回购与发行。净回购 net buybacks (nbb)>0，则 $- \Delta S >0$，$E(R_e)$ 上升
         
-        （2）经济增长的一部分来自中小型非上市公司，此效应成为经济的相对活力效应 relative dynamism of the economy, rd，这部分经济增长无法反映进股市，无法反映在上市公司的股权收益里，即  `$E(R_e)$` 上。这种效应越大，则经济的增长与股权收益之间的偏离就越大。
+        （2）经济增长的一部分来自中小型非上市公司，此效应成为经济的相对活力效应 relative dynamism of the economy, rd，这部分经济增长无法反映进股市，无法反映在上市公司的股权收益里，即  $E(R_e)$ 上。这种效应越大，则经济的增长与股权收益之间的偏离就越大。
         
     
     （2）经济增长与固定收益市场的关系
@@ -271,32 +271,32 @@ $$
         - 较高的潜在经济增长率有利于提高固定收益产品的整体信用质量
         - 一个主权国家的信用质量和其潜在的经济增长正相关。信用评级机构常根据潜在的经济增长率来评估主权风险 sovereign risk
 3. Cobb-Douglas Production function 柯布-道格拉斯生产函数
-    - 定义：`$Y = AK^\alpha L^{(1-\alpha)}$`
+    - 定义：$Y = AK^\alpha L^{(1-\alpha)}$
         - A：全要素生产率 total factor productivity, TFP，代表经济的整体劳动生产率或科技水平
         - K：实物资本水平 capital
         - L：劳动力水平 labor
-        - `$\alpha$`：资本产出弹性，或资本要素占收入的比例，`$0 \leq \alpha \leq 1$`
-        - `$1-\alpha$`：劳动产出弹性，或劳动要素占收入的比例
+        - $\alpha$：资本产出弹性，或资本要素占收入的比例，$0 \leq \alpha \leq 1$
+        - $1-\alpha$：劳动产出弹性，或劳动要素占收入的比例
     - 性质
         - 规模报酬不变：假设全要素生产率不变，生产过程中的所有投入若增加了相同的百分比，则产出水平也会变化相同的百分比
-        - 边际生产率递减：对单个生产要素而言，额外一单位的投入所带来的产出递减。递减速度取决于要素的产出弹性。对资本而言，`$\alpha$` 越小，递减越明显。
+        - 边际生产率递减：对单个生产要素而言，额外一单位的投入所带来的产出递减。递减速度取决于要素的产出弹性。对资本而言，$\alpha$ 越小，递减越明显。
     - 应用
-        - 劳动生产率的影响因素 `$\% \Delta y = \% \Delta A + \alpha \% \Delta k$`
+        - 劳动生产率的影响因素 $\% \Delta y = \% \Delta A + \alpha \% \Delta k$
             - 资本深化 capital deepening，即人均资本 k 的增加。发展中国家人均资本水平比较低，此时，人均资本的增加对人均产出的促进作用比较明显
             - 技术进步 technological progress，即全要素生产率 A 的提升。发达国家人均资本水平比较高，想要进一步提高人均产出，只能通过技术进步实现。
         - 增长率的核算
             - 索罗增长核算方程 Solow growth accounting equation
             
-            `$$
+            $$
             \% \Delta Y = \% \Delta A+\alpha \% \Delta K + (1-\alpha)\%\Delta L
-            $$`
+            $$
             
             - 劳动生产率增长核算方程 Labor productivity growth accounting equation
             （此模型无法区分资本深化和技术进步各自对经济增长的具体影响）
             
-            `$$
+            $$
             \%\Delta Y = \% \Delta y + \% \Delta L
-            $$`
+            $$
             
     - 扩展：经济增长的其他影响因素
         
@@ -333,7 +333,7 @@ $$
     | 核心 | 有限资源下的人口爆炸 | Cobb-Douglas生产函数 | 研发(R&D)的外溢性 spillover effects |
     | 科技进步 | 外生变量 | 外生变量 | 内生变量 |
     | 主要观点 | 人均经济的增长是暂时的，有限资源下的人口爆炸会终止经济的增长 | 资本和劳动力投入都边际效益递减，长期的人均收入增长只取决于技术进步 | 研发所带来的正外部性 positive externalities 使资本不再边际收益递减；通过高储蓄和投资来自我维持持续性的较高增长 |
-    | 长期状态 | 即使科技进步，经济保持稳定，人均产出和生活条件不会发生改变 | 经济趋于稳定的状态<br>- 稳态前提假设：单位资本的产出 Y/K 恒定，人均资本和人均产出的增长率相同<br> - 人均产出的稳态增长率： `$g^* = \frac{\theta}{1-\alpha} \text{ i.e. }\%\Delta y =\frac{\%\Delta A}{1-\alpha}$`<br>- 总产出的稳态增长率： `$G^* = \frac{\theta}{1-\alpha}+\%\Delta L$` | 不存在稳态；只要增加研发的投入，就会带来经济的增长 |
+    | 长期状态 | 即使科技进步，经济保持稳定，人均产出和生活条件不会发生改变 | 经济趋于稳定的状态<br>- 稳态前提假设：单位资本的产出 Y/K 恒定，人均资本和人均产出的增长率相同<br> - 人均产出的稳态增长率： $g^* = \frac{\theta}{1-\alpha} \text{ i.e. }\%\Delta y =\frac{\%\Delta A}{1-\alpha}$<br>- 总产出的稳态增长率： $G^* = \frac{\theta}{1-\alpha}+\%\Delta L$ | 不存在稳态；只要增加研发的投入，就会带来经济的增长 |
     | 相关结论 |  | - 短期，资本的积累(K的增加）会促进总产出增加，但是并不会影响长期的经济增长率<br>    - 人均资本的增加对经济的促进作用是短暂的。长期想要持续增长，必须依靠科技进步或全要素生产率的提高。但是科技进步属于外部冲击，不可控<br>    - 趋同：发达国家和发展中国家的人均收入水平逐渐趋同<br>    - 储蓄在初期可以暂时提高经济增长率，长期仍要靠科技进步 | - 持续的经济增长：经济通过高储蓄和投资来自我维持持续性的 permanently 较高增长<br>    - 收入水平的差异化：发达国家经济发展速度持续领先于发展中国家<br>    - 内生的技术进步：技术进步可认为控制 |
 5. 趋同理论 Convergence
     - 含义：拥有较高经济增速的低人均收入水平国家最终会与高人均收入水平国家的收入水平相同
