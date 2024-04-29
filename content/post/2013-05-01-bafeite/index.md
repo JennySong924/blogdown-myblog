@@ -5,7 +5,7 @@ date: '2013-05-01'
 slug: []
 categories: 
   - 读书笔记
-    - 经济
+  - 经济
 tags: 
   - 经济
 ---
