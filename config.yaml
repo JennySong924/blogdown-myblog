@@ -500,7 +500,7 @@ params:
   # 文章底部的设置
   # Post footer settings
   postFooter:
-    enable: false
+    endLine: false
     # 通过线条将文章和捐赠等信息隔开，并在线条上添加提示信息
     # Use line to separate post and reward etc other information
     # and add tip title on line.
@@ -797,7 +797,7 @@ params:
   comments:
     # 开启评论组件
     # If true, will show comment component in post end.
-    enable: true
+    enable: false
     # 设置默认使用的评论插件
     # 可选值：livere | waline | utterances | artalk | giscus
     # Choose a comment system to be displayed by default.
