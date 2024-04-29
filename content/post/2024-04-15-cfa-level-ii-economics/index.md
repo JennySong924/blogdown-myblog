@@ -29,7 +29,7 @@ math: mathjax
         - 考虑买卖价差：
         
 $$
-(\frac{A}{B})_{bid} =(\frac{A}{C})_{bid}(\frac{C}{B})_{bid}
+\frac{A}{B}_{bid} = \frac{A}{C}_{bid} \frac{C}{B}_{bid}
 $$
         
 $$
