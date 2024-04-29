@@ -29,19 +29,19 @@ math: mathjax
         - 考虑买卖价差：
         
         $$
-        ( \frac{A}{B} )_{bid} = (\frac{A}{C})\_{bid} (\frac{C}{B})\_{bid}
+        ( \frac{A}{B} )_{\text{bid}} = (\frac{A}{C})\_{\text{bid}} (\frac{C}{B})\_{\text{bid}}
         $$
                 
         $$
-        (\frac{A}{B})_{ask}=(\frac{A}{C})\_{ask}(\frac{C}{B})\_{ask}
+        (\frac{A}{B})_{\text{ask}}=(\frac{A}{C})\_{\text{ask}}(\frac{C}{B})\_{\text{ask}}
         $$
                 
         $$
-        (\frac{A}{B})_{bid} =1/(\frac{B}{A})\_{ask}
+        (\frac{A}{B})_{\text{bid}} =1/(\frac{B}{A})\_{\text{ask}}
         $$
                
         $$
-        (\frac{A}{B})_{ask} = 1/(\frac{B}{A})\_{bid}
+        (\frac{A}{B})_{\text{ask}} = 1/(\frac{B}{A})\_{\text{bid}}
         $$
             
     - 套利机会识别
