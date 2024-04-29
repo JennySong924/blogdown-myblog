@@ -91,19 +91,19 @@ math: mathjax
     - 购买力平价 Purchasing power parity, PPP
         - 绝对购买力平价 Absolute PPP
             - 一价定律： 当允许自由贸易且交易费用为 0 时，同样的商品无论在何地销售，用同一货币所表示的商品价格都相同
-            - 定义：描述了汇率与两国物价水平的关系  $S_{X/Y} = \frac{P_X}{P_Y}$
+            - 定义：描述了汇率与两国物价水平的关系  $$S_{X/Y} = \frac{P_X}{P_Y}$$
             - 绝对购买力平价通常是不成立的
         - 相对购买力平价 Relative PPP
             - 定义：描述了汇率与两国相对物价水平（通货膨胀率）之间的关系
             - 事后相对购买力平价 ex-post PPP：$\frac{S_t}{S_0} = (\frac{1+\pi_X}{1+\pi_Y})^t$
                 - 如果一国的通货膨胀率较高，则其货币在长期会贬值；反之，会升值
                 - 短期不成立，长期才有可能成立
-            - 事前相对购买力平价 ex-ante PPP： $\frac{S_t^e}{S_0} = (\frac{1+\pi^e_X}{1+\pi^e_Y})^t$
+            - 事前相对购买力平价 ex-ante PPP： $$\frac{S_t^e}{S_0} = (\frac{1+\pi^e_X}{1+\pi^e_Y})^t$$
             - 如果相对购买力评价在任何时候都成立，实际汇率稳定不变，则将其称为均衡的实际汇率
     - 国际费雪效应 International Fisher relation
         - 实际利率与费雪效应 $1+R = (1+r)(1+\pi^e)$ 或简化为  $R= r+\pi^e$
         - 实际利率平价 real interest rate parity：不同国家或市场的实际利率会趋同
-        - 国际费雪效应 International Fisher Effect：$R_X - R_Y = \pi_X^e - \pi_Y^e$
+        - 国际费雪效应 International Fisher Effect：$$R_X - R_Y = \pi_X^e - \pi_Y^e$$
             - 国际费雪效应成立的前提是实际利率平价成立
             - 实际利率平价成立的前提是非抛补利率平价和事前PPP同时成立
             - 国际费雪关系在短期到中期不成立，只有在长期才可能成立
@@ -111,7 +111,7 @@ math: mathjax
     - 如果非抛补利率平价不成立，则投资者尅通过利差交易 carry trade 获利
     - 投资收益：如果  $r_X > r_Y$，利差交易为在Y国借钱，在X国投资一年，则该笔单位交易的所有利润 all-in-profit = $\frac{S_0}{S_1}\times(1+r_X)-(1+r_Y)$
         - 套利计算使用的是远期汇率，利差交易使用的是即期汇率
-    - 近似计算：利润  $\approx r_X-r_Y-\%\Delta S_{X/Y}$
+    - 近似计算：利润  $\approx r_X-r_Y-\\%\Delta S_{X/Y}$
         - 如果X贬值，Y升值，则 $\%\Delta S_{X/Y}$ > 0, 收益率下降；反之收益率上升
     - 风险管理
         - 汇率风险：利差交易并非套利交易，投资者在交易过程中承担汇率风险
@@ -140,12 +140,14 @@ math: mathjax
             - 债务状况影响投资者信任，撤资造成资本流出，本币贬值
     - 资本账户对汇率的影响机制
         - 实际利率之差 real exchange rate differentials
-            - $\text{real exchange rate}_{X/Y} = \text{equilibrium real exchange rate} + (r_Y - r_X) - (\text{risk premium}_Y - \text{risk premium}_X)$
+            - $$\text{real exchange rate}_{X/Y} = \text{equilibrium real exchange rate} + $$
+            $$(r_Y - r_X) - (\text{risk premium}_Y - \text{risk premium}_X)$$
             - 实际汇率在短期围绕其长期均衡水平上下波动
             - 实际利率与汇率之间正相关，实际利率高的国家，货币需求增加，本币升值
             - 风险补偿与汇率之间负相关，风险溢价高的国家，风险水平较高，本币面临贬值
         - 名义利率之差 nominal interest rate differentials
-            - $\text{real exchange rate}_{X/Y} = \text{equilibrium real exchange rate} + (R_Y - R_X) - (\pi_Y^e - \pi_X^e) - (\text{risk premium}_Y - \text{risk premium}_X)$
+            - $$\text{real exchange rate}_{X/Y} = \text{equilibrium real exchange rate} + $$
+            $$(R_Y - R_X) - (\pi_Y^e - \pi_X^e) - (\text{risk premium}_Y - \text{risk premium}_X)$$
             - 实际汇率由四个因素决定：均衡的实际汇率，名义利率之差，预期通货膨胀率之差，风险溢价之差
             - 若一国采取紧缩的货币政策，该国的汇率肯能较高
         - 权益市场和汇率的关系
