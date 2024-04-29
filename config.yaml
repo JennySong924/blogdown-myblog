@@ -482,8 +482,8 @@ params:
       enable: true
       anotherDay: true
     categories: true
-    wordCount: true
-    readTime: true
+    wordCount: false
+    readTime: false
     # 是否开启评论数显示
     comments: 
       enable: true
