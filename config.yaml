@@ -641,7 +641,7 @@ params:
   githubBanner:
     # 是否开启显示
     # If true, will display banner.
-    enable: true
+    enable: false
     # 你的 Github 仓库地址
     # Your repository url on Github.
     permalink: https://github.com/hugo-next
