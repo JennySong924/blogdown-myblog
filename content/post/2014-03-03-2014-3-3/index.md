@@ -2,6 +2,8 @@
 title: 2014-3-3
 author: J Song
 date: '2014-03-03'
+categories: 
+  - 日记
 ---
 嗯，现在是周一。
 

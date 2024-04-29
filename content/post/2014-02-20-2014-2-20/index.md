@@ -3,7 +3,8 @@ title: 2014-2-20
 author: J Song
 date: '2014-02-20'
 slug: []
-categories: []
+categories: 
+  - 日记
 tags: []
 ---
 欲把西湖比西子，淡妆浓抹总相宜

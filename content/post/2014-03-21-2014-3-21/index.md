@@ -3,7 +3,8 @@ title: 2014-3-21
 author: J Song
 date: '2014-03-21'
 slug: []
-categories: []
+categories: 
+  - 日记
 tags: []
 ---
 >又一个朋友被伤了心\
