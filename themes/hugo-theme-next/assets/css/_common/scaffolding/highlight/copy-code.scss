@@ -51,6 +51,7 @@
       background: #d6d1cc;
       border: 0.125em;
       border-color: #999;
+      box-shadow: 5px 5px 5px #ccc;
       font-size: $font-size-smaller;
       
     } @else if $codeblock_style == 'mac' {
