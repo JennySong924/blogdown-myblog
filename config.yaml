@@ -477,7 +477,7 @@ params:
   postMeta:
     # 是否开启各元素的文字显示 
     itemText: true
-    created: true
+    created: false
     updated:
       enable: true
       anotherDay: true
@@ -500,6 +500,7 @@ params:
   # 文章底部的设置
   # Post footer settings
   postFooter:
+    enable: false
     # 通过线条将文章和捐赠等信息隔开，并在线条上添加提示信息
     # Use line to separate post and reward etc other information
     # and add tip title on line.
