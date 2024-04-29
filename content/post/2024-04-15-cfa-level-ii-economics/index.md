@@ -288,7 +288,7 @@ math: mathjax
             - 索罗增长核算方程 Solow growth accounting equation
             
             $$
-            % \Delta Y = \% \Delta A+\alpha \% \Delta K + (1-\alpha)\%\Delta L
+            \\% \Delta Y = \% \Delta A+\alpha \% \Delta K + (1-\alpha)\%\Delta L
             $$
             
             - 劳动生产率增长核算方程 Labor productivity growth accounting equation
