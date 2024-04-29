@@ -27,7 +27,10 @@ math: mathjax
     - 交叉汇率 cross-rate
         - 不考虑买卖价差：`$\frac{A}{B} = \frac{A}{C} \times \frac{C}{B}$`
         - 考虑买卖价差：
-        $$(\frac{A}{B})_{bid} =(\frac{A}{C})_{bid}(\frac{C}{B})_{bid}$$
+        $$
+        (\frac{A}{B})_{bid} =(\frac{A}{C})_{bid}(\frac{C}{B})_{bid}
+        $$
+        
         $$(\frac{A}{B})_{ask}=(\frac{A}{C})_{ask}(\frac{C}{B})_{ask}$$
        $$(\frac{A}{B})_{bid} =1/(\frac{B}{A})_{ask}$$
         $$(\frac{A}{B})_{ask} = 1/(\frac{B}{A})_{bid}$$
