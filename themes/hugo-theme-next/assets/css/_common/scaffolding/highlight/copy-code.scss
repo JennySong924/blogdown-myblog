@@ -47,8 +47,10 @@
     background: var(--highlight-background);
 
     @if $codeblock_style == 'flat' {
-      background: white;
-      border: 0;
+      // background: white;
+      background: #d6d1cc;
+      border: 0.125em;
+      border-color: #999;
       font-size: $font-size-smaller;
       
     } @else if $codeblock_style == 'mac' {
