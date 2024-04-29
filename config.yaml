@@ -126,7 +126,7 @@ menus:
   main:
     - identifier: home
       name: 主页
-      url: /
+      url: _index
       pre: home
       weight: 2
     - identifier: archives
@@ -149,7 +149,7 @@ menus:
       pre: movie
       weight: 6
     - name: 关于我
-      url: /about/
+      url: about
       pre: user
       weight: 8
 
