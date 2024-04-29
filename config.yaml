@@ -137,6 +137,7 @@ menus:
     - identifier: thoughts
       name: 随笔
       pageref: thoughts
+      pre: pen
       weight: 4
     - identifier: book-list
       name: 书单
@@ -146,7 +147,7 @@ menus:
     - identifier: movie-list
       name: 片单
       url: movie-list
-      pre: movie
+      pre: film
       weight: 6
     - name: 关于我
       url: about
