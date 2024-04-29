@@ -8,7 +8,7 @@ categories:
   - 经济
 tags: 
   - CFA 
-math: mathjax
+math: katex
 ---
 
 ### Learning Module 1: Currency exchange rates: understanding equilibrium value
