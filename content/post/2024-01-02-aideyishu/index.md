@@ -3,7 +3,9 @@ title: 爱的艺术
 author: J Song
 date: '2024-01-02'
 slug: []
-categories: []
+categories: 
+  - 读书笔记
+  - 心理
 tags: []
 ---
 强烈推荐《爱的艺术》。我看的是李连江的译本，比vx读书中译本要好很多。

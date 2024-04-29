@@ -3,7 +3,8 @@ title: 2014-5-25
 author: J Song
 date: '2014-05-25'
 slug: []
-categories: []
+categories: 
+  - 日记
 tags: []
 ---
 邮箱，写信，发信人，题目，加附件，发送

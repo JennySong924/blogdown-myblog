@@ -3,7 +3,9 @@ title: 搭建自己的博客
 author: J Song
 date: '2024-02-22'
 slug: []
-categories: []
+categories: 
+  - 技术文章
+  - 网络
 tags: []
 ---
 

@@ -3,7 +3,8 @@ title: 2016-4-1
 author: J Song
 date: '2016-04-01'
 slug: []
-categories: []
+categories: 
+  - 日记
 tags: []
 ---
 节日快乐~
