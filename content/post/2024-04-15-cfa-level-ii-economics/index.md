@@ -281,21 +281,21 @@ math: mathjax
         - 规模报酬不变：假设全要素生产率不变，生产过程中的所有投入若增加了相同的百分比，则产出水平也会变化相同的百分比
         - 边际生产率递减：对单个生产要素而言，额外一单位的投入所带来的产出递减。递减速度取决于要素的产出弹性。对资本而言，$\alpha$ 越小，递减越明显。
     - 应用
-        - 劳动生产率的影响因素 $\% \Delta y = \% \Delta A + \alpha \% \Delta k$
+        - 劳动生产率的影响因素 $$\\% \Delta y = \\% \Delta A + \alpha \\% \Delta k$$
             - 资本深化 capital deepening，即人均资本 k 的增加。发展中国家人均资本水平比较低，此时，人均资本的增加对人均产出的促进作用比较明显
             - 技术进步 technological progress，即全要素生产率 A 的提升。发达国家人均资本水平比较高，想要进一步提高人均产出，只能通过技术进步实现。
         - 增长率的核算
             - 索罗增长核算方程 Solow growth accounting equation
             
             $$
-            \\% \Delta Y = \% \Delta A+\alpha \% \Delta K + (1-\alpha)\%\Delta L
+            \\% \Delta Y = \\% \Delta A+\alpha \\% \Delta K + (1-\alpha)\\%\Delta L
             $$
             
             - 劳动生产率增长核算方程 Labor productivity growth accounting equation
             （此模型无法区分资本深化和技术进步各自对经济增长的具体影响）
             
             $$
-            \% \Delta Y = \% \Delta y + \% \Delta L
+            \\% \Delta Y = \\% \Delta y + \\% \Delta L
             $$
             
     - 扩展：经济增长的其他影响因素
