@@ -127,6 +127,7 @@ menus:
     - identifier: home
       name: 主页
       url: /
+      pre: home
       weight: 2
     - identifier: archives
       name: 文章
@@ -139,14 +140,17 @@ menus:
       weight: 4
     - identifier: book-list
       name: 书单
+      pre: book
       url: book-list
       weight: 5
     - identifier: movie-list
       name: 片单
       url: movie-list
+      pre: movie
       weight: 6
     - name: 关于我
       url: /about/
+      pre: user
       weight: 8
 
 
@@ -217,10 +221,10 @@ params:
     size: big
     # 侧边栏显示
     # Show in sidebar
-    sidebar: true
+    sidebar: false
     # 文章底部显示
     # Show in post footer
-    post: true
+    post: false
 
   # OG SEO 配置
   # Open graph settings
@@ -286,7 +290,7 @@ params:
   avatar:
     # 设置显示头像的相对路径
     # Replace the default image and set the url here.
-    url: /imgs/hugo_next_avatar.png
+    url: /imgs/IMG_7868.JPG
     # 开启头像的圆形显示效果
     # If true, the avatar will be displayed in circle.
     rounded: true
@@ -314,8 +318,8 @@ params:
   # Key is the link label order.
   # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
   socials: 
-    social0: Github || https://github.com/elkan1788 || fab fa-github
-    #social1: E-Mail || mailto:yourname@gmail.com || fa fa-envelope
+    social0: Github || https://github.com/JennySong924/ || fab fa-github
+    social1: E-Mail || mailto:jone_song@163.com || fa fa-envelope
     # social2: 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
     #Google: https://plus.google.com/yourname || fab fa-google
     #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -392,7 +396,7 @@ params:
     # 站点开始年份，默认为当下时间的年份
     # Specify the year when the site was setup. 
     # If not defined, current year will be used.
-    since: 2024
+    since: 2023
 
     # 年份和版权信息之间的图标
     # Icon between year and copyright info.
