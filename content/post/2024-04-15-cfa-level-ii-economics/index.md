@@ -28,13 +28,21 @@ math: mathjax
         - 不考虑买卖价差：$\frac{A}{B} = \frac{A}{C} \times \frac{C}{B}$
         - 考虑买卖价差：
         
-        $$
-        (\frac{A}{B})_{bid} =(\frac{A}{C})_{bid}(\frac{C}{B})_{bid}
-        $$
+$$
+(\frac{A}{B})_{bid} =(\frac{A}{C})_{bid}(\frac{C}{B})_{bid}
+$$
         
-        $$(\frac{A}{B})_{ask}=(\frac{A}{C})_{ask}(\frac{C}{B})_{ask}$$
-       $$(\frac{A}{B})_{bid} =1/(\frac{B}{A})_{ask}$$
-        $$(\frac{A}{B})_{ask} = 1/(\frac{B}{A})_{bid}$$
+$$
+(\frac{A}{B})_{ask}=(\frac{A}{C})_{ask}(\frac{C}{B})_{ask}
+$$
+        
+$$
+(\frac{A}{B})_{bid} =1/(\frac{B}{A})_{ask}
+$$
+       
+$$
+(\frac{A}{B})_{ask} = 1/(\frac{B}{A})_{bid}
+$$
             
     - 套利机会识别
         - 做市商 [bid, ask] 区间与银行间 [bid, ask] 区间不重叠，则有套利机会
