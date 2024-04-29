@@ -499,14 +499,14 @@ params:
 
   # 文章底部的设置
   # Post footer settings
-  # postFooter:
-  #   # 通过线条将文章和捐赠等信息隔开，并在线条上添加提示信息
-  #   # Use line to separate post and reward etc other information
-  #   # and add tip title on line.
-  #   endLineTip: "~ 我可是有底线的哟 ~"
-  #   # 是否使用小图标，默认使用 # 符号表示标签
-  #   # Use icon instead of the symbol # to indicate the tag
-  #   tagIcon: true
+  postFooter:
+    # 通过线条将文章和捐赠等信息隔开，并在线条上添加提示信息
+    # Use line to separate post and reward etc other information
+    # and add tip title on line.
+    endLineTip: "~ 我可是有底线的哟 ~"
+    # 是否使用小图标，默认使用 # 符号表示标签
+    # Use icon instead of the symbol # to indicate the tag
+    tagIcon: true
 
   # 捐赠信息设置
   # Donate (Sponsor) settings.
@@ -641,7 +641,7 @@ params:
   githubBanner:
     # 是否开启显示
     # If true, will display banner.
-    enable: false
+    enable: true
     # 你的 Github 仓库地址
     # Your repository url on Github.
     permalink: https://github.com/hugo-next
@@ -796,7 +796,7 @@ params:
   comments:
     # 开启评论组件
     # If true, will show comment component in post end.
-    enable: true  
+    enable: false   
     # 设置默认使用的评论插件
     # 可选值：livere | waline | utterances | artalk | giscus
     # Choose a comment system to be displayed by default.
