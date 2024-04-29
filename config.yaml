@@ -503,10 +503,10 @@ params:
     # 通过线条将文章和捐赠等信息隔开，并在线条上添加提示信息
     # Use line to separate post and reward etc other information
     # and add tip title on line.
-    endLineTip: "~ 我可是有底线的哟 ~"
+    # endLineTip: "~ 我可是有底线的哟 ~"
     # 是否使用小图标，默认使用 # 符号表示标签
     # Use icon instead of the symbol # to indicate the tag
-    tagIcon: false
+    tagIcon: true
 
   # 捐赠信息设置
   # Donate (Sponsor) settings.
@@ -644,7 +644,7 @@ params:
     enable: true
     # 你的 Github 仓库地址
     # Your repository url on Github.
-    permalink: https://github.com/hugo-next
+    permalink: https://github.com/JennySong924/blogdown-myblog
     # 关注说明
     # Show this title when cursor move on.
     title: Follow me on GitHub
