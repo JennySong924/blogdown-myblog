@@ -28,7 +28,7 @@ languageCode: zh-CN
 hasCJKLanguage: true
 # 每页显示文章数量
 # Display items per page
-paginate: 10
+paginate: 20
 # 开启支持表情符号
 # Enable Emoji support
 enableEmoji: true
@@ -128,24 +128,27 @@ menus:
       name: 主页
       url: /
       weight: 2
-    - identifier: posts
-      name: 随笔
-      url: /post/
+    - identifier: archives
+      name: 文章
+      pageref: /archives
+      pre: archive
       weight: 3
-    - identifier: tech
-      name: 技术文章
-      url: /Tech/
+    - identifier: thoughts
+      name: 随笔
+      pageref: thoughts
+      weight: 4
+    - identifier: book-list
+      name: 书单
+      url: book-list
       weight: 5
-    - identifier: reading
-      name: 阅读
-      url: /Reading/
+    - identifier: movie-list
+      name: 片单
+      url: movie-list
       weight: 6
-    - identifier: lists
-      name: 书影音清单
-      url: /lists/
-      weight: 7
     - name: 关于我
       url: /about/
+      weight: 8
+
 
 #-----------------------------------------
 # Hugo NexT 主题参数配置
