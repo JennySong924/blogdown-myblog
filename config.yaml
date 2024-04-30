@@ -320,7 +320,8 @@ params:
   socials: 
     social0: Github || https://github.com/JennySong924/ || fab fa-github
     social1: E-Mail || mailto:songj0924@gmail.com || fa fa-envelope
-    # social2: 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
+    social2: 豆瓣 || https://www.douban.com/people/193870143/?_i=44606619RFdp21 || fa fa-book
+    #social2: 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
     #Google: https://plus.google.com/yourname || fab fa-google
     #Twitter: https://twitter.com/yourname || fab fa-twitter
     #FB Page: https://www.facebook.com/yourname || fab fa-facebook
