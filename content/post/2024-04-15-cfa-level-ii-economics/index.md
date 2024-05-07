@@ -9,6 +9,7 @@ categories:
 tags: 
   - CFA 
 math: mathjax
+draft: true
 ---
 
 ### Learning Module 1: Currency exchange rates: understanding equilibrium value
