@@ -1,10 +1,11 @@
 ---
-title: '[摘]为什么很多名著大多人都看不下去，却仍被称为名著？'
+title: '[摘] 为什么很多名著大多人都看不下去，却仍被称为名著？'
 author: J Song
 date: '2024-05-15'
 slug: []
 categories:
-  - 日记
+  - 读书笔记
+  - 摘抄
 description: 2024-05-15-country
 keywords: 2024,05,15,country
 lastmod: '2024-05-15T18:08:07+08:00'
