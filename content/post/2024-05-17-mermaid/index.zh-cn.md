@@ -10,7 +10,7 @@ description: 2024-05-17-mermaid
 keywords: 2024,05,17,mermaid
 lastmod: '2024-05-17T14:24:21+08:00'
 
-mermaid:true
+mermaid: true
 ---
 
 原来流程图可以使用文字来画，学习了。收藏一下 [Hugo-next theme 作者提供的内容](https://hugo-next.eu.org)。

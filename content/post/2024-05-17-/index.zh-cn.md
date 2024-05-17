@@ -7,10 +7,9 @@ categories:
   - 技术文章
   - 网络
 tags: []
-_build:
-  render: never
-  list: never
-  publishResources: no
+description: 2024-05-17-
+keywords: 2024,05,17,
+lastmod: '2024-05-17T14:24:21+08:00'
 ---
 
 之前引用一些文章内容的时候用 quote，格式不太满意，自己暂时没找到自定义 quote 格式的方法（在 static 文件夹里面添加 css 文件之后没啥效果。。。不确定是自己写的 code 的问题还是不能用 css 文件来做）。然后在示例网站发现了作者提供的一种方法，收藏一下 [Hugo-next theme 作者提供的内容](https://hugo-next.eu.org/demo/shortcodes.html#more)。
