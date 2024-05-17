@@ -45,7 +45,7 @@ graph TD;
 {{</* /mermaid */>}}
 ```
 
-{{< mermaid align="left" >}}
+{{< mermaid align="left" bc="#eee">}}
 graph TD;
     A-->B;
     A-->C;
