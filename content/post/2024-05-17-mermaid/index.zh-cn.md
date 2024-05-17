@@ -36,7 +36,7 @@ mermaid: true
 ## 流程图
 
 ```shell
-{{</* mermaid align="left" */>}}
+{{</* mermaid align="left" bc="#eee"*/>}}
 graph TD;
     A-->B;
     A-->C;
@@ -88,7 +88,7 @@ sequenceDiagram
 ## 类图
 
 ```shell
-{{</* mermaid */>}}
+{{</* mermaid bc="#fff"*/>}}
 classDiagram
 Class01 <|-- AveryLongClass : Cool
 Class03 *-- Class04
@@ -105,7 +105,7 @@ Class01 : int gorilla
 Class08 <--> C2: Cool label
 {{</* /mermaid */>}}
 ```
-{{< mermaid >}}
+{{< mermaid bc="#fff">}}
 classDiagram
 Class01 <|-- AveryLongClass : Cool
 Class03 *-- Class04
@@ -125,7 +125,7 @@ Class08 <--> C2: Cool label
 ## 甘特图
 
 ```shell
-{{</* mermaid */>}}
+{{</* mermaid bc="#fff"*/>}}
 gantt
 dateFormat  YYYY-MM-DD
 title Adding GANTT diagram to mermaid
@@ -138,7 +138,7 @@ Future task               :         des3, after des2, 5d
 Future task2               :         des4, after des3, 5d
 {{</* /mermaid */>}}
 ```
-{{< mermaid >}}
+{{< mermaid bc="#fff">}}
 gantt
 dateFormat  YYYY-MM-DD
 title Adding GANTT diagram to mermaid
@@ -154,14 +154,14 @@ Future task2               :         des4, after des3, 5d
 ## 实体关系图
 
 ```shell
-{{</* mermaid */>}}
+{{</* mermaid bc="#fff"*/>}}
 erDiagram
     CUSTOMER ||--o{ ORDER : places
     ORDER ||--|{ LINE-ITEM : contains
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 {{</* /mermaid */>}}
 ```
-{{< mermaid >}}
+{{< mermaid bc="#fff">}}
 erDiagram
     CUSTOMER ||--o{ ORDER : places
     ORDER ||--|{ LINE-ITEM : contains
@@ -171,7 +171,7 @@ erDiagram
 ## 用户旅程
 
 ```shell
-{{</* mermaid */>}}
+{{</* mermaid bc="#fff"*/>}}
 journey
     title My working day
     section Go to work
@@ -183,7 +183,7 @@ journey
       Sit down: 5: Me
 {{</* /mermaid */>}}
 ```
-{{< mermaid >}}
+{{< mermaid bc="#fff">}}
 journey
     title My working day
     section Go to work
