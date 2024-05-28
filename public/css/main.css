@@ -669,7 +669,7 @@ pre, code {
 kbd {
   border: 2px solid #ccc;
   border-radius: .2em;
-  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.1);
+  box-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.4);
   font-family: inherit;
   padding: .1em .3em;
   white-space: nowrap;

@@ -7,7 +7,7 @@
 {{ end }}
 
 {{ range first 1 $pages }}
-  {{ $scratch.Set "first" (time.Format .Site.Params.timeFormat .Date) }}
+  {{ $scratch.Set "first" (time.Format .Site.Params.timeFormat .Lastmod) }}
 {{ end }}
 {{ range last 1 $pages }}
   {{ $scratch.Set "last" (time.Format .Site.Params.timeFormat .Date) }}

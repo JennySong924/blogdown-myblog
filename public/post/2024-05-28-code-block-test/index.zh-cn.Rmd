@@ -1,0 +1,25 @@
+---
+title: code block test
+author: J Song
+date: '2024-05-28'
+slug: []
+categories:
+  - ~
+tags:
+  - ~
+  - ~
+description: 2024-05-28-code-block-test
+keywords: 2024,05,28,code,block,test
+lastmod: '2024-05-28T18:14:19+08:00'
+---
+
+
+``` r
+{{</* mermaid align="left" bc="#eee"*/>}}
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+{{</* /mermaid */>}}
+```

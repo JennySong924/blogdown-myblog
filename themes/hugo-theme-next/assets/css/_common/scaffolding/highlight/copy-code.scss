@@ -48,18 +48,21 @@
 
     @if $codeblock_style == 'flat' {
       background: white;
-      // background: #d6d1cc;
+      // background-color: #d6d1cc;
       border: 0;
       // border-color: #999;
       // box-shadow: 5px 5px 5px #ccc;
       font-size: $font-size-smaller;
       
     } @else if $codeblock_style == 'mac' {
-      color: var(--highlight-foreground);
+      background-color: #d6d1cc;
+      // color: var(--highlight-foreground);
       font-size: 14px;
       border-radius: 3px;
     } @else {
-      background-color: $gainsboro;
+      // background-color: $gainsboro;
+      background-color: #d6d1cc;
+      //background: #d6d1cc;
       background-image: linear-gradient(#fcfcfc, $gainsboro);
       border: 1px solid #d5d5d5;
       border-radius: 3px;
