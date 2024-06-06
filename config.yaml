@@ -162,7 +162,7 @@ params:
   # 需要显示文章的部分，即content目录下的文件夹名称
   # Sections for show in home & archive page 
   # and it's forlder name which under content
-  mainSections: ["post"]
+  mainSections: ["goodposts"]
   # 年，月，日及时间的格式化样式
   # Format style for year,month,date & time
   yearFormat: "2006"
@@ -470,7 +470,7 @@ params:
   # 是否显示阅读更多按钮
   # Read more button
   # If true, the read more button will be displayed in excerpt section.
-  readMoreBtn: true
+  readMoreBtn: false
 
   # 开启文章头部元素显示
   # Post meta display settings

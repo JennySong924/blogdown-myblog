@@ -9,7 +9,7 @@ categories:
 tags: 
   - CFA 
 math: mathjax
-draft: true
+draft: false
 ---
 
 ### Learning Module 1: Currency exchange rates: understanding equilibrium value
@@ -64,11 +64,11 @@ draft: true
         V_t = \frac{\text{contract size} \times (F_t - F_0)}{1+r_{\text{price currency}}\times \frac{days}{360}}
         $$
         
-        - 如果是空头，则用 $F_0 - F_t$
+        - 如果是空头，则用 \\(F_0 - F_t\\) 
         - 步骤
             1. 建立一个远期合约的反向合约
             2. 确定反向合约的远期汇率 $F_t$：如果反向合约是买入基础货币，使用卖价；如果反向合约是卖出基础货币，使用买价
-            3. 计算结算日的净现金流 Net cash flows = Contract size $\times (F_t - F_0)$
+            3. 计算结算日的净现金流 Net cash flows = Contract size \\(\times (F_t - F_0)\\)
             4. 计算结算日净现金流的现值
 4. 国际平价关系 The International Parity Relationship
     - 利率平价 Interest rate parity, IRP
