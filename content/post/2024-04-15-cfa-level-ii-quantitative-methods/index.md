@@ -20,7 +20,7 @@ draft: false
     - The regression process covers several decisions the analyst must make, such as identifying the dependent and independent variables, selecting the appropriate regression model, testing if the assumptions behind linear regression are satisfied, examining goodness of fit, and making needed adjustments.
     - The regression process
         
-        ![Screenshot 2024-04-07 at 13.18.05.png](Screenshot 2024-04-07 at 13.18.05.png)
+        ![Screenshot 2024-04-07 at 13.18.05.png](https://github.com/JennySong924/blogdown-myblog/blob/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/Screenshot%202024-04-07%20at%2013.18.05.png)
         
     - A multiple regression model is represented by the following equation:
     \\(Y_i = b_0 + b_1X_{1i} + b_2X_{2i} + \dots + b_kX_{ki} + \epsilon_i, i=1,2,3,...,n\\)
