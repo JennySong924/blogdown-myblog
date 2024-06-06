@@ -8,7 +8,7 @@ categories:
   - 经济
 tags: 
   - CFA
-draft: true
+draft: false
 ---
 
 ### Learning Module 1: Basics of multiple regression and underlying assumptions
