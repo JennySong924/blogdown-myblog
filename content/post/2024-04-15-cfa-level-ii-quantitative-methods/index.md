@@ -333,7 +333,7 @@ Deep learning<br>Reinforcement learning |
   - Recall (R) = TP / ( TP + FN )
       - 真的是1的样本中，被预测为1的有多少
   - Accuracy = ( TP + TN ) / ( TP + FP + TN + FN )
-  - F1 score = 2*P*R/(P+R)
+  - F1 score = 2\*P\*R/(P+R)
       - P 和 R 的调和平均值
       - 当数据分类分布不均匀时，F1比accuracy更适用，分数越高模型表现越好
 - ROC
