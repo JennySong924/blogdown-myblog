@@ -20,7 +20,7 @@ draft: false
     - The regression process covers several decisions the analyst must make, such as identifying the dependent and independent variables, selecting the appropriate regression model, testing if the assumptions behind linear regression are satisfied, examining goodness of fit, and making needed adjustments.
     - The regression process
         
-        ![plot1](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot1.png)
+        ![plot0](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot1.png)
         
     - A multiple regression model is represented by the following equation:
     $$Y_i = b_0 + b_1X_{1i} + b_2X_{2i} + \dots + b_kX_{ki} + \epsilon_i, i=1,2,3,...,n$$
@@ -39,7 +39,7 @@ draft: false
     | Independence of independent variables | 1. Independent variables are not random.<br>2. There is no exact linear relation between two or more of the independent variables or combinations of the independent variables. |  |
     - Fat-tailed Q-Q plot
         
-        ![Screenshot 2024-04-07 at 13.18.05.png](1%20Quantitative%20Methods%20e84dd0d2cb6140a5a200ff6cf9e94216/Screenshot_2024-04-07_at_13.18.05.png)
+        ![plot1](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot1.png)
         
 
 ### Learning Module 2: Evaluating regression model fit and interpreting model results
