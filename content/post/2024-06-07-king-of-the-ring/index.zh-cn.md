@@ -46,7 +46,9 @@ Even if you were too small to understand why.
 
 But I think, Mr. Frodo, I do understand.I know now.
 
-Folks in those stories had lots of chances of turning back, only they didn't. They kept going because they were holding on to something.
+Folks in those stories had lots of chances of turning back, only they didn't. 
+
+They kept going because they were holding on to something.
 
 ( Frodo: what are we holding on to, Sam?)
 
