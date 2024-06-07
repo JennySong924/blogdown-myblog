@@ -20,7 +20,7 @@ draft: false
     - The regression process covers several decisions the analyst must make, such as identifying the dependent and independent variables, selecting the appropriate regression model, testing if the assumptions behind linear regression are satisfied, examining goodness of fit, and making needed adjustments.
     - The regression process
         
-        ![plot0](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot1.png)
+        ![plot0](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot0.png)
         
     - A multiple regression model is represented by the following equation:
     $$Y_i = b_0 + b_1X_{1i} + b_2X_{2i} + \dots + b_kX_{ki} + \epsilon_i, i=1,2,3,...,n$$
@@ -251,9 +251,9 @@ draft: false
         3. base error：数据自身随机性
     4. 一般模型越复杂，bias error越低，variance error越高
     
-    ![Untitled](1%20Quantitative%20Methods%20e84dd0d2cb6140a5a200ff6cf9e94216/Untitled.png)
+    ![plot4](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot4.png)
     
-    ![Untitled](1%20Quantitative%20Methods%20e84dd0d2cb6140a5a200ff6cf9e94216/Untitled%201.png)
+    ![plot5](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot5.png)
     
 2. Supervised learning model
     - Penalized regression
@@ -293,7 +293,7 @@ draft: false
     - Deep learning and reinforcement learning
         - reinforcement learning 是指人工智能（agent）根据周围的环境采取行动，模型根据行动的结果给予人工智能奖励（reward）或惩罚，从而学习行动方式。e.g. AlphaGo
 
-![Untitled](1%20Quantitative%20Methods%20e84dd0d2cb6140a5a200ff6cf9e94216/Untitled%202.png)
+![plot2](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot2.png)
 
 | 模型类别 | 分类 | 连续 | 分类或连续 |
 | --- | --- | --- | --- |
@@ -341,4 +341,4 @@ Deep learning<br>Reinforcement learning |
     - True positive rate TPR = TP / ( TP + FN ) = Recall
     - ROC 越往左上凸越好
     
-    ![Untitled](1%20Quantitative%20Methods%20e84dd0d2cb6140a5a200ff6cf9e94216/Untitled%203.png)
+    ![plot3](https://raw.githubusercontent.com/JennySong924/blogdown-myblog/main/content/post/2024-04-15-cfa-level-ii-quantitative-methods/plot3.png)
