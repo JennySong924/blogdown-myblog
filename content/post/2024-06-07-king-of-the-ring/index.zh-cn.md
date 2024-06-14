@@ -1,5 +1,5 @@
 ---
-title: King of the ring
+title: The lord of the ring
 author: J Song
 date: '2024-06-07'
 slug: []
