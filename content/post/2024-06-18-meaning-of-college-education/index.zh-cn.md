@@ -1,13 +1,10 @@
 ---
-title: 【转】大学教育之目的
-author: 【美】Andrew Abbott
+title: [转]大学教育之目的
+author: [美]Andrew Abbott
 date: '2024-06-18'
 slug: []
 categories:
   - 摘抄
-tags:
-  - ~
-  - ~
 description: 2024-06-18-meaning-of-college-education
 keywords: 2024,06,18,meaning,of,college,education
 lastmod: '2024-06-18T17:40:57+08:00'
