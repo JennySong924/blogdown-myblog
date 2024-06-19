@@ -1,6 +1,6 @@
 ---
-title: [转]大学教育之目的
-author: [美]Andrew Abbott
+title: 【转】大学教育之目的
+author: 【美】Andrew Abbott
 date: '2024-06-18'
 slug: []
 categories:
