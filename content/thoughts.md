@@ -9,7 +9,7 @@ lastmod: '2024-05-21T10:39:35+08:00'
 ---
 ## 2024
 
-**6.24** | 自己利用 google translator 和 ChatGLM，加上自己的校对、润色、排版，翻译了一下《An Interrupted Life》: [pdf/translated-An-Interrupted-Life.pdf](/pdf/translated-An-Interrupted-Life.pdf)。目前尚未完全完成，蓝字部分是校对完毕的部分，高亮以及黑字部分尚未完工。在这里 mark 一下，顺便测试下 pdf 文件链接是不是可用。
+**6.24** | 自己利用 google translator 和 ChatGLM，加上自己的校对、润色、排版，翻译了一下《An Interrupted Life》: [An-Interrupted-Life.pdf](/pdf/translated-An-Interrupted-Life.pdf)。目前尚未完全完成，蓝字部分是校对完毕的部分，高亮以及黑字部分尚未完工。在这里 mark 一下，顺便测试下 pdf 文件链接是不是可用。
 
 ---
 
