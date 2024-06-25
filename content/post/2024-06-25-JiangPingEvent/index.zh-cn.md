@@ -9,7 +9,7 @@ categories:
 description: 2024-06-25-JiangPingEvent
 keywords: 2024,06,25,JiangPingEvent
 lastmod: '2024-06-25T17:12:08+08:00'
-draft:True
+draft: true
 ---
 
 
