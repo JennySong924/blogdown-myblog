@@ -130,29 +130,44 @@ menus:
       pre: home
       weight: 2
     - identifier: archives
-      name: 文章
+      name: 所有文章
       pageref: /archives
       pre: archive
       weight: 3
+    - identifier: tech
+      name: 技术
+      pageref: /post/Techs
+      pre: archive
+      weight: 4
+    - identifier: reading
+      name: 阅读&观影
+      pageref: /post/BooksMovies
+      pre: archive
+      weight: 5
+    - identifier: diaries
+      name: 日记
+      pageref: /post/Diaries
+      pre: archive
+      weight: 6
     - identifier: thoughts
       name: 随笔
       pageref: thoughts
       pre: pen
-      weight: 4
+      weight: 7
     - identifier: book-list
       name: 书单
       pre: book
       url: book-list
-      weight: 5
+      weight: 8
     - identifier: movie-list
       name: 片单
       url: movie-list
       pre: film
-      weight: 6
+      weight: 9
     - name: 关于我
       url: about
       pre: user
-      weight: 8
+      weight: 10
 
 #-----------------------------------------
 # Hugo NexT 主题参数配置
