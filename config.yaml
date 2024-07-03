@@ -177,7 +177,7 @@ params:
   # 需要显示文章的部分，即content目录下的文件夹名称
   # Sections for show in home & archive page 
   # and it's forlder name which under content
-  mainSections: ["post"]
+  mainSections: ["Techs","Diaries","BooksMovies"]
   # 年，月，日及时间的格式化样式
   # Format style for year,month,date & time
   yearFormat: "2006"
@@ -185,7 +185,6 @@ params:
   dateFormat: "2006-01-02"
   timeFormat: "2006-01-02T15:04:05-07:00"
   
-  subSections: ["post/Techs"]
 
   # 页面模式
   # Schemes
