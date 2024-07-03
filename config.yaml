@@ -136,7 +136,7 @@ menus:
       weight: 3
     - identifier: tech
       name: 技术
-      pageref: /post/Techs
+      url: /post/Techs
       pre: archive
       weight: 4
     - identifier: reading
