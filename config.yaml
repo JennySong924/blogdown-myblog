@@ -136,7 +136,7 @@ menus:
       weight: 3
     - identifier: tech
       name: 技术
-      url: /post/Techs
+      pageref: /post/Techs
       pre: archive
       weight: 4
     - identifier: reading
@@ -157,15 +157,15 @@ menus:
     - identifier: book-list
       name: 书单
       pre: book
-      url: book-list
+      pageref: book-list
       weight: 8
     - identifier: movie-list
       name: 片单
-      url: movie-list
+      pageref: movie-list
       pre: film
       weight: 9
     - name: 关于我
-      url: about
+      pageref: about
       pre: user
       weight: 10
 
@@ -184,6 +184,8 @@ params:
   monthFormat: "01-02"
   dateFormat: "2006-01-02"
   timeFormat: "2006-01-02T15:04:05-07:00"
+  
+  subSections: ["post/Techs"]
 
   # 页面模式
   # Schemes
