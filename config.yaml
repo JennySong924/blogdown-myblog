@@ -136,17 +136,17 @@ menus:
       weight: 3
     - identifier: tech
       name: 技术
-      pageref: /post/Techs
+      pageref: /Techs
       pre: archive
       weight: 4
     - identifier: reading
       name: 阅读&观影
-      pageref: /post/BooksMovies
+      pageref: /BooksMovies
       pre: archive
       weight: 5
     - identifier: diaries
       name: 日记
-      pageref: /post/Diaries
+      pageref: /Diaries
       pre: archive
       weight: 6
     - identifier: thoughts
