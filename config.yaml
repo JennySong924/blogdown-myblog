@@ -134,21 +134,6 @@ menus:
       pageref: /archives
       pre: archive
       weight: 3
-    - identifier: tech
-      name: 技术
-      pageref: /Techs
-      pre: archive
-      weight: 4
-    - identifier: reading
-      name: 阅读&观影
-      pageref: /BooksMovies
-      pre: archive
-      weight: 5
-    - identifier: diaries
-      name: 日记
-      pageref: /Diaries
-      pre: archive
-      weight: 6
     - identifier: thoughts
       name: 随笔
       pageref: thoughts
