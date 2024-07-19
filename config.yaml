@@ -1117,7 +1117,7 @@ params:
     # The CDN provider of NexT internal scripts.
     # Available values: local | unpkg | cdnjs | qiniu | bootcdn | custom
     # Warning: If you are using the latest master branch of NexT, please set `internal: local`
-    internal: local
+    internal: unpkg
     # The default CDN provider of third-party plugins.
     # Available values: local | unpkg | cdnjs| qiniu | bootcdn | custom
     # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
