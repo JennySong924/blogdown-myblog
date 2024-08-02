@@ -19,3 +19,7 @@ lastmod: '2024-08-02T17:39:23+08:00'
 想法是在 classic estimator 的基础上增加一项 label 和 unlabel part 的相差项：
 
 $$\frac{1}{n}\sum_{i=1}^n \Phi (y_i,x_i;\theta) + \omega \odot \\{-\frac{1}{n}\sum_{i=1}^n \Phi(\hat{f}(z_i),x_i;\theta) + \frac{1}{N}\sum_{i=n+1}^{n+N}\Phi(\hat{f}(z_i),x_i;\theta)\\}=0$$
+
+## Jiacheng Miao, Valid inference for machine learning-assisted GWAS
+
+ML-assisted GWAS，用 ML 来 impute phenotypes，然后进行 GWAS 分析。这么做的有效性尚未被严格衡量。文章提出了 POP-GWAS framework，无论 imputation 的结果质量好与坏，都能够提供有效的统计推断。
