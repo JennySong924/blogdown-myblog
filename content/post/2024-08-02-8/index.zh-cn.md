@@ -18,4 +18,4 @@ lastmod: '2024-08-02T17:39:23+08:00'
 
 想法是在 classic estimator 的基础上增加一项 label 和 unlabel part 的相差项：
 
-$$\frac{1}{n}\sum_{i=1}^n \Phi (y_i,x_i;\theta) + \omega \odot \{-\frac{1}{n}\sum_{i=1}^n \Phi(\hat{f}(z_i),x_i;\theta) + \frac{1}{N}\sum_{i=n+1}^{n+N}\Phi(\hat{f}(z_i),x_i;\theta)\}=0$$
+$$\frac{1}{n}\sum_{i=1}^n \Phi (y_i,x_i;\theta) + \omega \odot \bigl\{-\frac{1}{n}\sum_{i=1}^n \Phi(\hat{f}(z_i),x_i;\theta) + \frac{1}{N}\sum_{i=n+1}^{n+N}\Phi(\hat{f}(z_i),x_i;\theta)\bigr\}=0$$
