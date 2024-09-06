@@ -36,58 +36,41 @@ alias server3="ssh ...@..."
 
 - 创建、删除目录 `mkdir`,`rmdir` 
 ```bash
-## 在另一个目录下创建一个目录
-mkdir -p parent/temp
-## 删除目录及其内的文件
-rmdir -rf temp
+mkdir -p parent/temp  ## 在另一个目录下创建一个目录
+rmdir -rf temp  ## 删除目录及其内的文件
 ```
 
 ### 压缩和提取文件
 ```bash
-# 从.tar 存档中提取文件
-tar -xvf archive.tar
-# 列出.tar存档中的文件（不提取）
-tar -tf archive.tar
-# 从 .tar.gz 存档中提取文件
-tar -xvf archive.tar.gz
-# 从 .tar.bz2 文件中提取文件
-tar -xvf archive.tar.bz2
-# 创建 tar 存档
-tar -cvf archive.tar dir
+tar -xvf archive.tar      # 从.tar 存档中提取文件
+tar -tf archive.tar       # 列出.tar存档中的文件（不提取）
+tar -xvf archive.tar.gz   # 从 .tar.gz 存档中提取文件
+tar -xvf archive.tar.bz2  # 从 .tar.bz2 文件中提取文件
+tar -cvf archive.tar dir  # 创建 tar 存档
 tar -czvf archive.tar.gz dir
 tar -cjvf archive.tar.bz2 dir
-# 提取 .gz 压缩文件
-gunzip file.gz
-# 创建 .gz 压缩文件
-gzip file.fastq
-# 提取 .bzip2 压缩文件
-bunzip2 file.bz2
-# 创建 .bzip2 压缩文件
-bzip2 file.fastq
-# 提取 .zip 存档
-unzip archive.zip
-# 创建 .zip存档
-zip archive.zip file.txt
-#创建 .zip存档（对文件夹）
-zip -r archive.zip dir
+gunzip file.gz  # 提取 .gz 压缩文件
+gzip file.fastq # 创建 .gz 压缩文件
+bunzip2 file.bz2  # 提取 .bzip2 压缩文件
+bzip2 file.fastq  # 创建 .bzip2 压缩文件
+unzip archive.zip # 提取 .zip 存档
+zip archive.zip file.txt  # 创建 .zip存档
+zip -r archive.zip dir  #创建 .zip存档（对文件夹）
 ```
 
 ### 查看文件
 
 ```bash
-## 查看 file.txt 文件前 20 行
-head -n 20 file.txt 
-## 展示 file.txt 文件中的前 10 行，并打印出所有行号
-cat -n file.txt | head -10
-## 逐页查看，按空格翻页，按回车换行，按 q 退出
-more file.txt
+head -n 20 file.txt   ## 查看 file.txt 文件前 20 行
+cat -n file.txt | head -10  ## 展示 file.txt 文件中的前 10 行，并打印出所有行号
+more file.txt ## 逐页查看，按空格翻页，按回车换行，按 q 退出
 ## less 上下左右键查看文本内容，回车向下移动一行，空格翻页，q 退出，-N 显示行号，-S 单行显示，可以查看压缩文件（less 或 zless）
 less file.txt | head -1
 ## 统计文本 wc -l 统计行数 -w 统计字符串数 -c 统计字节数（包括不可见字符，如回车）
 wc file.txt # 依次为行数、字符串数、字节数
 ```
 
-## 字符替换
+### 字符替换
 tr：字符替换
 
 常见用法: tr ‘’ ‘’
@@ -112,26 +95,17 @@ cat Data/example.gtf | cut -f 3 | sort | uniq -c | tr -s ' '     ## tr -s缩减
 
 列合并：paste（默认分隔符为`\\t`)
 ```bash
-## 合并 file1 和 file2 的内容
-cat file1.txt file2.txt > merged_file.txt
-## 追加 file3 的内容到 merged_file.txt
-cat file3.txt >> merged_file.txt
-## 将file1和file2左右合在一起,paste在合并文件时,中间是加tab键作为分隔符
-paste file1.txt file2.txt
-##  -d指定':'为分隔符
-paste -d ': ' file1 file2  
-## 将file1和file2左右合在一起,paste在合并文件时,并转秩
-paste file1 file2  -s     
+cat file1.txt file2.txt > merged_file.txt ## 合并 file1 和 file2 的内容
+cat file3.txt >> merged_file.txt  ## 追加 file3 的内容到 merged_file.txt
+paste file1.txt file2.txt ## 将file1和file2左右合在一起,paste在合并文件时,中间是加tab键作为分隔符
+paste -d ': ' file1 file2 ##  -d指定':'为分隔符
+paste file1 file2  -s ## 将file1和file2左右合在一起,paste在合并文件时,并转秩     
 
 ## paste 还可以合并字符
-## 将 1-20 数字用paste排序(每个 - 之间都有一个空格)
-seq 20 | paste - - - -      
-## 提取第 3 列，排序去重，取出数字相加计算求和
-cat Data/example.gtf | cut -f 3 | sort | uniq -c | tr -s ' ' | cut -d ' ' -f 2 | paste -s -d '+' | bc
-## bc 的作用可以计算“1+1”这种形式
-echo "1+1" | bc 
-##先用paste变成一个整体,再排序
-less Data/example.fq | paste - - - - | sort -k 2 -r | less -SN  
+seq 20 | paste - - - -  ## 将 1-20 数字用paste排序(每个 - 之间都有一个空格)     
+cat Data/example.gtf | cut -f 3 | sort | uniq -c | tr -s ' ' | cut -d ' ' -f 2 | paste -s -d '+' | bc ## 提取第 3 列，排序去重，取出数字相加计算求和
+echo "1+1" | bc ## bc 的作用可以计算“1+1”这种形式 
+less Data/example.fq | paste - - - - | sort -k 2 -r | less -SN  ##先用paste变成一个整体,再排序  
 ```
 
 ### 提取特定列
