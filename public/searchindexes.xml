@@ -13,7 +13,7 @@
 生物信息经典指标都有哪些，用标准化的表示方法，少定义新指标，数据为什么能支持结论
 工作中要理性，不可任性
 主动与别人打招呼
-  ]]></content></entry><entry><title>terminal learning notes</title><url>/post/techs/2024-09-03-terminal-learning-notes/</url><categories><category><no value=/></categories><tags/><content type="html"><![CDATA[  Terminal 自学笔记
+  ]]></content></entry><entry><title>terminal learning notes 2</title><url>/post/techs/2024-09-06-terminal-learning-notes-2/</url><categories><category>技术文章</category><category>编程</category></categories><tags><tag><no value=/><tag><no value=/></tags><content type="html"> 2024-09-06-terminal-learning-notes-2</content></entry><entry><title>terminal learning notes</title><url>/post/techs/2024-09-03-terminal-learning-notes/</url><categories><category>技术文章</category><category>编程</category></categories><tags/><content type="html"><![CDATA[  Terminal 自学笔记
 参考 Bioinfotec 、 遗落凡尘的萤火 博文
 iTerm2 软件 换主题：下载 itermcolors 文件并在设置中导入 Terminal shortcut 在 ~/.bashrc 文件中（没有就新建一个）添加行：alias &amp;lt;shortcut&amp;gt;=“&amp;lt;full command&amp;gt;”, 例如
 # ALIASES # ########### alias server3=&amp;#34;ssh ...@...&amp;#34; Terminal 常用命令 编辑文件 vi：文件编辑（没有文件时会创建新文件），编辑完后按Esc退出编辑模式，然后用:wq保存并退出或用:q!不保存退出。

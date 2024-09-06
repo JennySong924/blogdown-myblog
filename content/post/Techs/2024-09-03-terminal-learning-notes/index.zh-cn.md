@@ -4,7 +4,8 @@ author: J Song
 date: '2024-09-03'
 slug: []
 categories:
-  - ~
+  - 技术文章
+  - 编程
 description: 2024-09-03-terminal-learning-notes
 keywords: 2024,09,03,terminal,learning,notes
 lastmod: '2024-09-03T17:30:43+08:00'
@@ -15,20 +16,6 @@ Terminal 自学笔记
 <!--more-->
 > 参考 [Bioinfotec](https://blog.csdn.net/m0_56572447/article/details/131148134)、[遗落凡尘的萤火](https://blog.csdn.net/weixin_57975238/article/details/138159580?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-138159580-blog-131148134.235^v43^pc_blog_bottom_relevance_base6&spm=1001.2101.3001.4242.1&utm_relevant_index=1) 博文
 
-## iTerm2 软件
-- 换主题：下载 itermcolors 文件并在设置中导入
-
-
-## Terminal shortcut
-
-在 ~/.bashrc 文件中（没有就新建一个）添加行：`alias <shortcut>=“<full command>”`, 例如
-```bash
-# ALIASES #
-###########
-alias server3="ssh ...@..."
-```
-
-## Terminal 常用命令
 
 ### 编辑文件
 
@@ -127,8 +114,7 @@ less -S Data/example.gtf | cut -d 'h' -f 1  ##指定h为分隔符,进行选取
 ```
 
 ### 排序
-
-sort：排序
+[sort](https://en.wikipedia.org/wiki/Sort_(Unix))：排序
 
 常见参数：
 
@@ -141,12 +127,35 @@ sort：排序
 -k：指定按哪一列排序
 
 -t：指定分隔
+
+-u: 去掉重复
 ```bash
 less -S Data/example.gtf | sort -k 3 | less -SN  ##less查看example.gtf,按照第三列排序,用less查看
 cat Data/example.gtf | sort -k 3 | less -SN       ##cat查看example.gtf,按照第三列排序,用less查看,当文件比较大时用cat打开的比less快,小文件无差别
- cat Data/example.gtf | sort -k 4 -n | less -SN   ##cat查看example.gtf,按照第4列排序,按照数值来理解,less查看
+cat Data/example.gtf | sort -k 4 -n | less -SN   ##cat查看example.gtf,按照第4列排序,按照数值来理解,less查看
 cat Data/example.gtf | sort -k 4 -n -r | less -SN  ##cat查看example.gtf,按照第4列排序,按照数值来理解,逆向排序,less查看
+sort -k2,2 -t $'\t' phonebook ## 指定分隔符为 tab
 ```
+可以按多列排序
+```bash
+$ cat quota
+fred 2000
+bob 1000
+an 1000
+chad 1000
+don 1500
+eric 500
+
+$ sort -k2,2n -k1,1 quota
+eric 500
+an 1000
+bob 1000
+chad 1000
+don 1500
+fred 2000
+```
+Here the first sort is done using column 2. -k2,2n specifies sorting on the key starting and ending with column 2, and sorting numerically. If -k2 is used instead, the sort key would begin at column 2 and extend to the end of the line, spanning all the fields in between. -k1,1 dictates breaking ties using the value in column 1, sorting alphabetically by default. Note that bob, and chad have the same quota and are sorted alphabetically in the final output.
+
 ### 去重
 uniq：去除重复行  ##uniq比较”懒”，只能去除相邻的重复行! 因此记得要跟sort连用!
 
@@ -159,6 +168,14 @@ cat Data/example.gtf | cut -f 3 | head -20 | sort | uniq      ##sort与uniq连�
 cat Data/example.gtf | cut -f 3 | head -20 | sort | uniq -c   ##统计每个字符串连续出现的行数
 cat Data/example.gtf | cut -f 3 | head -20 | sort | uniq -c| cat -A   ##统计每个字符串连续出现的行数, 打印所有内容，包括特殊字符，如制表符
 ```
+
+
+### [grep](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
+
+### [sed](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/) 
+
+### [awk](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
+
 
 ### 常用 linux 命令
 ![linux_command.jpeg](/imgs/linux_command.jpeg)
