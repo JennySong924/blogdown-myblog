@@ -16,6 +16,7 @@ Terminal 自学笔记
 <!--more-->
 > 参考 [Bioinfotec](https://blog.csdn.net/m0_56572447/article/details/131148134)、[遗落凡尘的萤火](https://blog.csdn.net/weixin_57975238/article/details/138159580?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-138159580-blog-131148134.235^v43^pc_blog_bottom_relevance_base6&spm=1001.2101.3001.4242.1&utm_relevant_index=1) 博文
 
+## 操作和函数
 
 ### 编辑文件
 
@@ -226,7 +227,7 @@ output="output.txt"
 sed 's/old/new/g' "$input" > "$output"
 ```
 
-## [正则表达式](https://www.yiibai.com/sed/sed_regular_expressions.html)
+### [正则表达式](https://www.yiibai.com/sed/sed_regular_expressions.html)
 
 - ^  行开始
 - $ 行尾
@@ -304,9 +305,9 @@ echo -e "Line\t1\nLine2" | sed -n '/Line\s/ p'
 
 ### [awk](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
 #### 1. AWK Operations: 
-(a) Scans a file line by line 
-(b) Splits each input line into fields 
-(c) Compares input line/fields to pattern 
+(a) Scans a file line by line \
+(b) Splits each input line into fields \
+(c) Compares input line/fields to pattern \
 (d) Performs action(s) on matched lines 
 
 #### 2. Syntax:
@@ -384,5 +385,5 @@ sunil 13000
 satvik 80000
 ```
 
-### 常用 linux 命令
+## 常用 linux 命令 cheat sheet
 ![linux_command.jpeg](/imgs/linux_command.jpeg)
