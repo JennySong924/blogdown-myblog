@@ -171,11 +171,66 @@ cat Data/example.gtf | cut -f 3 | head -20 | sort | uniq -c| cat -A   ##统计�
 
 
 ### [grep](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
+```bash
+grep -i "UNix" file.txt ## 不区分大小写 case insensitive search
+grep -c "unix" file.txt ## 只显示行数 number of lines that matches the given string
+grep -l "unix" \\* ## 查找包含该字符的文件 files that contains the given string，也可跟特定文件，空格区隔
+grep -w "unix" file.txt ## 全词查找 by default, grep matches the given string/pattern even if it is found as a substring in a file. The -w option to grep makes it match only the whole words. 
+grep -o "unix" file.txt ## 只显示匹配的字符串 by default, grep displays the entire line which has the matched string. We can make the grep to display only the matched string by using the -o option. 
+grep -n "unix" file.txt ## 额外显示行数
+grep -v "unix" file.txt ## 显示不匹配的行
+grep "^unix" file.txt ## 匹配以 unix 开头的行
+grep "os$" file.txt ## 匹配以 os 结尾的行
+grep –e "Agarwal" –e "Aggarwal" –e "Agrawal" file.txt ## specifies expression with -e option
+grep -f pattern.txt file.txt ## 匹配 pattern.txt 文件中的字符（每行一个）
+grep -A1 "unix" file.txt ## 显示匹配行以及匹配行之后的 1 行
+grep -B2 "unix" file.txt ## 显示匹配行以及匹配行之前的 2 行
+grep -C3 "unix" file.txt ## 显示匹配行以及匹配行前后 3 行
+grep -R unix /home/geeks ## 显示/home/geeks 文件夹下的哪些文件中包含 unix
+```
 
 ### [sed](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/) 
+- 替换
+```bash
+sed 's/unix/linux/' geekfile.txt ## 把文件中每行的第 1 个 unix 替换为 linux
+sed 's/unix/linux/2' geekfile.txt ## 把文件中每行的第 2 个 unix 替换为 linux
+sed 's/unix/linux/g' geekfile.txt ## 把文件中所有 unix 都替换为 linux
+sed 's/unix/linux/3g' geekfile.txt ## 把文件中每行的第 3 个以及以后的 unix 都替换为 linux
+echo "Welcome To The Geek Stuff" | sed 's/\(\b[A-Z]\)/\(\1\)/g' ## 把每个词第一个字母用括号括起来
+sed '3 s/unix/linux/' geekfile.txt ## 只替换第 3 行第一个 unix
+sed '1,3 s/unix/linux/' geekfile.txt ## 只替换第 1 到第 3 行第一个 unix
+sed '2,$ s/unix/linux/' geekfile.txt ## 替换第 2 行以及之后的所有行，每行第一个 unix
+sed 's/unix/linux/p' geekfile.txt ## 替换，并且匹配的行 print 两次
+sed -n 's/unix/linux/p' geekfile.txt ## 只显示替换的行
+```
+
+- 删除
+```bash
+sed 'nd' filename.txt ## 删除第 n 行
+sed '$d' filename.txt ## 删除最后一行
+sed 'x,yd' filename.txt ## 删除第 x 到第 y 行
+sed 'n,$d' filename.txt ## 删除第 n 到最后一行
+sed '/pattern/d' filename.txt ## 删除有 pattern 的行
+sed '/pattern/i\
+the new line
+' geekfile.txt ## 在匹配行前插入一行
+sed '/pattern/a\
+the new line' geekfile.txt ## 在匹配行后插入一行
+```
+
+- script
+```bash
+#!/bin/bash
+input="input.txt"
+output="output.txt"
+sed 's/old/new/g' "$input" > "$output"
+```
 
 ### [awk](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
+```bash
 
+
+```
 
 ### 常用 linux 命令
 ![linux_command.jpeg](/imgs/linux_command.jpeg)
