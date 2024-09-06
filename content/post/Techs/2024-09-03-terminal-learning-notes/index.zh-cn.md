@@ -174,7 +174,7 @@ cat Data/example.gtf | cut -f 3 | head -20 | sort | uniq -c| cat -A   ##统计�
 ```bash
 grep -i "UNix" file.txt ## 不区分大小写 case insensitive search
 grep -c "unix" file.txt ## 只显示行数 number of lines that matches the given string
-grep -l "unix" \\* ## 查找包含该字符的文件 files that contains the given string，也可跟特定文件，空格区隔
+grep -l "unix" * ## 查找包含该字符的文件 files that contains the given string，也可跟特定文件，空格区隔
 grep -w "unix" file.txt ## 全词查找 by default, grep matches the given string/pattern even if it is found as a substring in a file. The -w option to grep makes it match only the whole words. 
 grep -o "unix" file.txt ## 只显示匹配的字符串 by default, grep displays the entire line which has the matched string. We can make the grep to display only the matched string by using the -o option. 
 grep -n "unix" file.txt ## 额外显示行数
@@ -226,10 +226,162 @@ output="output.txt"
 sed 's/old/new/g' "$input" > "$output"
 ```
 
-### [awk](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
+## [正则表达式](https://www.yiibai.com/sed/sed_regular_expressions.html)
+
+- ^  行开始
+- $ 行尾
+- . 单点字符，匹配除行字符结尾的任何单个字符, 如 `sed -n '/^..t$/p'` (可匹配到一个或多个)
+- [] 字符集，匹配括号中的任意一个字符
 ```bash
+echo -e "Call\nTall\nBall" | sed -n '/[CT]all/ p'
+```
+- [^] 匹配不在括号中字符的字符，如 `sed -n '/[^CT]all/ p'` 不会匹配到 Call 和 Tall
+```bash
+echo -e "Call\nTall\nBall" | sed -n '/[^CT]all/ p'
+```
+- [-] 匹配字符范围，`sed -n '/[C-Z]all/ p'`
+- \? 匹配 0 个或 1 个前面的字符，`sed -n '/Behaviou\?r/ p` 可以匹配到 Behaviour 和 Behavior
+```bash
+echo -e "Behaviour\nBehavior" | sed -n '/Behaviou\?r/ p'
+```
+- \+ 匹配 1 次或多次前面的字符
+```bash
+echo -e "111\n22\n123\n234\n456\n222"  | sed -n '/2\+/ p'
+```
+- * 匹配任意次数（0 次或多次）
+```bash
+echo -e "ca\ncat" | sed -n '/cat*/ p'
+```
+- {n} 完全一致的出现 n 次匹配字符
+```bash
+echo -e '1000\n100\n10101010' | sed -n '/^[0-9]\{3\}$/ p'
+```
+- {n,} 最少出现 n 次
+```bash
+echo -e '1000\n100\n10101010' | sed -n '/^[0-9]\{3,\}$/ p'
+```
+- {m,n} 出现 m 到 n 次
+```bash
+echo -e '1000\n100\n10101010' | sed -n '/^[0-9]\{4,8\}$/ p'
+```
+- 有些符号在匹配时需要多加一个 `\`，包括：`\\,\n,\r,\dnnn`
+- [:alnum:] 字母和数字字符，任意个数，不匹配制表符
+```bash
+echo -e "One\n123\n\t" | sed -n '/[[:alnum:]]/ p'
+```
+- [:alpha:] 只匹配字母字符，任意个数
+```bash
+echo -e "One\n123\n\t" | sed -n '/[[:alpha:]]/ p'
+```
+- [:digit:] 只匹配小数（整数也可以）
+```bash
+echo -e "One\n123\n\t" | sed -n '/[[:digit:]]/ p'
+echo -e "One\n123.12\n\t" | sed -n '/[[:digit:]]/ p'
+```
+- [:blank:] 任何空格或制表符
+- [:lower:] 小写字母
+- [:upper:] 大写字母
+```bash
+echo -e "one\nTWO\n\t" | sed -n '/[[:upper:]]/ p'
+```
+- [:punct:] 标点符号，包括不是空格或字母数字的字符
+- [:space:] 空格
+- \b 表示边界 （苹果电脑自带的 sed 不支持，可用 ^ 和 $ 代替）
+```bash
+echo -e "these\nthe\nthey\nthen" | sed -n '/\bthe\b/ p'
+```
+- \B 表示非边界 （苹果电脑自带的 sed 不支持，可用 . 代替）
+```bash
+echo -e "these\nthe\nthey" | sed -n '/the\B/ p'
+```
+- \s 单个空格字符 （苹果电脑自带的 sed 不支持）
+```bash
+echo -e "Line\t1\nLine2" | sed -n '/Line\s/ p'
+```
+- \S 单个非空格，\w 单个字符，\W 单个非字符，\` 模式空间开始 （苹果电脑自带的 sed 均不支持）
 
 
+
+### [awk](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
+#### 1. AWK Operations: 
+(a) Scans a file line by line 
+(b) Splits each input line into fields 
+(c) Compares input line/fields to pattern 
+(d) Performs action(s) on matched lines 
+
+#### 2. Syntax:
+```bash
+awk options 'selection _criteria {action }' input-file > output-file
+```
+options
+```bash
+-f program-file : Reads the AWK program source from the file 
+                  program-file, instead of from the 
+                  first command line argument.
+-F fs            : Use fs for the input field separator
+```
+#### 3. Built-In Variables In Awk
+
+Awk’s built-in variables include the field variables—\$1, \$2, \$3, and so on (\$0 is the entire line) — that break a line of text into individual words or pieces called fields. 
+
+- NR: NR command keeps a current count of the number of input records. Remember that records are usually lines. Awk command performs the pattern/action statements once for each record in a file. 
+- NF: NF command keeps a count of the number of fields within the current input record. 
+- FS: FS command contains the field separator character which is used to divide fields on the input line. The default is “white space”, meaning space and tab characters. FS can be reassigned to another character (typically in BEGIN) to change the field separator. 
+- RS: RS command stores the current record separator character. Since, by default, an input line is the input record, the default record separator character is a newline. 
+- OFS: OFS command stores the output field separator, which separates the fields when Awk prints them. The default is a blank space. Whenever print has several parameters separated with commas, it will print the value of OFS in between each parameter. 
+- ORS: ORS command stores the output record separator, which separates the output lines when Awk prints them. The default is a newline character. print automatically outputs the contents of ORS at the end of whatever it is given to print. 
+
+#### 4. Example
+```bash
+cat test2.txt
+# ajay manager account 45000
+# sunil clerk account 25000
+# varun manager sales 50000
+# amit manager account 47000
+# tarun peon sales 15000
+# deepak clerk sales 23000
+# sunil peon sales 13000
+# satvik director purchase 80000
+```
+- 查找特定 pattern
+```bash
+awk '/manager/ {print}' text2.txt 
+```
+output:
+```bash
+ajay manager account 45000
+varun manager sales 50000
+amit manager account 47000 
+```
+- 提取特定列
+```bash
+awk '{print $1,$4}' test2.txt
+```
+output:
+```bash
+ajay 45000
+sunil 25000
+varun 50000
+amit 47000
+tarun 15000
+deepak 23000
+sunil 13000
+satvik 80000
+```
+- 提取特定列
+```bash
+awk '{print $1,$4}' test2.txt
+```
+output:
+```bash
+ajay 45000
+sunil 25000
+varun 50000
+amit 47000
+tarun 15000
+deepak 23000
+sunil 13000
+satvik 80000
 ```
 
 ### 常用 linux 命令
