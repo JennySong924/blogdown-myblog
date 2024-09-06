@@ -315,7 +315,7 @@ echo -e "Line\t1\nLine2" | sed -n '/Line\s/ p'
 awk options 'selection _criteria {action }' input-file > output-file
 ```
 options
-```bash
+```
 -f program-file : Reads the AWK program source from the file 
                   program-file, instead of from the 
                   first command line argument.
@@ -334,7 +334,7 @@ Awk’s built-in variables include the field variables—\$1, \$2, \$3, and so o
 
 #### 4. Example
 ```bash
-cat test2.txt
+cat employee.txt
 # ajay manager account 45000
 # sunil clerk account 25000
 # varun manager sales 50000
@@ -346,7 +346,7 @@ cat test2.txt
 ```
 - 查找特定 pattern
 ```bash
-awk '/manager/ {print}' text2.txt 
+awk '/manager/ {print}' employee.txt 
 ```
 output:
 ```bash
@@ -356,7 +356,7 @@ amit manager account 47000
 ```
 - 提取特定列
 ```bash
-awk '{print $1,$4}' test2.txt
+awk '{print $1,$4}' employee.txt
 ```
 output:
 ```bash
@@ -369,9 +369,24 @@ deepak 23000
 sunil 13000
 satvik 80000
 ```
-- 提取特定列
+- 用 NR built-in variables 提取特定列
 ```bash
-awk '{print $1,$4}' test2.txt
+awk '{print NR,$0}' employee.txt
+```
+output:
+```bash
+1 ajay manager account 45000
+2 sunil clerk account 25000
+3 varun manager sales 50000
+4 amit manager account 47000
+5 tarun peon sales 15000
+6 deepak clerk sales 23000
+7 sunil peon sales 13000
+8 satvik director purchase 80000 
+```
+- 用 NF built-in variables 提取特定列，`$NF`指代最后一列
+```bash
+awk '{print $1,$NF}' employee.txt 
 ```
 output:
 ```bash
@@ -382,8 +397,21 @@ amit 47000
 tarun 15000
 deepak 23000
 sunil 13000
-satvik 80000
+satvik 80000 
 ```
+- 提取 3-6 行
+```bash
+awk 'NR==3, NR==6 {print NR,$0}' employee.txt 
+```
+output:
+```bash
+3 varun manager sales 50000
+4 amit manager account 47000
+5 tarun peon sales 15000
+6 deepak clerk sales 23000 
+```
+
+
 
 ## 常用 linux 命令 cheat sheet
 ![linux_command.jpeg](/imgs/linux_command.jpeg)
