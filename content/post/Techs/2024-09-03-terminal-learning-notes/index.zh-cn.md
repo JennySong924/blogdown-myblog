@@ -229,77 +229,77 @@ sed 's/old/new/g' "$input" > "$output"
 
 ### [正则表达式](https://www.yiibai.com/sed/sed_regular_expressions.html)
 
-- ^  行开始
-- $ 行尾
-- . 单点字符，匹配除行字符结尾的任何单个字符, 如 `sed -n '/^..t$/p'` (可匹配到一个或多个)
-- [] 字符集，匹配括号中的任意一个字符
+- `^`  行开始
+- `$` 行尾
+- `.` 单点字符，匹配除行字符结尾的任何单个字符, 如 `sed -n '/^..t$/p'` (可匹配到一个或多个)
+- `[]` 字符集，匹配括号中的任意一个字符
 ```bash
 echo -e "Call\nTall\nBall" | sed -n '/[CT]all/ p'
 ```
-- [^] 匹配不在括号中字符的字符，如 `sed -n '/[^CT]all/ p'` 不会匹配到 Call 和 Tall
+- `[^]` 匹配不在括号中字符的字符，如 `sed -n '/[^CT]all/ p'` 不会匹配到 Call 和 Tall
 ```bash
 echo -e "Call\nTall\nBall" | sed -n '/[^CT]all/ p'
 ```
-- [-] 匹配字符范围，`sed -n '/[C-Z]all/ p'`
-- \? 匹配 0 个或 1 个前面的字符，`sed -n '/Behaviou\?r/ p` 可以匹配到 Behaviour 和 Behavior
+- `[-]` 匹配字符范围，`sed -n '/[C-Z]all/ p'`
+- `\?` 匹配 0 个或 1 个前面的字符，`sed -n '/Behaviou\?r/ p` 可以匹配到 Behaviour 和 Behavior
 ```bash
 echo -e "Behaviour\nBehavior" | sed -n '/Behaviou\?r/ p'
 ```
-- \+ 匹配 1 次或多次前面的字符
+- `\+` 匹配 1 次或多次前面的字符
 ```bash
 echo -e "111\n22\n123\n234\n456\n222"  | sed -n '/2\+/ p'
 ```
-- * 匹配任意次数（0 次或多次）
+- `*` 匹配任意次数（0 次或多次）
 ```bash
 echo -e "ca\ncat" | sed -n '/cat*/ p'
 ```
-- {n} 完全一致的出现 n 次匹配字符
+- `{n}` 完全一致的出现 n 次匹配字符
 ```bash
 echo -e '1000\n100\n10101010' | sed -n '/^[0-9]\{3\}$/ p'
 ```
-- {n,} 最少出现 n 次
+- `{n,}` 最少出现 n 次
 ```bash
 echo -e '1000\n100\n10101010' | sed -n '/^[0-9]\{3,\}$/ p'
 ```
-- {m,n} 出现 m 到 n 次
+- `{m,n}` 出现 m 到 n 次
 ```bash
 echo -e '1000\n100\n10101010' | sed -n '/^[0-9]\{4,8\}$/ p'
 ```
 - 有些符号在匹配时需要多加一个 `\`，包括：`\\,\n,\r,\dnnn`
-- [:alnum:] 字母和数字字符，任意个数，不匹配制表符
+- `[:alnum:]` 字母和数字字符，任意个数，不匹配制表符
 ```bash
 echo -e "One\n123\n\t" | sed -n '/[[:alnum:]]/ p'
 ```
-- [:alpha:] 只匹配字母字符，任意个数
+- `[:alpha:]` 只匹配字母字符，任意个数
 ```bash
 echo -e "One\n123\n\t" | sed -n '/[[:alpha:]]/ p'
 ```
-- [:digit:] 只匹配小数（整数也可以）
+- `[:digit:]` 只匹配小数（整数也可以）
 ```bash
 echo -e "One\n123\n\t" | sed -n '/[[:digit:]]/ p'
 echo -e "One\n123.12\n\t" | sed -n '/[[:digit:]]/ p'
 ```
-- [:blank:] 任何空格或制表符
-- [:lower:] 小写字母
-- [:upper:] 大写字母
+- `[:blank:]` 任何空格或制表符
+- `[:lower:]` 小写字母
+- `[:upper:]` 大写字母
 ```bash
 echo -e "one\nTWO\n\t" | sed -n '/[[:upper:]]/ p'
 ```
-- [:punct:] 标点符号，包括不是空格或字母数字的字符
-- [:space:] 空格
-- \b 表示边界 （苹果电脑自带的 sed 不支持，可用 ^ 和 $ 代替）
+- `[:punct:]` 标点符号，包括不是空格或字母数字的字符
+- `[:space:]` 空格
+- `\b` 表示边界 （苹果电脑自带的 sed 不支持，可用 `^` 和 `$` 代替）
 ```bash
 echo -e "these\nthe\nthey\nthen" | sed -n '/\bthe\b/ p'
 ```
-- \B 表示非边界 （苹果电脑自带的 sed 不支持，可用 . 代替）
+- `\B` 表示非边界 （苹果电脑自带的 sed 不支持，可用 . 代替）
 ```bash
 echo -e "these\nthe\nthey" | sed -n '/the\B/ p'
 ```
-- \s 单个空格字符 （苹果电脑自带的 sed 不支持）
+- `\s` 单个空格字符 （苹果电脑自带的 sed 不支持）
 ```bash
 echo -e "Line\t1\nLine2" | sed -n '/Line\s/ p'
 ```
-- \S 单个非空格，\w 单个字符，\W 单个非字符，\` 模式空间开始 （苹果电脑自带的 sed 均不支持）
+- `\S` 单个非空格，`\w` 单个字符，`\W` 单个非字符，`\`` 模式空间开始 （苹果电脑自带的 sed 均不支持）
 
 
 
