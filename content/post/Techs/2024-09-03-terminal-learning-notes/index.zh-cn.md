@@ -14,7 +14,7 @@ lastmod: '2024-09-03T17:30:43+08:00'
 Terminal 自学笔记
 
 <!--more-->
-> 参考 [Bioinfotec](https://blog.csdn.net/m0_56572447/article/details/131148134)、[遗落凡尘的萤火](https://blog.csdn.net/weixin_57975238/article/details/138159580?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-138159580-blog-131148134.235^v43^pc_blog_bottom_relevance_base6&spm=1001.2101.3001.4242.1&utm_relevant_index=1) 博文
+> 参考 [Bioinfotec](https://blog.csdn.net/m0_56572447/article/details/131148134)、[遗落凡尘的萤火](https://blog.csdn.net/weixin_57975238/article/details/138159580?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-138159580-blog-131148134.235^v43^pc_blog_bottom_relevance_base6&spm=1001.2101.3001.4242.1&utm_relevant_index=1) 、[Odette George](https://medium.com/@odettegeorge/bioinformatics-working-with-awk-and-bioawk-c6587c330575) 博文
 
 ## 操作和函数
 
@@ -312,7 +312,9 @@ echo -e "Line\t1\nLine2" | sed -n '/Line\s/ p'
 
 #### 2. Syntax:
 ```bash
-awk options 'selection _criteria {action }' input-file > output-file
+awk options 'selection _criteria {action}' input-file > output-file
+awk '{if (condition) action}' file
+awk BEGIN{sum=0};{s+=$2-$3};END{print "mean: " s/NR} file
 ```
 options
 ```
@@ -320,13 +322,25 @@ options
                   program-file, instead of from the 
                   first command line argument.
 -F fs            : Use fs for the input field separator
+-v : 用于指定变量
 ```
+
+examples
+```bash
+## match 第一列为 10 的，并提取第二列和第三列之差大于 10 的
+awk '$1 ~ /10/ && $3-$2 > 1 {print $1 "\t" $2 "\t" $3}' example.bed
+awk '{if ($1 == 10 && $3-$2 > 1) print $1 "\t" $2 "\t" $3}' example.bed
+## 计算第 2 列减第 3 列之差的平均数
+awk BEGIN{sum=0};{s+=$2-$3};END{print "mean: " s/NR} example.bed
+```
+
+
 #### 3. Built-In Variables In Awk
 
 Awk’s built-in variables include the field variables—\$1, \$2, \$3, and so on (\$0 is the entire line) — that break a line of text into individual words or pieces called fields. 
 
 - NR: NR command keeps a current count of the number of input records. Remember that records are usually lines. Awk command performs the pattern/action statements once for each record in a file. 
-- NF: NF command keeps a count of the number of fields within the current input record. 
+- NF: NF command keeps a count of the number of fields (columns) within the current input record. 
 - FS: FS command contains the field separator character which is used to divide fields on the input line. The default is “white space”, meaning space and tab characters. FS can be reassigned to another character (typically in BEGIN) to change the field separator. 
 - RS: RS command stores the current record separator character. Since, by default, an input line is the input record, the default record separator character is a newline. 
 - OFS: OFS command stores the output field separator, which separates the fields when Awk prints them. The default is a blank space. Whenever print has several parameters separated with commas, it will print the value of OFS in between each parameter. 
@@ -411,6 +425,22 @@ output:
 6 deepak clerk sales 23000 
 ```
 
+- others
+```bash
+echo "hello world" | awk '/hello/ {print "Match found"}' ## Match found
+echo "hello world" | awk '{sub(/hello/, "hi"); print}' ## hi world
+echo "hello hello world" | awk '{gsub(/hello/, "hi"); print}' ## hi hi world
+echo "a,b,c" | awk '{n = split($1, a, /,/); for (i=1; i<=n; i++) {print a[i]}}' 
+## a
+## b
+## b
+echo "hello world" | awk '{match($0, /hello/); print substr($0, RSTART, RLENGTH)}' ## hello
+awk '{getline line < "input.txt"; print line > "output.txt"}'
+awk '{if($0 !~ /^#/) print "chr"$0; else print $0}' infile.no_chr.vcf > infile.vcf
+grep '^#' in.vcf > out.vcf && grep -v '^#' in.vcf | sort -V -k1,1 -k2,2n >> out.vcf
+find ${indir} -type f -name "*tier3.bed" -print0 | wc -l --files0-from=- ## Count the total number of lines in the selected files of a dir
+find ${indir} -type f -name "*tier3.bed" -exec cat {} + | wc -l ## Grab the body of a file excluding the header
+```
 
 
 ## 常用 linux 命令 cheat sheet
