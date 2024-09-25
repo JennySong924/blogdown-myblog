@@ -8,7 +8,7 @@ categories:
   - 编程
 description: 2024-09-03-terminal-learning-notes
 keywords: 2024,09,03,terminal,learning,notes
-lastmod: '2024-09-025T17:30:43+08:00'
+lastmod: '2024-09-25T01:30:43+08:00'
 ---
 
 Terminal 自学笔记
