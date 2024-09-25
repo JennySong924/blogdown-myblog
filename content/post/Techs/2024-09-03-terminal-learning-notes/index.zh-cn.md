@@ -8,13 +8,13 @@ categories:
   - 编程
 description: 2024-09-03-terminal-learning-notes
 keywords: 2024,09,03,terminal,learning,notes
-lastmod: '2024-09-03T17:30:43+08:00'
+lastmod: '2024-09-025T17:30:43+08:00'
 ---
 
 Terminal 自学笔记
 
 <!--more-->
-> 参考 [Bioinfotec](https://blog.csdn.net/m0_56572447/article/details/131148134)、[遗落凡尘的萤火](https://blog.csdn.net/weixin_57975238/article/details/138159580?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-138159580-blog-131148134.235^v43^pc_blog_bottom_relevance_base6&spm=1001.2101.3001.4242.1&utm_relevant_index=1) 、[Odette George](https://medium.com/@odettegeorge/bioinformatics-working-with-awk-and-bioawk-c6587c330575) 博文
+> 参考 [Bioinfotec](https://blog.csdn.net/m0_56572447/article/details/131148134)、[遗落凡尘的萤火](https://blog.csdn.net/weixin_57975238/article/details/138159580?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-138159580-blog-131148134.235^v43^pc_blog_bottom_relevance_base6&spm=1001.2101.3001.4242.1&utm_relevant_index=1) 、[Odette George](https://medium.com/@odettegeorge/bioinformatics-working-with-awk-and-bioawk-c6587c330575)、[Omics tutorials](https://omicstutorials.com/using-awk-script-in-bioinformatics-analysis/) 博文
 
 ## 操作和函数
 
@@ -442,6 +442,35 @@ find ${indir} -type f -name "*tier3.bed" -print0 | wc -l --files0-from=- ## Coun
 find ${indir} -type f -name "*tier3.bed" -exec cat {} + | wc -l ## Grab the body of a file excluding the header
 ```
 
+## 其他
+```bash
+base=$(basename $infile .txt) # Extract the base filename without the extension in a shell script
+line_count=$(wc -l < data.txt) # Count the number of lines in a file
+```
+
+example of a shell script
+```bash
+#!/bin/bash
+
+# Define variables
+indir="/path/to/input/files"
+outdir="/path/to/output/files"
+
+# Create output directory if it doesn't exist
+mkdir -p $outdir
+
+# Process each file in the input directory
+for infile in $indir/*.txt; do
+ # Extract the base filename without the extension
+ base=$(basename $infile .txt)
+
+ # Perform operations on the input file using a pipeline
+ # For example, filter lines based on a condition, calculate summary statistics, and generate a report
+ awk '{if ($1 > 5) print $0}' $infile > $outdir/$base.filtered
+ awk '{sum += $1} END {print sum}' $infile > $outdir/$base.sum
+ awk '{count[$1]++} END {for (i in count) print i, count[i]}' $infile | sort -rn > $outdir/$base.report
+done
+```
 
 ## 常用 linux 命令 cheat sheet
 ![linux_command.jpeg](/imgs/linux_command.jpeg)
