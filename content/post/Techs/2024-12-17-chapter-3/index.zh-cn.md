@@ -1,5 +1,5 @@
 ---
-title: <X. Shirley Liu> chapter 3 RNA-seq
+title: <X.Shirley Liu> chapter 3 - RNA-seq
 author: J Song
 date: '2024-12-17'
 slug: []
@@ -26,8 +26,104 @@ lastmod: '2024-12-17T13:28:45+08:00'
 - application
   - 检测特定条件下所有基因的表达情况（特定条件包括发育阶段，不同组织，正常或患病，药物治疗，基因微扰等）
   - 发现新的基因或转录本
-  - model alternative splicing
+  - model alternative splicing（同一个基因可能在表达时，只使用了部分外显子，而非全部）
   - find gene mutations or gene fusions
   - do not have to know the genome sequence or predict genes
   - digital representation of gene expression
   - good detection range(>10^5) from low to high expression level
+- RNA quality control
+  - degraded RNA are hard to be made into a sequencing library
+  - check RNA quality: index - DV200: % RNA > 200 nt(因为大多数基因长度超过 200), DV200 > 30% is recommended
+- experimental design
+  - Ribo-minus(remove too abundant t/rRNA transcripts)
+  - polyA(mRNA after splicing, enrich for exons, no tRNA/rRNA, most popular)
+  - strand specific(directionality of RNA, useful for nocel IncRNA(long non-coding RNA))
+  - sequencing:
+    - SE or PE: PE getting more popular 
+    - Depth: 20-50M for differential expression, deeper for transcript assembly or splicing
+    - Read length:longer for transcript assembly, splicing, or mutation calls
+  - assessing biological variation requires replicates:
+    - technical(rarely used):same RNA, library prep and sequencing separately
+    - Bio1: Cells grown in different dishes, processed on different days
+    - Bio2: Cells/tissues from different lab animals(genetically identical, similar age and lifestyle)
+    - Bio3: Cells/tissues from different human individuals
+  - How many replicates are good enough:
+    - 1 only for exploratory assays, not good for publications
+    - >= 2 OK for cell line samples
+    - >= 3 preferred for animal samples
+    - more for human samples
+    
+## 3.2 Alignment
+
+- BWA?: for DNA sequence
+- prefer splice-aware aligners
+- TopHat(BW),HISAT(BW),STAR(Suffix Array)...
+
+- Splice aware alignment (TopHat)
+  - need genome index file
+  - transcript annotation file is optional but not required
+  - map to exons first
+  - create junction database
+  - map unmapped reads to junctions
+  - for longer reads, map shorter segments (~25bp)
+- BAM file for PE RNA-seq alignemnt from STAR
+  - col1: read id
+  - col2: binary encoding flags, e.g. first bit indicate PE, so all PE samples have odd number
+  - col3,4: chromosome and the beginning location of the read
+  - col6: cigar string: '27M1099N48M' means read matches 27bp at first, spans a 1099bp intron, then maps 48bp on the next exon
+  - col7,8,9: the location of its mate and how long the two mates spanned on the reference genome
+  - optional fields:
+    - NH: how many places this read is aligned to;
+    - nM: the number of mismatches for the pair;
+    - XS: optional field, strand of the underlying transcript generating the read for HISAT
+
+## 3.3 RNA-seq QC (RSeQC): FASTQC Read Quality
+
+- overal mappability of reads, ideally > 50%, higher the better
+- could trim first few bases of every read
+- insert size and read distributions
+- TIN and medTIN
+  - TIN(transcript integrity number) on each transcript
+  - medTIN(median TIN score across all the transcripts) to measure the RNA integrity at sample level (>50%)
+  
+## 3.4 Expression index
+
+- RPKM vs FPKM
+  - RPKM = reads per kilobase million
+    - for single end RNA-seq
+    - normalized for differences in sequencing depth; normalized for gene size
+  - FPKM = fragments per kilobase million
+    - for paired end RNA-seq
+  - TPM
+    - normalized for gene length; normalized for sequencing depth
+    
+- RPKM (Reads per kilobase of transcript per million reads of library)
+  - Total reads/1M, divide by gene length in KB
+  - corrects for coverage, gene length
+  - TopHat / Cufflinks
+  - FPKM (Fragments), PE libraries, ~ RPKM/2
+- TPM (transcripts per million) RSEM (Li et al, Bioinfo 2011)
+  - Divide read count by gene length in KB (RPK) FIRST, divide by scaling factor (sum of RPK across all genes/1M)
+  - proportion of reads mapped to a gene in each sample is comparable
+- CPM (count per million)
+
+- RSEM for quantification
+  - Input: FASTQ or BAM files, reference transcript annotation file
+  - Output: transcript-level gene expression (read count, TPM, FPKM) calculated on effective transcript length
+  - Effective length: given the sequence composition of these transcripts, you'd expect a priori to sample more reads from them $$\tilde{l}_i=l_i-\mu +1$$
+    $l_i$ is the length of transcript, $\mu$ is the average fragment length
+- Isoform Inference
+  - geven known set of isoforms
+  - estimate x to maximize the likelihood of observing n
+
+- pseudoalignment
+  - RSEM is considered the best quantification approach
+  - Kallisto (Bray et al, Nat Biotech 2016)
+  - Salmon (Patro et al, Nat Meth 2017)
+  - Do not provide "full" alignment (i.e. no exact base-by-base alignment)
+  - Need reference transcript annotation files
+  - Find all transcripts (and positions) that a read is compatible with
+  - Salmon also corrects for sequence-specific and GC biases
+  - Can run either from FASTQ or BAM files
+  - Can map 10M reads in a few min, trade off between speed and accuracy
+

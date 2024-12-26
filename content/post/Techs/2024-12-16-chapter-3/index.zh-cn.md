@@ -1,5 +1,5 @@
 ---
-title: '<X. Shirley Liu> chapter 2 High Throughput Sequencing and Read Mapping'
+title: '<X.Shirley Liu> chapter 2 - High Throughput Sequencing and Read Mapping'
 author: J Song
 date: '2024-12-16'
 slug: []
