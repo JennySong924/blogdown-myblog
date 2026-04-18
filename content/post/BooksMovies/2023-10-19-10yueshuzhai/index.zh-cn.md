@@ -1,7 +1,7 @@
 ---
 title: 10月书摘
 author: ''
-date: '2026-04-18'
+date: '2023-10-19'
 slug: []
 categories:
   - 读书笔记
